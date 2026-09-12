@@ -70,17 +70,17 @@ button, input { font: inherit; }
 .page-main {
   flex: 0 0 auto;
   display: grid;
-  grid-template-rows: 330px 145px;
+  grid-template-rows: 334px 145px;
   background: #050505;
 }
 
 .hero {
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(0,28fr) minmax(0,44fr) minmax(0,28fr);
-  gap: 18px;
+  grid-template-columns: minmax(0,27fr) minmax(0,40fr) minmax(0,33fr);
+  gap: 12px;
   align-items: stretch;
-  padding: 8px 20px 0;
+  padding: 6px 10px 0 4px;
   border-bottom: 1px solid #222;
   overflow: hidden;
 }
@@ -90,12 +90,13 @@ button, input { font: inherit; }
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  overflow: hidden;
+  overflow: visible;
   background: #050505;
 }
 .mic-panel img {
-  width: 80%;
-  height: auto;
+  width: auto;
+  height: 100%;
+  max-width: 88%;
   max-height: 100%;
   object-fit: contain;
   object-position: left bottom;
@@ -108,72 +109,75 @@ button, input { font: inherit; }
   grid-template-rows: auto auto auto;
   align-content: start;
   justify-items: start;
-  padding: 8px 0 0;
+  padding: 4px 0 0;
 }
 .hero-brand-art {
-  width: min(455px, 88%);
+  width: min(430px, 96%);
   margin: 0;
   object-fit: contain;
   object-position: left center;
 }
 .fear-art {
-  width: min(375px, 72%);
-  margin: -2px 0 2px;
+  width: min(355px, 80%);
+  margin: -3px 0 1px;
   object-fit: contain;
   object-position: left center;
 }
 .hero-description {
-  max-width: 500px;
+  max-width: 470px;
   margin: 0;
-  padding: 4px 8px;
+  padding: 4px 7px;
   background: linear-gradient(180deg,#111,#0b0b0b);
   border-top: 1px solid #252525;
   color: #ddd8d0;
   font-size: 15px;
   font-weight: 700;
-  line-height: 1.42;
+  line-height: 1.4;
 }
 
 .marshall-panel {
   min-width: 0;
   height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 86px 1fr;
   align-items: stretch;
-  padding: 4px 0 0;
-  overflow: hidden;
+  padding: 1px 0 0;
+  overflow: visible;
 }
 .come-in-art {
   width: 75%;
-  max-height: 82px;
-  margin: 0 auto 2px;
+  height: 82px;
+  margin: 0 auto;
   object-fit: contain;
   object-position: top center;
 }
 .marshall-lower {
+  min-width: 0;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(150px, 1fr) minmax(170px, 43%);
-  gap: 4px;
+  grid-template-columns: minmax(0,46%) minmax(0,54%);
+  gap: 3px;
   align-items: end;
+  overflow: visible;
 }
 .marshall-lower blockquote {
   align-self: center;
-  margin: 0;
-  padding: 4px 6px;
+  margin: 0 0 8px;
+  padding: 4px 5px;
   color: #f4efe7;
   background: rgba(0,0,0,.52);
   font-size: 14px;
   font-style: italic;
   font-weight: 700;
-  line-height: 1.45;
+  line-height: 1.42;
 }
 .marshall-portrait {
   align-self: end;
   justify-self: end;
   width: 100%;
-  max-width: 220px;
-  max-height: 250px;
+  height: 245px;
+  max-width: 285px;
+  max-height: none;
   object-fit: contain;
   object-position: right bottom;
   filter: grayscale(1) contrast(1.12) brightness(.9);

@@ -1,6 +1,6 @@
 # CBS Radio Mystery Theater Frontend
 
-A responsive landing page for the CBS Radio Mystery Theater archive, built with Vite and plain JavaScript.
+Desktop landing page for the CBS Radio Mystery Theater archive, built with Vite and plain JavaScript.
 
 ## Development
 
@@ -20,40 +20,36 @@ npm run preview
 
 The production bundle is written to `dist/`.
 
-## API integration
+## Current scope
 
-The landing page works without a backend by using curated fallback content. To populate featured/searchable episodes from the CBSRMT API, create a local `.env` file:
+This branch intentionally implements the desktop landing page only. The layout follows the approved `landing.png` reference composition:
 
-```dotenv
-VITE_API_BASE_URL=http://localhost:8000
-```
+- compact desktop header and placeholder navigation
+- E.G. Marshall welcome panel
+- central CBS Radio Mystery Theater branding
+- static descriptive copy and tagline
+- six-card Browse the Archive section
+- presentation-only newsletter strip
+- footer with placeholder links/social controls
 
-The frontend calls:
-
-```text
-GET /episodes?limit=24
-```
-
-It accepts common collection wrappers (`items`, `episodes`, `data`, or `results`) and falls back safely when the API is unavailable.
+Mobile behavior and secondary pages will be implemented in later passes.
 
 ## Assets
 
-Historical imagery is served from `public/assets/images/`. The page currently uses the supplied CBS Radio microphone, Mystery Theater artwork, studio imagery, and host portraits.
+The landing page uses assets under `public/assets/images/`, including:
 
-## Design
-
-The implementation follows the approved noir landing-page direction:
-
-- monochrome editorial photography
-- charcoal/black surfaces
-- muted gold accents
-- serif display typography
-- featured episodes
-- archive discovery controls
-- E.G. Marshall opening quote
-- responsive mobile navigation
-- accessible search dialog and signup form
+- `cat.jpg`
+- `eg.marshell.1.png`
+- `come-in.jpg`
+- `cbsrmt2.jpg`
+- `cbsrmt3.jpg`
+- `icon-crime.png`
+- `icon-suspense.png`
+- `icon-psychological.png`
+- `icon-classics.png`
+- `icon-supernatural.png`
+- `icon-all.png`
 
 ## Branch
 
-Initial implementation: `landing-page`.
+Current implementation: `landing-page`.

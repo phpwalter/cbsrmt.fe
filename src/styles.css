@@ -112,7 +112,7 @@ button, input { font: inherit; }
 
 .page-main {
   display: grid;
-  grid-template-rows: 426px 354px;
+  grid-template-rows: 426px 196px;
   padding: 0 50px;
   background: #050505;
 }
@@ -213,10 +213,10 @@ button, input { font: inherit; }
   width: var(--content-width);
   min-height: 0;
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 132px;
   align-content: start;
   gap: 10px;
-  padding: 12px 12px 14px;
+  padding: 10px 12px 12px;
   background: #050505;
   overflow: hidden;
 }
@@ -245,57 +245,67 @@ button, input { font: inherit; }
   line-height: 1.2;
 }
 .archive-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 404px);
-  grid-template-rows: repeat(2, 144px);
-  gap: 10px;
-  min-width: 0;
-  align-items: start;
-  justify-content: start;
-}
-.archive-card {
-  width: 404px;
-  height: 144px;
-  display: grid;
-  grid-template-columns: 136px minmax(0,1fr) 24px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  border: 1px solid #303030;
-  background: linear-gradient(135deg,#151515,#090909);
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
   overflow: hidden;
 }
+.archive-card {
+  position: relative;
+  flex: 0 0 192px;
+  width: 192px;
+  height: 132px;
+  overflow: hidden;
+  border: 1pt solid #c0ab71;
+  border-radius: 4pt;
+  background: #070707;
+}
 .archive-card img {
-  width: 136px;
-  height: 142px;
+  position: absolute;
+  inset: 0;
+  width: 192px;
+  height: 132px;
+  max-width: none;
   object-fit: cover;
 }
-.archive-card span {
-  padding: 0 14px;
+.archive-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.03) 38%, rgba(0,0,0,.76) 100%);
+  pointer-events: none;
+}
+.archive-card-copy {
+  position: absolute;
+  z-index: 2;
+  left: 12px;
+  right: 10px;
+  bottom: 10px;
+  padding: 0;
   min-width: 0;
+  color: #f4efe7;
+  text-shadow: 0 1px 2px #000;
 }
 .archive-card strong,
 .archive-card small { display: block; }
 .archive-card strong {
-  color: #f2eee6;
-  font-family: var(--sans);
-  font-size: 18px;
-  line-height: 1.12;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.05;
   text-transform: uppercase;
   white-space: nowrap;
 }
 .archive-card small {
-  margin-top: 7px;
-  color: #d5d0c8;
+  margin-top: 5px;
   font-family: var(--sans);
-  font-size: 14px;
-  line-height: 1.1;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: .03em;
   text-transform: uppercase;
   white-space: nowrap;
-}
-.archive-card b {
-  padding-right: 7px;
-  color: #d1b373;
-  font-size: 26px;
-  font-weight: 400;
 }
 
 .bottom-stack { margin-top: 0; }

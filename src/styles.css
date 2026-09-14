@@ -112,7 +112,7 @@ button, input { font: inherit; }
 
 .page-main {
   display: grid;
-  grid-template-rows: 426px 148px;
+  grid-template-rows: 426px 354px;
   padding: 0 50px;
   background: #050505;
 }
@@ -215,8 +215,8 @@ button, input { font: inherit; }
   display: grid;
   grid-template-rows: auto 1fr;
   align-content: start;
-  gap: 6px;
-  padding: 10px 12px 10px;
+  gap: 10px;
+  padding: 12px 12px 14px;
   background: #050505;
   overflow: hidden;
 }
@@ -246,28 +246,30 @@ button, input { font: inherit; }
 }
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0,1fr));
-  gap: 8px;
+  grid-template-columns: repeat(3, 404px);
+  grid-template-rows: repeat(2, 144px);
+  gap: 10px;
   min-width: 0;
   align-items: start;
+  justify-content: start;
 }
 .archive-card {
-  min-width: 0;
-  height: 72px;
+  width: 404px;
+  height: 144px;
   display: grid;
-  grid-template-columns: 68px minmax(0,1fr) 16px;
+  grid-template-columns: 136px minmax(0,1fr) 24px;
   align-items: center;
   border: 1px solid #303030;
   background: linear-gradient(135deg,#151515,#090909);
   overflow: hidden;
 }
 .archive-card img {
-  width: 68px;
-  height: 70px;
+  width: 136px;
+  height: 142px;
   object-fit: cover;
 }
 .archive-card span {
-  padding: 0 7px;
+  padding: 0 14px;
   min-width: 0;
 }
 .archive-card strong,
@@ -275,24 +277,24 @@ button, input { font: inherit; }
 .archive-card strong {
   color: #f2eee6;
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 18px;
   line-height: 1.12;
   text-transform: uppercase;
   white-space: nowrap;
 }
 .archive-card small {
-  margin-top: 3px;
+  margin-top: 7px;
   color: #d5d0c8;
   font-family: var(--sans);
-  font-size: 8px;
+  font-size: 14px;
   line-height: 1.1;
   text-transform: uppercase;
   white-space: nowrap;
 }
 .archive-card b {
-  padding-right: 4px;
+  padding-right: 7px;
   color: #d1b373;
-  font-size: 15px;
+  font-size: 26px;
   font-weight: 400;
 }
 

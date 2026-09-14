@@ -187,7 +187,7 @@ button, input { font: inherit; }
 .marshall-portrait {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -10px;
   width: 370px;
   height: auto;
   max-width: none;

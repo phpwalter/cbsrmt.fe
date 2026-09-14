@@ -166,9 +166,11 @@ button, input { font: inherit; }
   position: absolute;
   right: 0;
   bottom: 0;
+  width: 20%;
+  height: auto;
   max-width: none;
-  object-fit: cover;
-  object-position: bottom;
+  object-fit: contain;
+  object-position: right bottom;
   filter: grayscale(1) contrast(1.08) brightness(.92);
 }
 .come-in-art {

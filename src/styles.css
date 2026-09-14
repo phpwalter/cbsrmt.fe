@@ -188,7 +188,7 @@ button, input { font: inherit; }
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 360px;
+  width: 370px;
   height: auto;
   max-width: none;
   object-fit: contain;
@@ -199,13 +199,14 @@ button, input { font: inherit; }
   position: absolute;
   z-index: 2;
   top: 10px;
-  right: 20px;
+  left: 0;
+  right: auto;
   width: 230px;
   height: auto;
   max-width: none;
   max-height: none;
   object-fit: contain;
-  object-position: right top;
+  object-position: left top;
 }
 
 .archive-section {

@@ -18,3 +18,31 @@ document.querySelector('.search-placeholder')?.addEventListener('click', (event)
 document.querySelector('[data-newsletter-form]')?.addEventListener('submit', (event) => {
   event.preventDefault();
 });
+
+const introAudio = document.querySelector('#rmt-intro');
+
+if (introAudio) {
+  const attemptPlayback = () => {
+    introAudio.currentTime = 0;
+    const playback = introAudio.play();
+
+    if (playback?.catch) {
+      playback.catch(() => {
+        const resumeOnInteraction = () => {
+          introAudio.play().catch(() => {});
+          document.removeEventListener('pointerdown', resumeOnInteraction);
+          document.removeEventListener('keydown', resumeOnInteraction);
+        };
+
+        document.addEventListener('pointerdown', resumeOnInteraction, { once: true });
+        document.addEventListener('keydown', resumeOnInteraction, { once: true });
+      });
+    }
+  };
+
+  if (document.readyState === 'loading') {
+    window.addEventListener('DOMContentLoaded', attemptPlayback, { once: true });
+  } else {
+    attemptPlayback();
+  }
+}

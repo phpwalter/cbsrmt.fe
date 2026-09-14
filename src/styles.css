@@ -188,7 +188,7 @@ button, input { font: inherit; }
   position: absolute;
   right: 0;
   bottom: -10px;
-  width: 370px;
+  width: 500px;
   height: auto;
   max-width: none;
   object-fit: contain;

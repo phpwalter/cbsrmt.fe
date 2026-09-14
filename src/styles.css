@@ -92,7 +92,7 @@ button, input { font: inherit; }
 .page-main {
   flex: 0 0 auto;
   display: grid;
-  grid-template-rows: 326px 148px;
+  grid-template-rows: 426px 148px;
   background: #050505;
 }
 
@@ -160,26 +160,22 @@ button, input { font: inherit; }
 .marshall-panel {
   position: relative;
   min-width: 0;
-  height: 100%;
-  overflow: hidden;
   background: #050505;
 }
 .marshall-portrait {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: 100%;
   max-width: none;
   object-fit: cover;
-  object-position: 58% bottom;
+  object-position: bottom;
   filter: grayscale(1) contrast(1.08) brightness(.92);
 }
 .come-in-art {
   position: absolute;
   z-index: 2;
   top: 10px;
-  right: 12px;
+  right: 20px;
   width: 50%;
   max-height: 84px;
   object-fit: contain;

@@ -33,7 +33,7 @@ button,input{font:inherit}
 .hero-v5{grid-template-columns:390px 450px 404px;gap:8px}
 
 .marshall-panel-v5{position:relative;min-width:0;height:100%;overflow:hidden;background:#050505}
-.marshall-portrait-v5{position:absolute;left:-106px;bottom:-20px;width:450px;height:auto;max-width:none;object-fit:contain;object-position:left bottom;transform:scaleX(-1);transform-origin:center;filter:grayscale(1) contrast(1.08) brightness(.92)}
+.marshall-portrait-v5{position:absolute;left:-106px;bottom:0;width:450px;height:auto;max-width:none;object-fit:contain;object-position:left bottom;transform:scaleX(-1);transform-origin:center;filter:grayscale(1) contrast(1.08) brightness(.92)}
 .come-in-art-v5{position:absolute;z-index:2;top:26px;right:0;width:205px;height:auto;max-width:none;object-fit:contain;object-position:right top}
 
 .brand-panel{min-width:0;height:100%;display:grid;grid-template-rows:auto auto auto;align-content:start;justify-items:start;padding:20px 0 0 24px;overflow:visible}

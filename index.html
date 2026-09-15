@@ -28,28 +28,30 @@
     </header>
 
     <main class="page-main">
-      <section class="hero" aria-label="CBS Radio Mystery Theater introduction">
-        <div class="mic-panel">
-          <img src="/assets/images/cbs-mic.jpg" alt="Vintage CBS Radio Network microphone" />
-        </div>
-        <section class="brand-panel" aria-labelledby="brand-heading">
+      <section class="hero hero-v5" aria-label="CBS Radio Mystery Theater introduction">
+        <section class="marshall-panel-v5" aria-labelledby="marshall-heading">
+          <h2 id="marshall-heading" class="sr-only">E.G. Marshall</h2>
+          <img class="marshall-portrait-v5" src="/assets/images/eg.marshell.1.png" alt="E.G. Marshall" />
+          <img class="come-in-art-v5" src="/assets/images/come-in-wht.png" alt="Come in. Welcome." />
+        </section>
+
+        <section class="brand-panel brand-panel-v5" aria-labelledby="brand-heading">
           <img class="hero-brand-art" src="/assets/images/cbsrmt3-wht.png" alt="CBS Radio Mystery Theater" />
           <h1 id="brand-heading" class="sr-only">CBS Radio Mystery Theater</h1>
           <img class="fear-art" src="/assets/images/fear-wht.png" alt="The Fear you can hear..." />
           <p class="hero-description">Classic suspense. Unforgettable voices. A world of mystery. Rediscover one of radio’s great storytelling traditions — crime, suspense, the supernatural, and the strange corners of the human mind.</p>
         </section>
-        <section class="marshall-panel" aria-labelledby="marshall-heading">
-          <h2 id="marshall-heading" class="sr-only">E.G. Marshall</h2>
-          <img class="marshall-portrait" src="/assets/images/eg.marshell.1.png" alt="E.G. Marshall" />
-          <img class="come-in-art" src="/assets/images/come-in-wht.png" alt="Come in. Welcome." />
+
+        <section class="anniversary-panel" aria-labelledby="anniversary-heading">
+          <h2 id="anniversary-heading">50 years ago tonight</h2>
+          <div class="anniversary-rule" aria-hidden="true"></div>
+          <img class="anniversary-episode-card" src="/assets/images/episode-panel-v5.jpg" alt="Murder on the Midnight Express episode card" />
         </section>
       </section>
 
       <section class="archive-section" aria-labelledby="archive-heading">
         <div class="archive-heading-block">
-          <div class="archive-title-row">
-            <h2 id="archive-heading">Browse the archive</h2>
-          </div>
+          <div class="archive-title-row"><h2 id="archive-heading">Browse the archive</h2></div>
           <p>Timeless stories. Unforgettable voices. Explore by category.</p>
         </div>
         <div class="archive-grid">
@@ -65,10 +67,7 @@
 
     <div class="bottom-stack">
       <section class="newsletter" aria-label="Newsletter signup">
-        <div class="newsletter-copy">
-          <h2>Stay in touch</h2>
-          <p>Get updates on new episodes and special features.</p>
-        </div>
+        <div class="newsletter-copy"><h2>Stay in touch</h2><p>Get updates on new episodes and special features.</p></div>
         <form class="newsletter-form" data-newsletter-form>
           <label class="sr-only" for="email">Your email address</label>
           <input id="email" name="email" type="email" placeholder="Your email address" />

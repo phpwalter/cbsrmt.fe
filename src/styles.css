@@ -39,11 +39,11 @@ button,input{font:inherit}
 .brand-panel{min-width:0;height:100%;display:grid;grid-template-rows:auto auto auto;align-content:start;justify-items:start;padding:20px 0 0 24px;overflow:visible}
 .brand-panel-v5{padding:24px 0 0 12px}
 .hero-brand-art{width:438px;margin:0;object-fit:contain;object-position:left center}
-.fear-art{width:355px;margin:-4px 0 4px -4px;object-fit:contain;object-position:left center}
-.hero-description{width:420px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);border-top:1px solid #252525;color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
+.fear-art{width:355px;margin:-4px 0 0 -4px;padding-bottom:6px;border-bottom:1px solid #252525;object-fit:contain;object-position:left center}
+.hero-description{width:420px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
 
 .anniversary-panel{min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;background:#050505}
-.anniversary-panel h2{margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;text-align:center}
+.anniversary-panel h2{margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
 .anniversary-rule{width:80%;height:1px;margin:8px auto 16px;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
 .anniversary-episode-card{width:264px;height:auto;align-self:center;border:1px solid var(--gold);object-fit:contain;background:#080808}
 

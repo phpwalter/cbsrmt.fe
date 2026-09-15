@@ -46,8 +46,8 @@ button,input{font:inherit}
 .anniversary-panel h2{margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
 .anniversary-rule{width:80%;height:1px;margin:8px auto 16px;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
 
-.episode-card{width:270px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
-.episode-card-image-region{width:270px;height:100px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
+.episode-card{width:330px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
+.episode-card-image-region{width:330px;height:100px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
 .episode-card-image-region img{width:100%;height:100%;object-fit:contain;object-position:center;background:#030303}
 .episode-card-copy{padding:12px 14px 14px;text-align:left}
 .episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;margin:0 0 10px}

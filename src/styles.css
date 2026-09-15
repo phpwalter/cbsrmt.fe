@@ -53,7 +53,7 @@ button,input{font:inherit}
 .episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;margin:0 0 10px}
 .episode-card-title{margin:0;font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.2;color:#f4efe7;text-align:left}
 .episode-card-play{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer}
-.episode-card-play svg{width:21px;height:21px;fill:currentColor;stroke:none;transform:translateX(1px)}
+.episode-card-play svg{width:30px;height:30px;fill:currentColor;stroke:none;transform:translateX(1px)}
 .episode-card-play:hover,.episode-card-play:focus-visible{background:var(--gold);color:#080808;outline:none}
 .episode-card-description{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left}
 

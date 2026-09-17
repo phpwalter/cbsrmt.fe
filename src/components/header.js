@@ -1,12 +1,18 @@
 export const renderSiteHeader = (target, { active = 'home' } = {}) => {
   if (!target) return;
 
+  const links = {
+    home: '/index.html',
+    episodes: '/index.html#archive-heading',
+    about: '/about.html',
+  };
+
   const navItem = (key, label) =>
-    `<a class="${active === key ? 'active' : 'placeholder-link'}" href="#">${label}</a>`;
+    `<a class="${active === key ? 'active' : ''}" href="${links[key]}">${label}</a>`;
 
   target.innerHTML = `
     <header class="site-header">
-      <a class="header-brand placeholder-link" href="#" aria-label="CBS Radio Mystery Theater home">
+      <a class="header-brand" href="/index.html" aria-label="CBS Radio Mystery Theater home">
         <img src="/assets/images/cbsrmt2-wht.png" alt="CBS Radio Mystery Theater" />
       </a>
       <nav class="primary-nav" aria-label="Primary navigation">

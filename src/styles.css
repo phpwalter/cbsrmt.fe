@@ -64,14 +64,10 @@ button,input{font:inherit}
 .archive-title-row::after{background:linear-gradient(90deg,var(--gold),transparent)}
 .archive-title-row h2{margin:0;color:var(--gold);font-size:26px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .archive-heading-block p{margin:7px 0 0;color:#d8d2c9;font-size:15px;letter-spacing:.05em}
-.archive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;width:100%}
-.archive-card{position:relative;width:100%;aspect-ratio:1.9 / 1;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
-.archive-card img{position:absolute;inset:-2px;width:calc(100% + 4px);height:calc(100% + 4px);max-width:none;object-fit:cover;object-position:left center}
-.archive-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02) 43%,rgba(0,0,0,.38) 63%,rgba(0,0,0,.94) 100%);pointer-events:none}
-.archive-card-copy{position:absolute;z-index:2;left:10px;right:10px;bottom:12px;text-align:center;color:#f4efe7;text-shadow:0 1px 2px #000}
-.archive-card strong,.archive-card small{display:block}
-.archive-card strong{font-family:var(--serif);font-size:14px;line-height:1.05;text-transform:uppercase;white-space:nowrap}
-.archive-card small{margin-top:6px;font-family:var(--sans);font-size:8px;line-height:1;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:#d9d3ca}
+.archive-grid{display:grid;grid-template-columns:repeat(4,303px);justify-content:center;gap:18px;width:100%}
+.archive-card{position:relative;width:303px;aspect-ratio:1960 / 802;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
+.archive-card img{width:100%;height:100%;object-fit:contain;object-position:center}
+.archive-card::after{content:none}
 
 .bottom-stack{margin-top:0;background:#070707}
 .newsletter{height:88px;display:grid;grid-template-columns:430px 1fr 150px 60px;align-items:center;gap:16px;padding:0 72px;background:#090909;color:#eee8df;border-top:1px solid #1e1b15;border-bottom:1px solid #1e1b15}

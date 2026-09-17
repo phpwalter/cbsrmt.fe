@@ -64,8 +64,8 @@ button,input{font:inherit}
 .archive-title-row::after{background:linear-gradient(90deg,var(--gold),transparent)}
 .archive-title-row h2{margin:0;color:var(--gold);font-size:26px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .archive-heading-block p{margin:7px 0 0;color:#d8d2c9;font-size:15px;letter-spacing:.05em}
-.archive-grid{display:grid;grid-template-columns:repeat(4,303px);justify-content:center;gap:18px;width:100%}
-.archive-card{position:relative;width:303px;aspect-ratio:1960 / 802;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
+.archive-grid{display:grid;grid-template-columns:repeat(4,300px);justify-content:center;gap:18px;width:100%}
+.archive-card{position:relative;width:300px;height:120px;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
 .archive-card img{width:100%;height:100%;object-fit:contain;object-position:center}
 .archive-card::after{content:none}
 

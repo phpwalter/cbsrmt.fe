@@ -1,4 +1,9 @@
 import './styles.css';
+import { renderSiteHeader } from './components/header.js';
+import { renderSiteFooter } from './components/footer.js';
+
+renderSiteHeader(document.querySelector('[data-site-header]'), { active: 'home' });
+renderSiteFooter(document.querySelector('[data-site-footer]'));
 
 const preventPlaceholderNavigation = (event) => {
   const link = event.currentTarget;
@@ -18,6 +23,17 @@ document.querySelector('.search-placeholder')?.addEventListener('click', (event)
 document.querySelector('[data-newsletter-form]')?.addEventListener('submit', (event) => {
   event.preventDefault();
 });
+
+const anniversaryDate = document.querySelector('[data-anniversary-date]');
+if (anniversaryDate) {
+  const today = new Date();
+  const fiftyYearsAgo = new Date(today.getFullYear() - 50, today.getMonth(), today.getDate());
+  anniversaryDate.textContent = fiftyYearsAgo.toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
 
 const introAudio = document.querySelector('#rmt-intro');
 

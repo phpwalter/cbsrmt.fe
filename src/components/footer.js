@@ -14,7 +14,7 @@ export const renderSiteFooter = (target) => {
       </section>
 
       <footer class="site-footer">
-        <a class="footer-brand placeholder-link" href="#" aria-label="CBS Radio Mystery Theater home"><img src="/assets/images/cbsrmt2-wht.png" alt="CBS Radio Mystery Theater" /></a>
+        <a class="footer-brand" href="/index.html" aria-label="CBS Radio Mystery Theater home"><img src="/assets/images/cbsrmt2-wht.png" alt="CBS Radio Mystery Theater" /></a>
         <div class="footer-social" aria-label="Social links placeholders">
           <a class="social-link placeholder-link" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7h1.9V2.5c-.3 0-1.5-.1-2.8-.1-2.8 0-4.7 1.7-4.7 4.8v2.3H6.8V13h3.1v9h3.8z"/></svg></a>
           <a class="social-link placeholder-link" href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.3L6.6 22H3.5l7.1-8.1L3.1 2h6.2l4.3 5.7L18.9 2zm-1.1 17.9h1.7L8.4 4h-1.8l11.2 15.9z"/></svg></a>

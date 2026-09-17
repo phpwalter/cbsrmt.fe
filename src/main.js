@@ -2,8 +2,8 @@ import './styles.css';
 import { renderSiteHeader } from './components/header.js';
 import { renderSiteFooter } from './components/footer.js';
 
-const activePage = document.body.dataset.page || 'home';
-renderSiteHeader(document.querySelector('[data-site-header]'), { active: activePage });
+const currentPage = document.body.dataset.page || 'home';
+renderSiteHeader(document.querySelector('[data-site-header]'), { active: currentPage });
 renderSiteFooter(document.querySelector('[data-site-footer]'));
 
 const preventPlaceholderNavigation = (event) => {

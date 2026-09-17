@@ -16,9 +16,9 @@ html,body{margin:0;min-width:var(--page-width);min-height:100%;background:#111;c
 body{min-height:100vh;display:flex;flex-direction:column;align-items:center;font-family:var(--serif)}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
-button,input{font:inherit}
+button,input,select{font:inherit}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.site-header,.page-main,.bottom-stack{width:var(--page-width);flex:0 0 auto}
+.site-header,.page-main,.bottom-stack,.episodes-page-main{width:var(--page-width);flex:0 0 auto}
 
 .site-header{height:74px;display:grid;grid-template-columns:290px 1fr 70px;align-items:center;padding:0 50px;background:#030303}
 .header-brand img,.footer-brand img{width:205px;max-height:54px;object-fit:contain;object-position:left center}
@@ -31,22 +31,18 @@ button,input{font:inherit}
 .page-main{display:grid;grid-template-rows:426px auto;padding:0 50px;background:#050505}
 .hero{width:var(--content-width);min-height:0;display:grid;align-items:stretch;padding:0;border-bottom:1px solid #242424;overflow:hidden}
 .hero-v5{grid-template-columns:390px 450px 404px;gap:8px}
-
 .marshall-panel-v5{position:relative;min-width:0;height:100%;overflow:hidden;background:#050505}
 .marshall-portrait-v5{position:absolute;left:-106px;bottom:-20px;width:495px;height:auto;max-width:none;object-fit:contain;object-position:left bottom;transform:scaleX(-1);transform-origin:center;filter:grayscale(1) contrast(1.08) brightness(.92)}
 .come-in-art-v5{position:absolute;z-index:2;top:26px;right:0;width:205px;height:auto;max-width:none;object-fit:contain;object-position:right top}
-
 .brand-panel{min-width:0;height:100%;display:grid;grid-template-rows:auto auto auto;align-content:start;justify-items:start;padding:20px 0 0 24px;overflow:visible}
 .brand-panel-v5{padding:24px 0 0 12px}
 .hero-brand-art{width:438px;margin:0;object-fit:contain;object-position:left center}
 .fear-art{width:355px;margin:-4px 0 0;padding-bottom:6px;border-bottom:1px solid #252525;object-fit:contain;object-position:center center;justify-self:center}
 .hero-description{width:420px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
-
 .anniversary-panel{min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;background:#050505}
 .anniversary-panel h2{margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
 .anniversary-rule{width:80%;height:1px;margin:8px auto 7px;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
 .anniversary-date{margin:0 0 12px;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.04em;text-align:center}
-
 .episode-card{width:330px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
 .episode-card-image-region{width:330px;height:120px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
 .episode-card-image-region img{width:100%;height:100%;object-fit:contain;object-position:center;background:#030303}
@@ -58,7 +54,6 @@ button,input{font:inherit}
 .episode-card-play svg{width:30px;height:30px;fill:currentColor;stroke:none;transform:translateX(1px)}
 .episode-card-play:hover,.episode-card-play:focus-visible{background:var(--gold);color:#080808;outline:none}
 .episode-card-description{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left}
-
 .archive-section{width:var(--content-width);min-height:0;display:grid;grid-template-rows:auto 1fr;align-content:start;gap:20px;padding:20px 0 22px;background:#050505;overflow:hidden}
 .archive-heading-block{text-align:center}
 .archive-title-row{display:flex;align-items:center;justify-content:center;gap:22px}
@@ -71,6 +66,67 @@ button,input{font:inherit}
 .archive-card img{width:100%;height:100%;object-fit:contain;object-position:center}
 .archive-card::after{content:none}
 
+.episodes-page-main{padding:0 50px 28px;background:#050505}
+.episodes-intro{height:255px;display:grid;grid-template-columns:1.05fr .95fr;border-bottom:1px solid #2a251b;background:linear-gradient(90deg,#070707 0%,#0a0a0a 58%,#080808 100%);overflow:hidden}
+.episodes-intro-copy{padding:34px 0 24px 18px;max-width:650px}
+.episodes-intro-copy h1{margin:0;color:#f1eee7;font-size:54px;font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.02em}
+.episodes-tagline{margin:10px 0 0;font-size:21px;color:#eee9e0}
+.episodes-rule{width:92px;height:2px;margin:18px 0;background:var(--gold)}
+.episodes-intro-copy>p:last-child{margin:0;color:#d5cfc5;font-size:16px;line-height:1.5;max-width:610px}
+.episodes-intro-art{position:relative;overflow:hidden;background:radial-gradient(circle at 65% 45%,#242424 0,#111 34%,#060606 72%)}
+.episodes-intro-art::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 25%,rgba(0,0,0,.1) 75%,#050505 100%)}
+.episodes-intro-art img{position:absolute;right:35px;top:37px;width:470px;opacity:.26;filter:grayscale(1) contrast(1.1)}
+
+.episodes-workspace{display:grid;grid-template-columns:220px minmax(510px,1fr) 410px;gap:18px;padding:18px 0 0;align-items:start}
+.episodes-filters{border:1px solid #8d7846;padding:16px;background:#090909;min-height:600px}
+.episodes-filters h2,.episodes-list-head h2,.episodes-share h3{margin:0;color:var(--gold);font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
+.episodes-search{height:38px;margin:14px 0 18px;display:grid;grid-template-columns:1fr 30px;align-items:center;border:1px solid #555;background:#111}
+.episodes-search input{width:100%;height:100%;padding:0 10px;border:0;background:transparent;color:#eee;outline:0;font-size:13px}
+.episodes-search span:last-child{font-size:20px;text-align:center;color:#ddd}
+.episodes-filters fieldset{margin:0 0 18px;padding:0;border:0}
+.episodes-filters legend,.episodes-select-label{display:block;margin:0 0 8px;color:var(--gold);font-size:13px}
+.episodes-filters fieldset label{display:block;margin:7px 0;color:#e4ded5;font-size:13px}
+.episodes-filters input[type=checkbox]{appearance:none;width:15px;height:15px;margin:0 8px 0 0;vertical-align:-2px;border:1px solid #9f8952;background:#080808}
+.episodes-filters input[type=checkbox]:checked{background:var(--gold);box-shadow:inset 0 0 0 3px #080808}
+.episodes-select-label{margin-top:16px}
+.episodes-select-label select{display:block;width:100%;height:34px;margin-top:6px;padding:0 8px;border:1px solid #555;background:#111;color:#e9e4dc;font-size:12px}
+.episodes-clear{width:100%;height:42px;margin-top:18px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+
+.episodes-list{min-width:0}
+.episodes-list-head{height:40px;display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid #5a4b2b}
+.episodes-page-count{margin-right:12px;color:#bbb3a9;font-size:11px}
+.episodes-page-arrows{display:flex;gap:8px}
+.episodes-page-arrows button,.episodes-pagination button{border:1px solid #64542f;background:#0b0b0b;color:#ddd4c5}
+.episodes-page-arrows button{width:28px;height:28px;font-size:18px}
+.episodes-list-item{display:grid;grid-template-columns:185px 1fr 34px;gap:14px;min-height:112px;padding:10px 0;border-bottom:1px solid #26221b;cursor:pointer}
+.episodes-list-item.is-selected{background:linear-gradient(90deg,rgba(192,171,113,.08),transparent)}
+.episodes-list-item>img{width:185px;height:94px;object-fit:cover;border:1px solid #7b683b;background:#050505}
+.episodes-list-copy h3{margin:0 0 3px;color:#f1ece5;font-size:18px;font-weight:400}
+.episodes-meta{margin:0 0 5px!important;color:#a9a297!important;font-size:11px!important;letter-spacing:.02em}
+.episodes-meta span,.episodes-preview-header span{margin:0 6px;color:#75643b}
+.episodes-list-copy p{margin:0;color:#d0c9bf;font-size:12px;line-height:1.35}
+.episodes-play,.episodes-preview-play{align-self:center;width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);font-size:12px;cursor:pointer}
+.episodes-pagination{display:flex;justify-content:center;align-items:center;gap:7px;padding:14px 0 4px}
+.episodes-pagination button{min-width:28px;height:28px;padding:0 7px}
+.episodes-pagination button.active{background:var(--gold);color:#080808}
+
+.episodes-preview{position:sticky;top:18px;border-left:1px solid #2e281d;padding-left:18px;min-height:580px}
+.episodes-preview-image{width:100%;height:210px;object-fit:cover;border:1px solid #8d7846;background:#050505}
+.episodes-preview-header{display:grid;grid-template-columns:1fr 42px;gap:12px;align-items:center;padding:13px 0 7px}
+.episodes-preview-header h2{margin:0;color:#f4efe7;font-size:28px;font-weight:400;line-height:1.05}
+.episodes-preview-header p{margin:5px 0 0;color:#bdb5aa;font-size:12px}
+.episodes-preview-play{width:40px;height:40px}
+.episodes-preview-description{margin:8px 0 14px;color:#ded7cd;font-size:13px;line-height:1.45}
+.episodes-preview-rule{height:1px;background:linear-gradient(90deg,var(--gold),#3a3120 70%,transparent)}
+.episodes-preview-lower{display:grid;grid-template-columns:1.45fr .8fr;gap:18px;padding-top:15px}
+.episodes-details{margin:0}
+.episodes-details div{display:grid;grid-template-columns:120px 1fr;gap:8px;margin:0 0 8px}
+.episodes-details dt{color:#c9c1b7;font-size:11px}
+.episodes-details dd{margin:0;color:#f0ebe4;font-size:11px;line-height:1.25}
+.episodes-share{border-left:1px solid #685733;padding-left:16px}
+.episodes-share>div{display:flex;gap:8px;margin-top:14px}
+.episodes-share button{width:30px;height:30px;border:1px solid #777;border-radius:50%;background:transparent;color:#eee}
+
 .bottom-stack{margin-top:0;background:#070707}
 .newsletter{height:88px;display:grid;grid-template-columns:430px 1fr 150px 60px;align-items:center;gap:16px;padding:0 72px;background:#090909;color:#eee8df;border-top:1px solid #1e1b15;border-bottom:1px solid #1e1b15}
 .newsletter-copy h2{margin:0;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.18em;text-transform:uppercase}
@@ -79,7 +135,6 @@ button,input{font:inherit}
 .newsletter-form input{height:46px;padding:0 18px;border:1px solid #555;background:#171717;color:#eee;font-size:14px}
 .newsletter-form button{height:46px;border:1px solid #a99157;background:linear-gradient(180deg,#ccb36f,#ae9253);color:#0a0a0a;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 .newsletter-cat{justify-self:end;width:44px;height:56px;object-fit:contain;filter:invert(1);opacity:.9}
-
 .site-footer{height:72px;display:grid;grid-template-columns:230px 1fr 215px;align-items:center;gap:14px;padding:0 78px 0 84px;background:linear-gradient(180deg,#0b0b0b,#050505);border-top:1px solid #161616}
 .footer-brand img{width:184px;max-height:42px}
 .footer-social{display:flex;align-items:center;justify-content:center;gap:22px}

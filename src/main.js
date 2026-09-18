@@ -31,6 +31,7 @@ document.querySelector('[data-newsletter-form]')?.addEventListener('submit', (ev
 });
 
 const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
+const EPISODE_IMAGE_FALLBACK = '/assets/images/cbsrmt2-wht.png';
 
 const formatApiDate = (value) => {
   if (!value) return '';
@@ -72,8 +73,12 @@ const createEpisodeCard = (broadcast, multiple) => {
   imageRegion.className = 'episode-card-image-region';
 
   const image = document.createElement('img');
-  image.src = episode.thumbnail || `/assets/episodes/${episodeNumber}.png`;
   image.alt = episode.episode_name;
+  image.addEventListener('error', () => {
+    if (image.src.endsWith(EPISODE_IMAGE_FALLBACK)) return;
+    image.src = EPISODE_IMAGE_FALLBACK;
+  });
+  image.src = episode.thumbnail || `/assets/episodes/${episodeNumber}.png`;
   imageRegion.appendChild(image);
 
   const copy = document.createElement('div');

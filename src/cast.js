@@ -1,5 +1,5 @@
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
-const CAST_FALLBACK = '/assets/images/cast-silhouette.svg';
+const CAST_FALLBACK = '/assets/images/silhouette.png';
 const PAGE_SIZE = 10;
 
 const escapeHtml = (value) => String(value ?? '')

@@ -294,7 +294,7 @@ export const initEpisodesPage = () => {
       renderList(episodes);
       renderPagination();
       setStatus('');
-      syncUrl({ replace: replaceUrl });
+      syncUrl({ replace: true });
       await loadDetail(state.selectedEpisode);
     } catch (error) {
       console.error('Unable to load episodes:', error);

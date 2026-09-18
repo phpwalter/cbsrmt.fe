@@ -204,3 +204,13 @@ button,input{font:inherit}
   object-fit: contain;
   object-position: center;
 }
+
+
+/* Keep fallback branding inset without changing normal episode artwork. */
+.episodes-list-item img.is-fallback-artwork,
+.episodes-preview-image.is-fallback-artwork,
+.episode-card-image-region img.is-fallback-artwork {
+  box-sizing: border-box;
+  padding-left: 18px;
+  padding-right: 18px;
+}

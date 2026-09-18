@@ -14,6 +14,13 @@ const formatDate = (value) => {
 
 const episodeNumber = (value) => String(value).padStart(4, '0');
 
+const escapeHtml = (value) => String(value ?? '')
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#039;');
+
 const textName = (person) =>
   person?.display_name ||
   [person?.first_name, person?.last_name].filter(Boolean).join(' ') ||
@@ -102,25 +109,25 @@ export const initEpisodesPage = () => {
   };
 
   const renderPreview = (episode) => {
-    const genres = (episode.genres || []).map((genre) => genre.name).join(', ') || '—';
-    const writers = (episode.writers || []).map(textName).join(', ') || '—';
-    const cast = (episode.cast || []).map(textName).join('<br>') || '—';
+    const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
+    const writers = (episode.writers || []).map((person) => escapeHtml(textName(person))).join(', ') || '—';
+    const cast = (episode.cast || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
 
     previewElement.innerHTML = `
-      <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${episode.episode_name}">
+      <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${escapeHtml(episode.episode_name)}">
       <div class="episodes-preview-header">
         <div>
-          <h2>${episode.episode_name}</h2>
+          <h2>${escapeHtml(episode.episode_name)}</h2>
           <p>Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>
         </div>
         <button class="episodes-preview-play${audioAvailable ? '' : ' is-unavailable'}"
           type="button"
-          aria-label="${audioAvailable ? `Play ${episode.episode_name}` : `Audio unavailable for ${episode.episode_name}`}"
+          aria-label="${audioAvailable ? `Play ${escapeHtml(episode.episode_name)}` : `Audio unavailable for ${escapeHtml(episode.episode_name)}`}"
           ${audioAvailable ? '' : 'disabled'}>▶</button>
       </div>
-      <p class="episodes-preview-description">${episode.episode_plot || 'No episode description is available.'}</p>
+      <p class="episodes-preview-description">${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>
       <div class="episodes-preview-rule" aria-hidden="true"></div>
       <div class="episodes-preview-lower episodes-preview-lower-single">
         <dl class="episodes-details">
@@ -181,11 +188,11 @@ export const initEpisodesPage = () => {
       row.tabIndex = 0;
       row.innerHTML = `
         <span class="episodes-current-indicator" aria-hidden="true"></span>
-        <img src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${episode.episode_name}">
+        <img src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${escapeHtml(episode.episode_name)}">
         <div class="episodes-list-copy">
-          <h3>${episode.episode_name}</h3>
+          <h3>${escapeHtml(episode.episode_name)}</h3>
           <p class="episodes-meta">Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>
-          <p>${episode.episode_plot || 'No episode description is available.'}</p>
+          <p>${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>
         </div>
       `;
       const activate = () => selectEpisode(episode.episode_number);

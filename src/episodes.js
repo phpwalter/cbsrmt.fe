@@ -1,6 +1,6 @@
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
 const PAGE_SIZE = 5;
-const EPISODE_IMAGE_FALLBACK = '/assets/images/cbsrmt2-wht.png';
+const EPISODE_IMAGE_FALLBACK = '/assets/images/cbsrmt4-wht.png';
 
 const formatDate = (value) => {
   if (!value) return 'Unknown';
@@ -26,6 +26,7 @@ const useEpisodeImageFallback = (image) => {
   if (!image) return;
   image.addEventListener('error', () => {
     if (image.src.endsWith(EPISODE_IMAGE_FALLBACK)) return;
+    image.classList.add('is-fallback-artwork');
     image.src = EPISODE_IMAGE_FALLBACK;
   });
 };

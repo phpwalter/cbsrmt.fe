@@ -4,6 +4,7 @@ export const renderSiteHeader = (target, { active = 'home' } = {}) => {
   const items = [
     ['home', 'Home', '/index.html'],
     ['episodes', 'Episodes', '/episodes.html'],
+    ['cast', 'Cast', '/cast.html'],
     ['about', 'About', '/about.html'],
   ];
 

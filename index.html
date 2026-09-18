@@ -31,25 +31,12 @@
         <section class="anniversary-panel" aria-labelledby="anniversary-heading">
           <h2 id="anniversary-heading">50 Years Ago Tonight</h2>
           <div class="anniversary-rule" aria-hidden="true"></div>
-          <p class="anniversary-date" data-anniversary-date></p>
-
-          <article class="episode-card" aria-labelledby="episode-0733-title">
-            <div class="episode-card-image-region">
-              <img src="/assets/episodes/0733.png" alt="Last Train Out" />
-            </div>
-            <div class="episode-card-copy">
-              <div class="episode-card-title-row">
-                <div>
-                  <h3 id="episode-0733-title" class="episode-card-title">Last Train Out</h3>
-                  <p class="episode-card-number">Episode 733</p>
-                </div>
-                <button class="episode-card-play" type="button" aria-label="Play Last Train Out" data-episode-id="0733">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5v9l7-4.5-7-4.5z"></path></svg>
-                </button>
-              </div>
-              <p class="episode-card-description">An American film crew tries to film the last journey of a legendary train The Orient Express and falls into a communist espionage trap.</p>
-            </div>
-          </article>
+          <p class="anniversary-date" data-anniversary-date>Loading tonight's broadcast...</p>
+          <p class="anniversary-fallback" data-anniversary-fallback hidden></p>
+          <div class="anniversary-cards" data-anniversary-cards aria-live="polite"></div>
+          <p class="anniversary-error" data-anniversary-error hidden>
+            Tonight's historical broadcast information is temporarily unavailable.
+          </p>
         </section>
       </section>
 

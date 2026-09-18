@@ -1,5 +1,6 @@
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
 const PAGE_SIZE = 5;
+const EPISODE_IMAGE_FALLBACK = '/assets/images/cbsrmt2-wht.png';
 
 const formatDate = (value) => {
   if (!value) return 'Unknown';
@@ -20,6 +21,14 @@ const escapeHtml = (value) => String(value ?? '')
   .replaceAll('>', '&gt;')
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&#039;');
+
+const useEpisodeImageFallback = (image) => {
+  if (!image) return;
+  image.addEventListener('error', () => {
+    if (image.src.endsWith(EPISODE_IMAGE_FALLBACK)) return;
+    image.src = EPISODE_IMAGE_FALLBACK;
+  });
+};
 
 const textName = (person) =>
   person?.display_name ||
@@ -140,6 +149,8 @@ export const initEpisodesPage = () => {
       </div>
     `;
 
+    useEpisodeImageFallback(previewElement.querySelector('.episodes-preview-image'));
+
     if (audioAvailable) {
       previewElement.querySelector('.episodes-preview-play').addEventListener('click', (event) => {
         const button = event.currentTarget;
@@ -195,6 +206,8 @@ export const initEpisodesPage = () => {
           <p>${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>
         </div>
       `;
+      useEpisodeImageFallback(row.querySelector('img'));
+
       const activate = () => selectEpisode(episode.episode_number);
       row.addEventListener('click', activate);
       row.addEventListener('keydown', (event) => {

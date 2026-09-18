@@ -42,17 +42,17 @@ button,input{font:inherit}
 .fear-art{width:355px;margin:-4px 0 0;padding-bottom:6px;border-bottom:1px solid #252525;object-fit:contain;object-position:center center;justify-self:center}
 .hero-description{width:420px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
 
-.anniversary-panel{min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;background:#050505}
+.anniversary-panel{min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;background:#050505;overflow:hidden}
 .anniversary-panel h2{margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
 .anniversary-rule{width:80%;height:1px;margin:8px auto 7px;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
 .anniversary-date{margin:0 0 12px;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.04em;text-align:center}
 
-.anniversary-cards{width:330px;display:flex;flex-direction:column;gap:8px;max-height:310px;overflow:auto;scrollbar-width:thin}
+.anniversary-cards{width:350px;display:flex;flex-direction:column;gap:8px;align-self:flex-end;overflow:hidden}
 .anniversary-cards:empty{display:none}
-.anniversary-fallback,.anniversary-error{width:330px;margin:0 0 8px;color:#bdb6ac;font-family:var(--sans);font-size:11px;line-height:1.35;text-align:center}
+.anniversary-fallback,.anniversary-error{width:350px;align-self:flex-end;margin:0 0 8px;color:#bdb6ac;font-family:var(--sans);font-size:11px;line-height:1.35;text-align:center}
 .anniversary-error{color:#d8c7a0}
 .anniversary-episode-card{flex:0 0 auto}
-.anniversary-cards.is-multiple .episode-card{display:grid;grid-template-columns:118px 1fr;width:330px;min-height:82px}
+.anniversary-cards.is-multiple .episode-card{display:grid;grid-template-columns:118px 1fr;width:350px;min-height:82px}
 .anniversary-cards.is-multiple .episode-card-image-region{width:118px;height:82px}
 .anniversary-cards.is-multiple .episode-card-copy{padding:9px 10px}
 .anniversary-cards.is-multiple .episode-card-title-row{grid-template-columns:minmax(0,1fr) 34px;margin:0}
@@ -62,8 +62,8 @@ button,input{font:inherit}
 .anniversary-cards.is-multiple .episode-card-play svg{width:25px;height:25px}
 .episode-card-title a:hover,.episode-card-title a:focus-visible{color:var(--gold);outline:none}
 .episode-card-play:disabled,.episode-card-play.is-unavailable{opacity:.35;cursor:not-allowed;background:transparent;color:var(--gold)}
-.episode-card{width:330px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
-.episode-card-image-region{width:330px;height:120px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
+.episode-card{width:350px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
+.episode-card-image-region{width:350px;height:120px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
 .episode-card-image-region img{width:100%;height:100%;object-fit:contain;object-position:center;background:#030303}
 .episode-card-copy{padding:12px 14px 14px;text-align:left}
 .episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;margin:0 0 10px}
@@ -72,7 +72,7 @@ button,input{font:inherit}
 .episode-card-play{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer}
 .episode-card-play svg{width:30px;height:30px;fill:currentColor;stroke:none;transform:translateX(1px)}
 .episode-card-play:hover,.episode-card-play:focus-visible{background:var(--gold);color:#080808;outline:none}
-.episode-card-description{margin:0;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left}
+.episode-card-description{max-height:120px;margin:0;padding-right:4px;overflow-x:hidden;overflow-y:auto;overflow-wrap:anywhere;word-break:normal;white-space:normal;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left;scrollbar-width:thin}
 
 .archive-section{width:var(--content-width);min-height:0;display:grid;grid-template-rows:auto 1fr;align-content:start;gap:20px;padding:20px 0 22px;background:#050505;overflow:hidden}
 .archive-heading-block{text-align:center}

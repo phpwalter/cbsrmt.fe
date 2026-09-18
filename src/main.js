@@ -1,10 +1,15 @@
 import './styles.css';
 import { renderSiteHeader } from './components/header.js';
 import { renderSiteFooter } from './components/footer.js';
+import { initEpisodesPage } from './episodes.js';
 
 const currentPage = document.body.dataset.page || 'home';
 renderSiteHeader(document.querySelector('[data-site-header]'), { active: currentPage });
 renderSiteFooter(document.querySelector('[data-site-footer]'));
+
+if (currentPage === 'episodes') {
+  initEpisodesPage();
+}
 
 const preventPlaceholderNavigation = (event) => {
   const link = event.currentTarget;

@@ -25,7 +25,7 @@ document.querySelector('[data-newsletter-form]')?.addEventListener('submit', (ev
   event.preventDefault();
 });
 
-const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000').replace(/\/$/, '');
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000').replace(/\/$/, '');
 
 const formatApiDate = (value) => {
   if (!value) return '';

@@ -69,6 +69,7 @@ export const initEpisodesPage = () => {
   const state = {
     search: params.get('search') || '',
     year: params.get('year') || '',
+    cast: params.get('cast') || '',
     genres: params.getAll('genre'),
     sort: ['episode_number', 'episode_name', 'broadcast_date'].includes(initialSort)
       ? initialSort
@@ -90,6 +91,7 @@ export const initEpisodesPage = () => {
     const next = new URLSearchParams();
     if (state.search) next.set('search', state.search);
     if (state.year) next.set('year', state.year);
+    if (state.cast) next.set('cast', state.cast);
     state.genres.forEach((genre) => next.append('genre', genre));
     if (state.sort !== 'episode_number') next.set('sort', state.sort);
     if (state.order !== 'asc') next.set('order', state.order);
@@ -276,6 +278,7 @@ export const initEpisodesPage = () => {
     });
     if (state.search) query.set('search', state.search);
     if (state.year) query.set('year', state.year);
+    if (state.cast) query.set('cast', state.cast);
     state.genres.forEach((genre) => query.append('genre', genre));
 
     try {
@@ -374,6 +377,7 @@ export const initEpisodesPage = () => {
   clearButton.addEventListener('click', () => {
     state.search = '';
     state.year = '';
+    state.cast = '';
     state.genres = [];
     state.sort = 'episode_number';
     state.order = 'asc';

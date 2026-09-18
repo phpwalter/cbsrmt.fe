@@ -190,3 +190,17 @@ button,input{font:inherit}
 .until-art{justify-self:end;width:178px;max-height:45px;object-fit:contain;object-position:right center}
 .placeholder-link{cursor:default}
 .placeholder-link:hover{opacity:.94}
+
+
+/* Episode image fallback sizing */
+.episodes-list-item img,
+.episodes-preview-image,
+.episode-card-image-region img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}

@@ -214,3 +214,72 @@ button,input{font:inherit}
   padding-left: 18px;
   padding-right: 18px;
 }
+
+
+/* Cast Archive */
+.cast-page-main{width:var(--page-width);padding:0 50px 28px;background:#050505}
+.cast-hero{width:var(--content-width);height:230px;display:grid;grid-template-columns:1.05fr .95fr;border-top:1px solid #332b1c;border-bottom:1px solid #66542e;background:linear-gradient(90deg,#090909 0%,#111 45%,#080808 100%);overflow:hidden}
+.cast-hero-copy{position:relative;z-index:2;padding:31px 0 24px 22px;max-width:660px}
+.cast-hero-copy h1{margin:0;color:#f0d79b;font-size:52px;font-weight:400;line-height:.98}
+.cast-eyebrow{margin:10px 0 15px!important;color:var(--gold)!important;font-family:var(--sans);font-size:12px!important;letter-spacing:.24em;text-transform:uppercase}
+.cast-hero-copy p:last-child{max-width:620px;margin:0;color:#ded8cf;font-size:16px;line-height:1.45}
+.cast-hero-art{position:relative;overflow:hidden;background:radial-gradient(circle at 56% 45%,#39352c 0,#1a1814 34%,#080808 75%)}
+.cast-hero-art::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#0b0b0b 0,transparent 24%,rgba(0,0,0,.15) 65%,#060606 100%)}
+.cast-hero-art img{position:absolute;left:70px;bottom:-128px;width:335px;height:445px;object-fit:contain;filter:contrast(1.1);opacity:.96}
+.cast-hero-words{position:absolute;right:30px;top:58px;color:#c6ad72;font-family:var(--sans);font-size:11px;line-height:2;letter-spacing:.23em;text-transform:uppercase}
+
+.cast-alpha{width:var(--content-width);min-height:50px;display:flex;align-items:center;gap:0;border-bottom:1px solid #3c3322;background:#080808}
+.cast-alpha>span{width:132px;padding-left:16px;color:var(--gold);font-family:var(--sans);font-size:10px;line-height:1.2;letter-spacing:.18em;text-transform:uppercase}
+.cast-alpha button{height:32px;min-width:39px;padding:0 9px;border:0;border-left:1px solid #30291d;background:transparent;color:#ded8ce;font-size:13px;cursor:pointer}
+.cast-alpha button:last-child{margin-left:auto;border-right:1px solid #30291d;color:var(--gold)}
+.cast-alpha button:hover,.cast-alpha button:focus-visible,.cast-alpha button.active{color:#f0ce7d;background:#111;outline:none}
+
+.cast-workspace{width:var(--content-width);display:grid;grid-template-columns:760px 1fr;gap:28px;padding-top:18px;align-items:start}
+.cast-directory{min-width:0}
+.cast-controls{height:46px;display:grid;grid-template-columns:360px 220px 1fr;gap:16px;align-items:center;margin-bottom:16px}
+.cast-search{height:38px;display:grid;grid-template-columns:36px 1fr;align-items:center;border:1px solid #4c473d;background:#0b0b0b}
+.cast-search>span:not(.sr-only){color:#d8d1c7;text-align:center;font-size:18px}
+.cast-search input{width:100%;height:100%;border:0;background:transparent;color:#eee8df;outline:none;font-size:13px}
+.cast-sort-label{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:center;color:#c7bda8;font-size:11px}
+.cast-sort-label select{height:36px;padding:0 10px;border:1px solid #4c473d;background:#0b0b0b;color:#e9e1d5;font-size:11px}
+.cast-total{justify-self:end;color:#bdb5a7;font-size:12px}
+
+.cast-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cast-card{position:relative;height:224px;padding:0;border:1px solid #554d40;background:#0a0a0a;color:#eee8df;text-align:center;cursor:pointer;overflow:hidden}
+.cast-card:hover,.cast-card:focus-visible{border-color:#9f8952;outline:none}
+.cast-card.is-selected{border:2px solid #d8b557;box-shadow:inset 0 0 0 1px #6b562b}
+.cast-card img{width:100%;height:166px;object-fit:cover;object-position:center 20%;background:#0b0b0b;filter:grayscale(1) sepia(.15) contrast(1.06)}
+.cast-card img.is-fallback{object-fit:cover;filter:none}
+.cast-card-name{display:block;margin:8px 6px 2px;font-size:13px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cast-card-count{display:block;color:#aca497;font-size:10px}
+.cast-status{margin:15px 0;color:#bdb5aa;font-family:var(--sans);font-size:12px;text-align:center}
+.cast-pagination{display:flex;justify-content:center;align-items:center;gap:8px;padding:18px 0 5px}
+.cast-pagination button{min-width:31px;height:31px;padding:0 7px;border:1px solid #4b4335;background:#0a0a0a;color:#ddd5c8;cursor:pointer}
+.cast-pagination button.active{background:#d4ad5c;color:#080808;border-color:#d4ad5c}
+.cast-pagination span{color:#928979}
+
+.cast-detail{position:sticky;top:16px;min-height:520px;padding-left:22px;border-left:1px solid #413620}
+.cast-detail-top{display:grid;grid-template-columns:235px 1fr;gap:24px}
+.cast-detail-image{width:235px;height:300px;object-fit:cover;object-position:center 18%;border:1px solid #5f5544;background:#0a0a0a;filter:grayscale(1) sepia(.15) contrast(1.08)}
+.cast-detail-image.is-fallback{object-fit:cover;filter:none}
+.cast-detail-copy{padding-top:8px}
+.cast-detail-label{margin:0 0 11px;color:#c6a75d;font-family:var(--sans);font-size:9px;letter-spacing:.23em;text-transform:uppercase}
+.cast-detail-copy h2{margin:0;color:#f1e7d7;font-size:33px;font-weight:400;line-height:1.03}
+.cast-detail-meta{margin:11px 0 0;color:#d2c8b9;font-size:11px}
+.cast-detail-meta span{margin:0 8px;color:#7e6a39}
+.cast-detail-rule{width:56px;height:1px;margin:17px 0;background:#a88743}
+.cast-detail-summary{margin:0;color:#d3ccc1;font-size:12px;line-height:1.5}
+.cast-episode-section{margin-top:22px;border-top:1px solid #3a3121;padding-top:15px}
+.cast-episode-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cast-episode-heading h3{margin:0;color:#d9ba73;font-size:15px;font-weight:400;letter-spacing:.12em;text-transform:uppercase}
+.cast-episode-heading a{color:#c8a65a;font-size:11px}
+.cast-episode-row{display:grid;grid-template-columns:24px 1fr 92px;gap:8px;align-items:center;min-height:34px;border-bottom:1px solid #27231c;color:#e9e2d8;font-size:11px}
+.cast-episode-row:hover,.cast-episode-row:focus-visible{background:#0d0d0d;outline:none}
+.cast-episode-play{width:20px;height:20px;display:grid;place-items:center;border:1px solid #c7a65d;border-radius:50%;color:#c7a65d;font-size:8px}
+.cast-episode-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cast-episode-date{color:#aaa195;text-align:right}
+.cast-detail-empty{padding:40px 10px;color:#bdb5aa;font-size:14px;line-height:1.5}
+
+@media (max-width:1390px){
+  .cast-page-main{padding-left:50px;padding-right:50px}
+}

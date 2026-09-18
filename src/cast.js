@@ -126,7 +126,7 @@ export const initCastPage = () => {
       <section class="cast-episode-section">
         <div class="cast-episode-heading">
           <h3>Select Episodes</h3>
-          <a href="/episodes.html?cast=${person.id}">View all episodes →</a>
+          <a href="/episodes.html?cast=${encodeURIComponent(name)}">View all episodes →</a>
         </div>
         <div class="cast-episode-list">
           ${episodes.length ? episodes.map((episode) => `

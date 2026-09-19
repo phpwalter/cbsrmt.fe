@@ -130,7 +130,7 @@ export const initCastPage = () => {
         </div>
         <div class="cast-episode-list">
           ${episodes.length ? episodes.map((episode) => `
-            <a class="cast-episode-row" href="/episodes.html?episode=${episode.episode_number}">
+            <a class="cast-episode-row" href="/episodes.html?cast=${encodeURIComponent(name)}&episode=${episode.episode_number}">
               <span class="cast-episode-play" aria-hidden="true">▶</span>
               <span class="cast-episode-title">${escapeHtml(episode.episode_name)}</span>
               <span class="cast-episode-date">${formatDate(episode.broadcast_date)}</span>

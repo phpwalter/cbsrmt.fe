@@ -77,6 +77,7 @@ export const initEpisodesPage = () => {
     order: ['asc', 'desc'].includes(initialOrder) ? initialOrder : 'asc',
     page: Math.max(Number.parseInt(params.get('page') || '1', 10) || 1, 1),
     selectedEpisode: Number.parseInt(params.get('episode') || '', 10) || null,
+    focusEpisode: Number.parseInt(params.get('episode') || '', 10) || null,
     pages: 0,
   };
 
@@ -279,6 +280,7 @@ export const initEpisodesPage = () => {
     if (state.search) query.set('search', state.search);
     if (state.year) query.set('year', state.year);
     if (state.cast) query.set('cast', state.cast);
+    if (state.focusEpisode) query.set('episode', String(state.focusEpisode));
     state.genres.forEach((genre) => query.append('genre', genre));
 
     try {
@@ -288,6 +290,8 @@ export const initEpisodesPage = () => {
       state.page = payload.pagination.page;
       state.pages = payload.pagination.pages;
       const episodes = payload.data || [];
+      const requestedFocusEpisode = state.focusEpisode;
+      state.focusEpisode = null;
 
       totalElement.textContent = `${payload.pagination.total.toLocaleString('en-US')} Episodes`;
       pageCountElement.textContent = state.pages
@@ -306,7 +310,11 @@ export const initEpisodesPage = () => {
       }
 
       const selectedOnPage = episodes.some((episode) => episode.episode_number === state.selectedEpisode);
-      if (!selectedOnPage) state.selectedEpisode = episodes[0].episode_number;
+      if (requestedFocusEpisode && episodes.some((episode) => episode.episode_number === requestedFocusEpisode)) {
+        state.selectedEpisode = requestedFocusEpisode;
+      } else if (!selectedOnPage) {
+        state.selectedEpisode = episodes[0].episode_number;
+      }
 
       renderList(episodes);
       renderPagination();
@@ -351,6 +359,7 @@ export const initEpisodesPage = () => {
   const resetAndLoad = () => {
     state.page = 1;
     state.selectedEpisode = null;
+    state.focusEpisode = null;
     syncUrl();
     loadEpisodes();
   };
@@ -399,6 +408,7 @@ export const initEpisodesPage = () => {
     if (state.page <= 1) return;
     state.page -= 1;
     state.selectedEpisode = null;
+    state.focusEpisode = null;
     syncUrl();
     loadEpisodes();
   });
@@ -407,6 +417,7 @@ export const initEpisodesPage = () => {
     if (!state.pages || state.page >= state.pages) return;
     state.page += 1;
     state.selectedEpisode = null;
+    state.focusEpisode = null;
     syncUrl();
     loadEpisodes();
   });

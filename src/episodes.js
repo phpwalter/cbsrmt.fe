@@ -257,6 +257,7 @@ export const initEpisodesPage = () => {
         if (value === state.page) return;
         state.page = value;
         state.selectedEpisode = null;
+        state.focusEpisode = null;
         syncUrl();
         loadEpisodes();
       });
@@ -344,6 +345,7 @@ export const initEpisodesPage = () => {
           state.genres = [...genresContainer.querySelectorAll('input:checked')].map((input) => input.value);
           state.page = 1;
           state.selectedEpisode = null;
+          state.focusEpisode = null;
           syncUrl();
           loadEpisodes();
         });
@@ -392,6 +394,7 @@ export const initEpisodesPage = () => {
     state.order = 'asc';
     state.page = 1;
     state.selectedEpisode = null;
+    state.focusEpisode = null;
 
     searchInput.value = '';
     yearSelect.value = '';

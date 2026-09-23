@@ -5,8 +5,8 @@
   --text:#f3efe8;
   --muted:#d0cbc2;
   --gold:#c0ab71;
-  --page-width:1360px;
-  --content-width:1260px;
+  --page-width:1220px;
+  --content-width:1120px;
   --serif:Georgia,'Times New Roman',serif;
   --sans:Arial,Helvetica,sans-serif;
 }
@@ -20,64 +20,58 @@ button,input{font:inherit}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .site-header,.page-main,.about-page-main,.bottom-stack{width:var(--page-width);flex:0 0 auto}
 
-.site-header{height:74px;display:grid;grid-template-columns:290px 1fr 70px;align-items:center;padding:0 50px;background:#030303}
-.header-brand img,.footer-brand img{width:205px;max-height:54px;object-fit:contain;object-position:left center}
-.primary-nav{justify-self:center;display:flex;align-items:center;gap:42px;height:100%;padding:0 22px;background:#080808}
-.primary-nav a{position:relative;padding:20px 0 16px;color:#ece7df;font-size:26px;line-height:1}
+.site-header{height:74px;display:grid;grid-template-columns:240px 1fr 60px;align-items:center;padding:0 40px;background:#030303}
+.header-brand img,.footer-brand img{width:195px;max-height:54px;object-fit:contain;object-position:left center}
+.primary-nav{justify-self:center;display:flex;align-items:center;gap:32px;height:100%;padding:0 18px;background:#080808}
+.primary-nav a{position:relative;padding:20px 0 16px;color:#ece7df;font-size:22px;line-height:1}
 .primary-nav a.active::after{content:'';position:absolute;left:7px;right:7px;bottom:7px;height:1px;background:var(--gold)}
 .header-search{justify-self:end;width:52px;height:52px;display:grid;place-items:center;border:0;border-left:1px solid #171717;background:#030303;color:#f0ece5;cursor:default}
 .header-search svg{width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.5}
 
 .page-main{display:grid;grid-template-rows:426px auto;padding:0 50px;background:#050505}
 .hero{width:var(--content-width);min-height:0;display:grid;align-items:stretch;padding:0;border-bottom:1px solid #242424;overflow:hidden}
-.hero-v5{grid-template-columns:390px 450px 404px;gap:8px}
+.hero-v5{grid-template-columns:340px 410px 354px;gap:8px}
 
 .marshall-panel-v5{position:relative;min-width:0;height:100%;overflow:hidden;background:#050505}
-.marshall-portrait-v5{position:absolute;left:-106px;bottom:-20px;width:495px;height:auto;max-width:none;object-fit:contain;object-position:left bottom;transform:scaleX(-1);transform-origin:center;filter:grayscale(1) contrast(1.08) brightness(.92)}
-.come-in-art-v5{position:absolute;z-index:2;top:26px;right:0;width:205px;height:auto;max-width:none;object-fit:contain;object-position:right top}
+.marshall-portrait-v5{position:absolute;left:-100px;bottom:-20px;width:445px;height:auto;max-width:none;object-fit:contain;object-position:left bottom;transform:scaleX(-1);transform-origin:center;filter:grayscale(1) contrast(1.08) brightness(.92)}
+.come-in-art-v5{position:absolute;z-index:2;top:26px;right:0;width:190px;height:auto;max-width:none;object-fit:contain;object-position:right top}
 
 .brand-panel{min-width:0;height:100%;display:grid;grid-template-rows:auto auto auto;align-content:start;justify-items:start;padding:20px 0 0 24px;overflow:visible}
 .brand-panel-v5{padding:24px 0 0 12px}
-.hero-brand-art{width:438px;margin:0;object-fit:contain;object-position:left center}
-.fear-art{width:355px;margin:-4px 0 0;padding-bottom:6px;border-bottom:1px solid #252525;object-fit:contain;object-position:center center;justify-self:center}
-.hero-description{width:420px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
+.hero-brand-art{width:395px;margin:0;object-fit:contain;object-position:left center}
+.fear-art{width:335px;margin:-4px 0 0;padding-bottom:6px;border-bottom:1px solid #252525;object-fit:contain;object-position:center center;justify-self:center}
+.hero-description{width:390px;margin:0;padding:5px 7px;background:linear-gradient(180deg,#111,#0b0b0b);color:#ddd8d0;font-size:14px;font-weight:700;line-height:1.45}
 
 .anniversary-panel{min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0;background:#050505;overflow:hidden}
-.anniversary-panel h2{width:350px;align-self:flex-end;margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
-.anniversary-rule{width:280px;height:1px;align-self:flex-end;margin:8px 35px 7px 0;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
-.anniversary-date{width:350px;align-self:flex-end;margin:0 0 12px;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.04em;text-align:center}
+.anniversary-panel h2{width:330px;align-self:flex-end;margin:0;color:var(--gold);font-size:22px;font-weight:400;letter-spacing:.05em;text-transform:none;white-space:nowrap;text-align:center}
+.anniversary-rule{width:265px;height:1px;align-self:flex-end;margin:8px 35px 7px 0;background:linear-gradient(90deg,transparent,var(--gold) 18%,#806f45 82%,transparent)}
+.anniversary-date{width:330px;align-self:flex-end;margin:0 0 12px;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.04em;text-align:center}
 
-.anniversary-cards{width:350px;display:flex;flex-direction:column;gap:8px;align-self:flex-end;overflow:hidden}
+.anniversary-cards{width:330px;display:flex;flex-direction:column;gap:8px;align-self:flex-end;overflow:hidden}
 .anniversary-cards:empty{display:none}
-.anniversary-fallback,.anniversary-error{width:350px;align-self:flex-end;margin:0 0 8px;color:#bdb6ac;font-family:var(--sans);font-size:11px;line-height:1.35;text-align:center}
+.anniversary-fallback,.anniversary-error{width:330px;align-self:flex-end;margin:0 0 8px;color:#bdb6ac;font-family:var(--sans);font-size:13px;line-height:1.35;text-align:center}
 .anniversary-error{color:#d8c7a0}
 .anniversary-episode-card{flex:0 0 auto}
-.anniversary-cards.is-multiple .episode-card{display:grid;grid-template-columns:118px 1fr;width:350px;min-height:82px}
-.anniversary-cards.is-multiple .episode-card-image-region{width:118px;height:82px}
+.anniversary-cards.is-multiple .episode-card{display:grid;grid-template-columns:112px 1fr;width:330px;min-height:82px}
+.anniversary-cards.is-multiple .episode-card-image-region{width:112px;height:82px}
 .anniversary-cards.is-multiple .episode-card-copy{padding:9px 10px}
-.anniversary-cards.is-multiple .episode-card-title-row{grid-template-columns:minmax(0,1fr) 96px;margin:0}
+.anniversary-cards.is-multiple .episode-card-title-row{grid-template-columns:minmax(0,1fr) 34px;margin:0}
 .anniversary-cards.is-multiple .episode-card-title{font-size:14px}
 .anniversary-cards.is-multiple .episode-card-number{font-size:9px}
-.anniversary-cards.is-multiple .episode-card-audio-controls{grid-template-columns:repeat(3,28px);gap:4px;width:96px}
-.anniversary-cards.is-multiple .episode-card-audio-button{width:28px;height:28px}
-.anniversary-cards.is-multiple .episode-card-audio-button svg{width:18px;height:18px}
+.anniversary-cards.is-multiple .episode-card-play{width:34px;height:34px}
+.anniversary-cards.is-multiple .episode-card-play svg{width:25px;height:25px}
 .episode-card-title a:hover,.episode-card-title a:focus-visible{color:var(--gold);outline:none}
-.episode-card{width:350px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
-.episode-card-image-region{width:350px;height:120px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
+.episode-card-play:disabled,.episode-card-play.is-unavailable{opacity:.35;cursor:not-allowed;background:transparent;color:var(--gold)}
+.episode-card{width:330px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
+.episode-card-image-region{width:330px;height:113px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
 .episode-card-image-region img{width:100%;height:100%;object-fit:contain;object-position:center;background:#030303}
 .episode-card-copy{padding:12px 14px 14px;text-align:left}
-.episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 108px;align-items:center;gap:10px;margin:0 0 10px}
+.episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;margin:0 0 10px}
 .episode-card-title{margin:0;font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.2;color:#f4efe7;text-align:left}
-.episode-card-number{margin:3px 0 0;color:#aaa39a;font-family:var(--sans);font-size:11px;line-height:1.2;letter-spacing:.08em;text-transform:uppercase}
-.episode-card-audio-controls{width:108px;display:grid;grid-template-columns:repeat(3,32px);align-items:center;justify-content:end;gap:6px}
-.episode-card-audio-button{width:32px;height:32px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:#080808;color:var(--gold);cursor:pointer;opacity:1}
-.episode-card-audio-button svg{width:20px;height:20px;fill:currentColor;stroke:none}
-.episode-card-play svg{transform:translateX(1px)}
-.episode-card-audio-button:hover:not(:disabled),.episode-card-audio-button:focus-visible:not(:disabled){background:var(--gold);color:#080808;outline:none}
-.episode-card-audio-button:disabled{opacity:.62;cursor:not-allowed;background:#080808;color:var(--gold);border-color:var(--gold)}
-.episode-card-audio-button.is-unavailable{opacity:.4}
-.episode-card-audio-controls[data-state="playing"] .episode-card-play{background:var(--gold);color:#080808}
-.episode-card-audio-controls[data-state="paused"] .episode-card-pause{background:var(--gold);color:#080808}
+.episode-card-number{margin:3px 0 0;color:#aaa39a;font-family:var(--sans);font-size:13px;line-height:1.2;letter-spacing:.08em;text-transform:uppercase}
+.episode-card-play{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer}
+.episode-card-play svg{width:30px;height:30px;fill:currentColor;stroke:none;transform:translateX(1px)}
+.episode-card-play:hover,.episode-card-play:focus-visible{background:var(--gold);color:#080808;outline:none}
 .episode-card-description{max-height:120px;margin:0;padding-right:4px;overflow-x:hidden;overflow-y:auto;overflow-wrap:anywhere;word-break:normal;white-space:normal;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left;scrollbar-width:thin}
 
 .archive-section{width:var(--content-width);min-height:0;display:grid;grid-template-rows:auto 1fr;align-content:start;gap:20px;padding:20px 0 22px;background:#050505;overflow:hidden}
@@ -87,12 +81,12 @@ button,input{font:inherit}
 .archive-title-row::after{background:linear-gradient(90deg,var(--gold),transparent)}
 .archive-title-row h2{margin:0;color:var(--gold);font-size:26px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .archive-heading-block p{margin:7px 0 0;color:#d8d2c9;font-size:15px;letter-spacing:.05em}
-.archive-grid{display:grid;grid-template-columns:repeat(4,300px);justify-content:center;gap:18px;width:100%}
-.archive-card{position:relative;width:300px;height:120px;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
+.archive-grid{display:grid;grid-template-columns:repeat(4,266px);justify-content:center;gap:18px;width:100%}
+.archive-card{position:relative;width:266px;height:106px;overflow:hidden;border:1px solid var(--gold);border-radius:4px;background:#070707}
 .archive-card img{width:100%;height:100%;object-fit:contain;object-position:center}
 .archive-card::after{content:none}
 
-.episodes-page-main{padding:0 50px 28px;background:#050505}
+.episodes-page-main{width:var(--page-width);padding:0 50px 28px;background:#050505}
 .episodes-intro{height:255px;display:grid;grid-template-columns:1.05fr .95fr;border-bottom:1px solid #2a251b;background:linear-gradient(90deg,#070707 0%,#0a0a0a 58%,#080808 100%);overflow:hidden}
 .episodes-intro-copy{padding:34px 0 24px 18px;max-width:650px}
 .episodes-intro-copy h1{margin:0;color:#f1eee7;font-size:54px;font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.02em}
@@ -101,9 +95,9 @@ button,input{font:inherit}
 .episodes-intro-copy>p:last-child{margin:0;color:#d5cfc5;font-size:16px;line-height:1.5;max-width:610px}
 .episodes-intro-art{position:relative;overflow:hidden;background:radial-gradient(circle at 65% 45%,#242424 0,#111 34%,#060606 72%)}
 .episodes-intro-art::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 25%,rgba(0,0,0,.1) 75%,#050505 100%)}
-.episodes-intro-art img{position:absolute;right:35px;top:37px;width:470px;opacity:.26;filter:grayscale(1) contrast(1.1)}
+.episodes-intro-art img{position:absolute;right:0;top:0;width:auto;height:100%;max-width:none;object-fit:contain;object-position:right center;opacity:.26;filter:grayscale(1) contrast(1.1)}
 
-.episodes-workspace{display:grid;grid-template-columns:220px minmax(510px,1fr) 410px;gap:18px;padding:18px 0 0;align-items:start}
+.episodes-workspace{width:100%;display:grid;grid-template-columns:210px 500px 374px;gap:18px;padding:18px 0 0;align-items:start}
 .episodes-filters{border:1px solid #8d7846;padding:16px;background:#090909;min-height:600px}
 .episodes-filters h2,.episodes-list-head h2,.episodes-share h3{margin:0;color:var(--gold);font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .episodes-search{height:38px;margin:14px 0 18px;display:grid;grid-template-columns:1fr 30px;align-items:center;border:1px solid #555;background:#111}
@@ -116,46 +110,51 @@ button,input{font:inherit}
 .episodes-filters input[type=checkbox]:checked{background:var(--gold);box-shadow:inset 0 0 0 3px #080808}
 .episodes-select-label{margin-top:16px}
 .episodes-select-label select{display:block;width:100%;height:34px;margin-top:6px;padding:0 8px;border:1px solid #555;background:#111;color:#e9e4dc;font-size:12px}
-.episodes-clear{width:100%;height:42px;margin-top:18px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.episodes-clear{width:100%;height:42px;margin-top:18px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 
 .episodes-list{min-width:0}
-.episodes-list-head{height:40px;display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid #5a4b2b}
-.episodes-page-count{margin-right:12px;color:#bbb3a9;font-size:11px}
-.episodes-page-arrows{display:flex;gap:8px}
-.episodes-page-arrows button,.episodes-pagination button{border:1px solid #64542f;background:#0b0b0b;color:#ddd4c5}
-.episodes-page-arrows button{width:28px;height:28px;font-size:18px}
-.episodes-list-item{display:grid;grid-template-columns:185px 1fr 34px;gap:14px;min-height:112px;padding:10px 0;border-bottom:1px solid #26221b;cursor:pointer}
-.episodes-list-item.is-selected{background:linear-gradient(90deg,rgba(192,171,113,.08),transparent)}
-.episodes-list-item>img{width:185px;height:94px;object-fit:cover;border:1px solid #7b683b;background:#050505}
+.episodes-list-head{height:40px;display:flex;align-items:center;border-bottom:1px solid #5a4b2b}
+.episodes-pagination button{border:1px solid #64542f;background:#0b0b0b;color:#ddd4c5}
+.episodes-pagination button:disabled{opacity:.35;cursor:not-allowed}
+.episodes-list-item{position:relative;display:grid;grid-template-columns:170px 1fr;gap:14px;min-height:112px;padding:10px 0;border-bottom:1px solid #26221b;cursor:pointer;outline:none}
+.episodes-list-item:hover,.episodes-list-item:focus-visible{background:linear-gradient(90deg,rgba(192,171,113,.045),transparent)}
+.episodes-list-item.is-selected{background:linear-gradient(90deg,rgba(192,171,113,.12),transparent)}
+.episodes-current-indicator{position:absolute;left:0;top:10px;bottom:10px;width:3px;background:transparent}
+.episodes-list-item.is-selected .episodes-current-indicator{background:var(--gold);box-shadow:0 0 8px rgba(192,171,113,.35)}
+.episodes-list-item>img{width:170px;height:86px;object-fit:cover;border:1px solid #7b683b;background:#050505}
 .episodes-list-copy h3{margin:0 0 3px;color:#f1ece5;font-size:18px;font-weight:400}
-.episodes-meta{margin:0 0 5px!important;color:#a9a297!important;font-size:11px!important;letter-spacing:.02em}
+.episodes-meta{margin:0 0 5px!important;color:#a9a297!important;font-size:13px!important;letter-spacing:.02em}
 .episodes-meta span,.episodes-preview-header span{margin:0 6px;color:#75643b}
 .episodes-list-copy p{margin:0;color:#d0c9bf;font-size:12px;line-height:1.35}
 .episodes-play,.episodes-preview-play{align-self:center;width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);font-size:12px;cursor:pointer}
 .episodes-pagination{display:flex;justify-content:center;align-items:center;gap:7px;padding:14px 0 4px}
 .episodes-pagination button{min-width:28px;height:28px;padding:0 7px}
 .episodes-pagination button.active{background:var(--gold);color:#080808}
+.episodes-status{margin:10px 0 0;color:#bdb5aa;font-family:var(--sans);font-size:12px;text-align:center}
 
 .episodes-preview{position:sticky;top:18px;border-left:1px solid #2e281d;padding-left:18px;min-height:580px}
-.episodes-preview-image{width:100%;height:210px;object-fit:cover;border:1px solid #8d7846;background:#050505}
+.episodes-preview-image{width:100%;height:195px;object-fit:cover;border:1px solid #8d7846;background:#050505}
 .episodes-preview-header{display:grid;grid-template-columns:1fr 42px;gap:12px;align-items:center;padding:13px 0 7px}
 .episodes-preview-header h2{margin:0;color:#f4efe7;font-size:28px;font-weight:400;line-height:1.05}
 .episodes-preview-header p{margin:5px 0 0;color:#bdb5aa;font-size:12px}
 .episodes-preview-play{width:40px;height:40px}
+.episodes-preview-play:disabled,.episodes-preview-play.is-unavailable{opacity:.35;cursor:not-allowed}
 .episodes-preview-description{margin:8px 0 14px;color:#ded7cd;font-size:13px;line-height:1.45}
 .episodes-preview-rule{height:1px;background:linear-gradient(90deg,var(--gold),#3a3120 70%,transparent)}
 .episodes-preview-lower{display:grid;grid-template-columns:1.45fr .8fr;gap:18px;padding-top:15px}
+.episodes-preview-lower-single{grid-template-columns:1fr}
+.episodes-preview-empty{padding:30px 10px;color:#bdb5aa;font-size:14px;line-height:1.5}
 .episodes-details{margin:0}
-.episodes-details div{display:grid;grid-template-columns:120px 1fr;gap:8px;margin:0 0 8px}
-.episodes-details dt{color:#c9c1b7;font-size:11px}
-.episodes-details dd{margin:0;color:#f0ebe4;font-size:11px;line-height:1.25}
+.episodes-details div{display:grid;grid-template-columns:110px 1fr;gap:8px;margin:0 0 8px}
+.episodes-details dt{color:#c9c1b7;font-size:13px}
+.episodes-details dd{margin:0;color:#f0ebe4;font-size:13px;line-height:1.25}
 .episodes-share{border-left:1px solid #685733;padding-left:16px}
 .episodes-share>div{display:flex;gap:8px;margin-top:14px}
 .episodes-share button{width:30px;height:30px;border:1px solid #777;border-radius:50%;background:transparent;color:#eee}
 
 .about-page-main{padding:18px 50px 24px;background:#050505}
-.about-hero{width:var(--content-width);display:grid;grid-template-columns:690px 1fr;gap:36px;align-items:stretch}
-.about-hero-art{height:580px;overflow:hidden;background:#050505}
+.about-hero{width:var(--content-width);display:grid;grid-template-columns:610px 1fr;gap:34px;align-items:stretch}
+.about-hero-art{height:540px;overflow:hidden;background:#050505}
 .about-hero-art img{width:100%;height:100%;object-fit:cover;object-position:center}
 .about-copy{padding:4px 8px 0 0;color:#eee8df}
 .about-eyebrow{margin:0 0 6px;color:var(--gold);font-size:23px;letter-spacing:.13em;text-transform:uppercase}
@@ -167,18 +166,18 @@ button,input{font:inherit}
 .about-quote span{font-size:24px}
 .about-quote cite{display:block;margin-top:7px;color:#efe8df;font-size:14px;font-style:normal;letter-spacing:.08em;text-transform:uppercase}
 .about-panels{width:var(--content-width);display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
-.about-panels img{width:100%;height:168px;object-fit:contain;object-position:center;border:1px solid var(--gold);background:#070707}
+.about-panels img{width:100%;height:150px;object-fit:contain;object-position:center;border:1px solid var(--gold);background:#070707}
 
 .bottom-stack{margin-top:0;background:#070707}
-.newsletter{height:88px;display:grid;grid-template-columns:430px 1fr 150px 60px;align-items:center;gap:16px;padding:0 72px;background:#090909;color:#eee8df;border-top:1px solid #1e1b15;border-bottom:1px solid #1e1b15}
+.newsletter{height:88px;display:grid;grid-template-columns:380px 1fr 44px;align-items:center;gap:16px;padding:0 56px;background:#090909;color:#eee8df;border-top:1px solid #1e1b15;border-bottom:1px solid #1e1b15}
 .newsletter-copy h2{margin:0;color:var(--gold);font-family:var(--serif);font-size:18px;font-weight:400;letter-spacing:.18em;text-transform:uppercase}
 .newsletter-copy p{margin:7px 0 0;color:#cfc8bf;font-size:14px}
-.newsletter-form{display:grid;grid-template-columns:1fr 150px;gap:12px}
+.newsletter-form{display:grid;grid-template-columns:1fr 140px;gap:12px}
 .newsletter-form input{height:46px;padding:0 18px;border:1px solid #555;background:#171717;color:#eee;font-size:14px}
 .newsletter-form button{height:46px;border:1px solid #a99157;background:linear-gradient(180deg,#ccb36f,#ae9253);color:#0a0a0a;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
 .newsletter-cat{justify-self:end;width:44px;height:56px;object-fit:contain;filter:invert(1);opacity:.9}
 
-.site-footer{height:72px;display:grid;grid-template-columns:230px 1fr 215px;align-items:center;gap:14px;padding:0 78px 0 84px;background:linear-gradient(180deg,#0b0b0b,#050505);border-top:1px solid #161616}
+.site-footer{height:72px;display:grid;grid-template-columns:215px 1fr 200px;align-items:center;gap:14px;padding:0 60px;background:linear-gradient(180deg,#0b0b0b,#050505);border-top:1px solid #161616}
 .footer-brand img{width:184px;max-height:42px}
 .footer-social{display:flex;align-items:center;justify-content:center;gap:22px}
 .social-link{width:22px;height:22px;display:grid;place-items:center}
@@ -188,3 +187,178 @@ button,input{font:inherit}
 .until-art{justify-self:end;width:178px;max-height:45px;object-fit:contain;object-position:right center}
 .placeholder-link{cursor:default}
 .placeholder-link:hover{opacity:.94}
+
+
+/* Episode image fallback sizing */
+.episodes-list-item img,
+.episodes-preview-image,
+.episode-card-image-region img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+
+
+/* Fit episode-list artwork frame tightly to the native 2080x756 artwork ratio. */
+.episodes-list-item>img:not(.is-fallback-artwork) {
+  width: 170px;
+  height: auto;
+  aspect-ratio: 2080 / 756;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Keep fallback branding inset without changing normal episode artwork. */
+.episodes-list-item img.is-fallback-artwork,
+.episodes-preview-image.is-fallback-artwork,
+.episode-card-image-region img.is-fallback-artwork {
+  box-sizing: border-box;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+
+/* Cast Archive */
+.cast-page-main{width:var(--page-width);padding:0 50px 28px;background:#050505}
+.cast-hero{position:relative;width:var(--content-width);height:auto;display:block;border-top:1px solid #332b1c;border-bottom:1px solid #66542e;background:#080808;overflow:hidden}
+.cast-hero-image{display:block;width:100%;height:auto;max-width:none;object-fit:contain;object-position:center}
+.cast-hero-copy{position:absolute;z-index:2;left:122px;top:13%;width:42%;max-width:560px;padding:0}
+.cast-hero-copy h1{margin:0;color:#f0d79b;font-size:52px;font-weight:400;line-height:.98;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.cast-eyebrow{margin:10px 0 15px!important;color:var(--gold)!important;font-family:var(--sans);font-size:12px!important;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+.cast-hero-copy p:last-child{max-width:540px;margin:0;color:#ded8cf;font-size:16px;line-height:1.45;text-shadow:0 1px 4px rgba(0,0,0,.95)}
+.cast-hero-words{position:absolute;z-index:2;right:calc(17% - 50px);top:31%;color:#c6ad72;font-family:var(--sans);font-size:13px;line-height:2;letter-spacing:.23em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.95)}
+
+.cast-alpha{width:var(--content-width);min-height:50px;display:flex;align-items:center;gap:0;border-bottom:1px solid #3c3322;background:#080808}
+.cast-alpha>span{width:132px;padding-left:16px;color:var(--gold);font-family:var(--sans);font-size:12px;line-height:1.2;letter-spacing:.18em;text-transform:uppercase}
+.cast-alpha button{height:32px;min-width:39px;padding:0 9px;border:0;border-left:1px solid #30291d;background:transparent;color:#ded8ce;font-size:13px;cursor:pointer}
+.cast-alpha button:last-child{margin-left:auto;border-right:1px solid #30291d;color:var(--gold)}
+.cast-alpha button:hover,.cast-alpha button:focus-visible,.cast-alpha button.active{color:#f0ce7d;background:#111;outline:none}
+
+.cast-workspace{width:var(--content-width);display:grid;grid-template-columns:680px 412px;gap:28px;padding-top:18px;align-items:start}
+.cast-directory{min-width:0}
+.cast-controls{height:46px;display:grid;grid-template-columns:320px 210px 1fr;gap:16px;align-items:center;margin-bottom:16px}
+.cast-search{height:38px;display:grid;grid-template-columns:36px 1fr;align-items:center;border:1px solid #4c473d;background:#0b0b0b}
+.cast-search>span:not(.sr-only){color:#d8d1c7;text-align:center;font-size:18px}
+.cast-search input{width:100%;height:100%;border:0;background:transparent;color:#eee8df;outline:none;font-size:13px}
+.cast-sort-label{display:grid;grid-template-columns:auto 1fr;gap:9px;align-items:center;color:#c7bda8;font-size:13px}
+.cast-sort-label select{height:36px;padding:0 10px;border:1px solid #4c473d;background:#0b0b0b;color:#e9e1d5;font-size:13px}
+.cast-total{justify-self:end;color:#bdb5a7;font-size:12px}
+
+.cast-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.cast-card{position:relative;height:224px;padding:0;border:1px solid #554d40;background:#0a0a0a;color:#eee8df;text-align:center;cursor:pointer;overflow:hidden}
+.cast-card:hover,.cast-card:focus-visible{border-color:#9f8952;outline:none}
+.cast-card.is-selected{border:2px solid #d8b557;box-shadow:inset 0 0 0 1px #6b562b}
+.cast-card img{width:100%;height:166px;object-fit:cover;object-position:center 20%;background:#0b0b0b;filter:grayscale(1) sepia(.15) contrast(1.06)}
+.cast-card img.is-fallback{object-fit:cover;filter:none}
+.cast-card-name{display:block;margin:8px 6px 2px;font-size:13px;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cast-card-count{display:block;color:#aca497;font-size:12px}
+.cast-status{margin:15px 0;color:#bdb5aa;font-family:var(--sans);font-size:12px;text-align:center}
+.cast-pagination{display:flex;justify-content:center;align-items:center;gap:8px;padding:18px 0 5px}
+.cast-pagination button{min-width:31px;height:31px;padding:0 7px;border:1px solid #4b4335;background:#0a0a0a;color:#ddd5c8;cursor:pointer}
+.cast-pagination button.active{background:#d4ad5c;color:#080808;border-color:#d4ad5c}
+.cast-pagination span{color:#928979}
+
+.cast-detail{position:sticky;top:16px;min-height:520px;padding-left:22px;border-left:1px solid #413620}
+.cast-detail-top{display:grid;grid-template-columns:190px 1fr;gap:22px}
+.cast-detail-image{width:190px;height:250px;object-fit:cover;object-position:center 18%;border:1px solid #5f5544;background:#0a0a0a;filter:grayscale(1) sepia(.15) contrast(1.08)}
+.cast-detail-image.is-fallback{object-fit:cover;filter:none}
+.cast-detail-copy{padding-top:8px}
+.cast-detail-label{margin:0 0 11px;color:#c6a75d;font-family:var(--sans);font-size:9px;letter-spacing:.23em;text-transform:uppercase}
+.cast-detail-copy h2{margin:0;color:#f1e7d7;font-size:30px;font-weight:400;line-height:1.03}
+.cast-detail-meta{margin:11px 0 0;color:#d2c8b9;font-size:13px}
+.cast-detail-meta span{margin:0 8px;color:#7e6a39}
+.cast-detail-rule{width:56px;height:1px;margin:17px 0;background:#a88743}
+.cast-detail-summary{margin:0;color:#d3ccc1;font-size:12px;line-height:1.5}
+.cast-episode-section{margin-top:22px;border-top:1px solid #3a3121;padding-top:15px}
+.cast-episode-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.cast-episode-heading h3{margin:0;color:#d9ba73;font-size:15px;font-weight:400;letter-spacing:.12em;text-transform:uppercase}
+.cast-episode-heading a{color:#c8a65a;font-size:13px}
+.cast-episode-row{display:grid;grid-template-columns:24px 1fr 88px;gap:8px;align-items:center;min-height:34px;border-bottom:1px solid #27231c;color:#e9e2d8;font-size:13px}
+.cast-episode-row:hover,.cast-episode-row:focus-visible{background:#0d0d0d;outline:none}
+.cast-episode-play{width:20px;height:20px;display:grid;place-items:center;border:1px solid #c7a65d;border-radius:50%;color:#c7a65d;font-size:8px}
+.cast-episode-title{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cast-episode-date{color:#aaa195;text-align:right}
+.cast-detail-empty{padding:40px 10px;color:#bdb5aa;font-size:14px;line-height:1.5}
+
+
+
+/* Anniversary episode audio transport controls.
+   Deliberately scoped so archive/episode-page layout is untouched. */
+.anniversary-episode-card .episode-card-title-row{
+  grid-template-columns:minmax(0,1fr) 108px;
+}
+.anniversary-episode-card .episode-card-audio-controls{
+  width:108px;
+  display:grid;
+  grid-template-columns:repeat(3,32px);
+  align-items:center;
+  justify-content:end;
+  gap:6px;
+}
+.anniversary-episode-card .episode-card-audio-button{
+  width:32px;
+  height:32px;
+  display:grid;
+  place-items:center;
+  padding:0;
+  border:1px solid var(--gold);
+  border-radius:50%;
+  background:#080808;
+  color:var(--gold);
+  cursor:pointer;
+  opacity:1;
+}
+.anniversary-episode-card .episode-card-audio-button svg{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+  stroke:none;
+}
+.anniversary-episode-card .episode-card-play svg{
+  transform:translateX(1px);
+}
+.anniversary-episode-card .episode-card-audio-button:hover:not(:disabled),
+.anniversary-episode-card .episode-card-audio-button:focus-visible:not(:disabled){
+  background:var(--gold);
+  color:#080808;
+  outline:none;
+}
+.anniversary-episode-card .episode-card-audio-button:disabled{
+  opacity:.62;
+  cursor:not-allowed;
+  background:#080808;
+  color:var(--gold);
+  border-color:var(--gold);
+}
+.anniversary-episode-card .episode-card-audio-button.is-unavailable{
+  opacity:.4;
+}
+.anniversary-episode-card .episode-card-audio-controls[data-state="playing"] .episode-card-play{
+  background:var(--gold);
+  color:#080808;
+}
+.anniversary-episode-card .episode-card-audio-controls[data-state="paused"] .episode-card-pause{
+  background:var(--gold);
+  color:#080808;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-title-row{
+  grid-template-columns:minmax(0,1fr) 96px;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-audio-controls{
+  width:96px;
+  grid-template-columns:repeat(3,28px);
+  gap:4px;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-audio-button{
+  width:28px;
+  height:28px;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-audio-button svg{
+  width:18px;
+  height:18px;
+}

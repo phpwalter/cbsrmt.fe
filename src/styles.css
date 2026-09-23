@@ -97,7 +97,7 @@ button,input{font:inherit}
 .episodes-intro-art::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 25%,rgba(0,0,0,.1) 75%,#050505 100%)}
 .episodes-intro-art img{position:absolute;right:0;top:0;width:auto;height:100%;max-width:none;object-fit:contain;object-position:right center;opacity:.26;filter:grayscale(1) contrast(1.1)}
 
-.episodes-workspace{width:calc(var(--page-width) - 50px);display:grid;grid-template-columns:210px 500px 424px;gap:18px;padding:18px 0 0;align-items:start}
+.episodes-workspace{width:100%;display:grid;grid-template-columns:210px 500px 374px;gap:18px;padding:18px 0 0;align-items:start}
 .episodes-filters{border:1px solid #8d7846;padding:16px;background:#090909;min-height:600px}
 .episodes-filters h2,.episodes-list-head h2,.episodes-share h3{margin:0;color:var(--gold);font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .episodes-search{height:38px;margin:14px 0 18px;display:grid;grid-template-columns:1fr 30px;align-items:center;border:1px solid #555;background:#111}

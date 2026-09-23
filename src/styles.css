@@ -422,3 +422,40 @@ button,input{font:inherit}
   background:var(--gold);
   color:#080808;
 }
+
+
+/* Selected episode audio progress */
+.episodes-preview-header{
+  grid-template-columns:minmax(0,1fr) 168px;
+}
+.episodes-preview-audio-stack{
+  width:168px;
+  display:grid;
+  gap:7px;
+  justify-items:end;
+}
+.episodes-preview-audio-progress{
+  width:168px;
+  display:grid;
+  gap:3px;
+}
+.episodes-preview-progress{
+  width:100%;
+  height:4px;
+  margin:0;
+  accent-color:var(--gold);
+  cursor:pointer;
+}
+.episodes-preview-progress:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+.episodes-preview-audio-time{
+  display:flex;
+  justify-content:flex-end;
+  gap:4px;
+  color:#bdb5aa;
+  font-family:var(--sans);
+  font-size:10px;
+  line-height:1;
+}

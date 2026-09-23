@@ -54,11 +54,9 @@ export const initEpisodesPage = () => {
   const sortSelect = document.querySelector('[data-episodes-sort]');
   const clearButton = document.querySelector('[data-episodes-clear]');
   const totalElement = document.querySelector('[data-episodes-total]');
-  const pageCountElement = document.querySelector('[data-episodes-page-count]');
-  const prevButton = document.querySelector('[data-episodes-prev]');
-  const nextButton = document.querySelector('[data-episodes-next]');
   const listElement = document.querySelector('[data-episodes-list]');
   const paginationElement = document.querySelector('[data-episodes-pagination]');
+  const yearNav = document.querySelector('[data-episodes-year-nav]');
   const statusElement = document.querySelector('[data-episodes-status]');
   const previewElement = document.querySelector('[data-episodes-preview]');
 
@@ -266,8 +264,6 @@ export const initEpisodesPage = () => {
       paginationElement.appendChild(button);
     });
 
-    prevButton.disabled = state.page <= 1;
-    nextButton.disabled = state.pages === 0 || state.page >= state.pages;
   };
 
   const loadEpisodes = async ({ replaceUrl = false } = {}) => {
@@ -298,10 +294,6 @@ export const initEpisodesPage = () => {
       state.focusEpisode = null;
 
       totalElement.textContent = `${payload.pagination.total.toLocaleString('en-US')} Episodes`;
-      pageCountElement.textContent = state.pages
-        ? `Page ${state.page} of ${state.pages}`
-        : 'No pages';
-
       if (!episodes.length) {
         listElement.replaceChildren();
         paginationElement.replaceChildren();
@@ -372,15 +364,38 @@ export const initEpisodesPage = () => {
   searchInput.value = state.search;
   yearSelect.value = state.year;
   sortSelect.value = `${state.sort}:${state.order}`;
+  syncYearNav();
 
   searchInput.addEventListener('input', debounce(() => {
     state.search = searchInput.value.trim();
     resetAndLoad();
   }, 300));
 
+  const syncYearNav = () => {
+    yearNav?.querySelectorAll('button[data-year]').forEach((button) => {
+      const active = button.dataset.year === state.year;
+      button.classList.toggle('active', active);
+      if (active) {
+        button.setAttribute('aria-current', 'true');
+      } else {
+        button.removeAttribute('aria-current');
+      }
+    });
+  };
+
   yearSelect.addEventListener('change', () => {
     state.year = yearSelect.value;
+    syncYearNav();
     resetAndLoad();
+  });
+
+  yearNav?.querySelectorAll('button[data-year]').forEach((button) => {
+    button.addEventListener('click', () => {
+      state.year = button.dataset.year || '';
+      yearSelect.value = state.year;
+      syncYearNav();
+      resetAndLoad();
+    });
   });
 
   sortSelect.addEventListener('change', () => {
@@ -402,29 +417,12 @@ export const initEpisodesPage = () => {
 
     searchInput.value = '';
     yearSelect.value = '';
+    syncYearNav();
     sortSelect.value = 'episode_number:asc';
     genresContainer.querySelectorAll('input[type="checkbox"]').forEach((input) => {
       input.checked = false;
     });
 
-    syncUrl();
-    loadEpisodes();
-  });
-
-  prevButton.addEventListener('click', () => {
-    if (state.page <= 1) return;
-    state.page -= 1;
-    state.selectedEpisode = null;
-    state.focusEpisode = null;
-    syncUrl();
-    loadEpisodes();
-  });
-
-  nextButton.addEventListener('click', () => {
-    if (!state.pages || state.page >= state.pages) return;
-    state.page += 1;
-    state.selectedEpisode = null;
-    state.focusEpisode = null;
     syncUrl();
     loadEpisodes();
   });

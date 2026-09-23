@@ -1,0 +1,27 @@
+
+Convert the uploaded portrait into the same visual treatment as the established reference image. Preserve the subject’s identity, facial structure, expression, pose, clothing, and overall composition as closely as possible. Do not redesign the person.
+Apply a refined **1930s–1950s Hollywood studio portrait treatment** with warm sepia monochrome coloring, deep blacks, bright but controlled facial highlights, strong tonal contrast, soft cinematic key lighting, subtle rim lighting, smooth tonal transitions, and a polished studio-photography finish.
+Use a softly blurred background with a gentle luminous halo behind the subject and darker vignetted edges. Keep the background simple and unobtrusive.
+Preserve natural skin texture and facial details without excessive smoothing. Maintain realistic hair texture, clothing texture, and period-appropriate photographic detail. Do not add scratches, borders, text, logos, watermarks, props, or artificial aging effects unless they already exist in the source image.
+Preserve the original subject and source content as faithfully as possible. Do not introduce new accessories, clothing, facial hair, jewelry, or other visual elements that are not present in the source.
+The finished image must be **exactly 1254 × 1254 pixels**, with a **1:1 square aspect ratio**. Reframe or extend the background as necessary rather than awkwardly cropping the subject. Keep the complete head, hair, shoulders, and important clothing details comfortably within the square frame.
+
+Prioritize, in this order:
+
+1. Facial likeness to the source image.
+2. Preservation of the original facial proportions and distinctive features.
+3. Preservation of the original pose, expression, and gaze direction.
+4. Preservation of hairstyle, clothing, and accessories.
+5. Consistent warm sepia palette.
+6. Deep shadows and luminous but controlled highlights.
+7. Classic Hollywood studio lighting.
+8. Natural photographic realism.
+9. Square **1254 × 1254** composition.
+
+Do not modernize the hairstyle, clothing, facial features, makeup, or expression. Do not make the person younger, older, thinner, heavier, more attractive, or more glamorous than the source. Do not substantially alter the shape of the eyes, nose, mouth, jawline, ears, hairline, or face.
+
+The objective is **not to create a new interpretation of the person**. The objective is to faithfully rebuild the supplied portrait at higher visual quality while applying the established warm-sepia Hollywood studio treatment.
+
+**Use the uploaded image as the authoritative subject reference and the previously established sepia portrait as the visual-style reference. Preserve likeness over reinterpretation.**
+
+**FINAL OUTPUT REQUIREMENT: 1254 pixels wide × 1254 pixels high.**

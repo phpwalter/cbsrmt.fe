@@ -459,3 +459,47 @@ button,input{font:inherit}
   font-size:10px;
   line-height:1;
 }
+
+
+/* Main-page anniversary audio progress */
+.anniversary-episode-card .episode-card-title-row{
+  grid-template-columns:minmax(0,1fr) 168px;
+}
+.anniversary-episode-card .episode-card-audio-stack{
+  width:168px;
+  display:grid;
+  gap:7px;
+  justify-items:end;
+}
+.anniversary-episode-card .episode-card-audio-progress{
+  width:168px;
+  display:grid;
+  gap:3px;
+}
+.anniversary-episode-card .episode-card-progress{
+  width:100%;
+  height:4px;
+  margin:0;
+  accent-color:var(--gold);
+  cursor:pointer;
+}
+.anniversary-episode-card .episode-card-progress:disabled{
+  opacity:.4;
+  cursor:not-allowed;
+}
+.anniversary-episode-card .episode-card-audio-time{
+  display:flex;
+  justify-content:flex-end;
+  gap:4px;
+  color:#bdb5aa;
+  font-family:var(--sans);
+  font-size:10px;
+  line-height:1;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-title-row{
+  grid-template-columns:minmax(0,1fr) 148px;
+}
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-audio-stack,
+.anniversary-cards.is-multiple .anniversary-episode-card .episode-card-audio-progress{
+  width:148px;
+}

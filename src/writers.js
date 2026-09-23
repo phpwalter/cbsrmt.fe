@@ -259,7 +259,7 @@ export const initWritersPage = () => {
       syncUrl({ replace: true });
       loadDetail(state.selected);
     } catch (error) {
-      console.error('Unable to load cast:', error);
+      console.error('Unable to load writers:', error);
       status.hidden = false;
       status.textContent = 'Writer data is temporarily unavailable.';
     }

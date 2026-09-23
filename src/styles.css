@@ -86,7 +86,7 @@ button,input{font:inherit}
 .archive-card img{width:100%;height:100%;object-fit:contain;object-position:center}
 .archive-card::after{content:none}
 
-.episodes-page-main{padding:0 50px 28px;background:#050505}
+.episodes-page-main{width:var(--page-width);padding:0 50px 28px;background:#050505}
 .episodes-intro{height:255px;display:grid;grid-template-columns:1.05fr .95fr;border-bottom:1px solid #2a251b;background:linear-gradient(90deg,#070707 0%,#0a0a0a 58%,#080808 100%);overflow:hidden}
 .episodes-intro-copy{padding:34px 0 24px 18px;max-width:650px}
 .episodes-intro-copy h1{margin:0;color:#f1eee7;font-size:54px;font-weight:400;line-height:.95;text-transform:uppercase;letter-spacing:.02em}
@@ -95,9 +95,9 @@ button,input{font:inherit}
 .episodes-intro-copy>p:last-child{margin:0;color:#d5cfc5;font-size:16px;line-height:1.5;max-width:610px}
 .episodes-intro-art{position:relative;overflow:hidden;background:radial-gradient(circle at 65% 45%,#242424 0,#111 34%,#060606 72%)}
 .episodes-intro-art::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0,transparent 25%,rgba(0,0,0,.1) 75%,#050505 100%)}
-.episodes-intro-art img{position:absolute;right:35px;top:37px;width:470px;opacity:.26;filter:grayscale(1) contrast(1.1)}
+.episodes-intro-art img{position:absolute;right:0;top:0;width:auto;height:100%;max-width:none;object-fit:contain;object-position:right center;opacity:.26;filter:grayscale(1) contrast(1.1)}
 
-.episodes-workspace{width:var(--content-width);display:grid;grid-template-columns:210px 500px 374px;gap:18px;padding:18px 0 0;align-items:start}
+.episodes-workspace{width:calc(var(--page-width) - 50px);display:grid;grid-template-columns:210px 500px 424px;gap:18px;padding:18px 0 0;align-items:start}
 .episodes-filters{border:1px solid #8d7846;padding:16px;background:#090909;min-height:600px}
 .episodes-filters h2,.episodes-list-head h2,.episodes-share h3{margin:0;color:var(--gold);font-size:16px;font-weight:400;letter-spacing:.08em;text-transform:uppercase}
 .episodes-search{height:38px;margin:14px 0 18px;display:grid;grid-template-columns:1fr 30px;align-items:center;border:1px solid #555;background:#111}

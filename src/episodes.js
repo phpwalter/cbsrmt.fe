@@ -56,7 +56,6 @@ export const initEpisodesPage = () => {
   const totalElement = document.querySelector('[data-episodes-total]');
   const listElement = document.querySelector('[data-episodes-list]');
   const paginationElement = document.querySelector('[data-episodes-pagination]');
-  const yearNav = document.querySelector('[data-episodes-year-nav]');
   const statusElement = document.querySelector('[data-episodes-status]');
   const previewElement = document.querySelector('[data-episodes-preview]');
 
@@ -364,38 +363,15 @@ export const initEpisodesPage = () => {
   searchInput.value = state.search;
   yearSelect.value = state.year;
   sortSelect.value = `${state.sort}:${state.order}`;
-  syncYearNav();
 
   searchInput.addEventListener('input', debounce(() => {
     state.search = searchInput.value.trim();
     resetAndLoad();
   }, 300));
 
-  const syncYearNav = () => {
-    yearNav?.querySelectorAll('button[data-year]').forEach((button) => {
-      const active = button.dataset.year === state.year;
-      button.classList.toggle('active', active);
-      if (active) {
-        button.setAttribute('aria-current', 'true');
-      } else {
-        button.removeAttribute('aria-current');
-      }
-    });
-  };
-
   yearSelect.addEventListener('change', () => {
     state.year = yearSelect.value;
-    syncYearNav();
     resetAndLoad();
-  });
-
-  yearNav?.querySelectorAll('button[data-year]').forEach((button) => {
-    button.addEventListener('click', () => {
-      state.year = button.dataset.year || '';
-      yearSelect.value = state.year;
-      syncYearNav();
-      resetAndLoad();
-    });
   });
 
   sortSelect.addEventListener('change', () => {
@@ -417,7 +393,6 @@ export const initEpisodesPage = () => {
 
     searchInput.value = '';
     yearSelect.value = '';
-    syncYearNav();
     sortSelect.value = 'episode_number:asc';
     genresContainer.querySelectorAll('input[type="checkbox"]').forEach((input) => {
       input.checked = false;

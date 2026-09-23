@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse the performers of CBS Radio Mystery Theater." />
+    <meta name="theme-color" content="#050505" />
+    <title>Cast Archive | CBS Radio Mystery Theater</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body data-page="cast">
+    <div data-site-header></div>
+
+    <main class="cast-page-main">
+      <section class="cast-hero">
+        <img class="cast-hero-image" src="/assets/images/cast.hero.png" alt="" aria-hidden="true" />
+        <div class="cast-hero-copy">
+          <h1>Cast Archive</h1>
+          <p class="cast-eyebrow">The voices behind the mysteries</p>
+          <p>Explore the remarkable actors who brought CBS Radio Mystery Theater to life. Familiar voices. Unforgettable performances. A legendary legacy.</p>
+        </div>
+        <div class="cast-hero-words">Suspense<br>Characters<br>Extraordinary actors<br>Timeless stories</div>
+      </section>
+
+      <nav class="cast-alpha" aria-label="Browse cast by last-name initial" data-cast-alpha>
+        <span>Browse by letter</span>
+        <button type="button" data-initial="" class="active">All</button>
+      </nav>
+
+      <section class="cast-workspace">
+        <section class="cast-directory" aria-labelledby="cast-directory-heading">
+          <div class="cast-controls">
+            <label class="cast-search">
+              <span class="sr-only">Search cast members</span>
+              <span aria-hidden="true">⌕</span>
+              <input type="search" placeholder="Search cast members..." data-cast-search />
+            </label>
+            <label class="cast-sort-label">Sort by
+              <select data-cast-sort>
+                <option value="appearances:desc">Most Episodes</option>
+                <option value="appearances:asc">Fewest Episodes</option>
+                <option value="name:asc">Name A–Z</option>
+                <option value="name:desc">Name Z–A</option>
+              </select>
+            </label>
+            <div class="cast-total" data-cast-total>Cast members</div>
+          </div>
+
+          <h2 id="cast-directory-heading" class="sr-only">Cast members</h2>
+          <div class="cast-grid" data-cast-grid aria-live="polite"></div>
+          <p class="cast-status" data-cast-status hidden></p>
+          <nav class="cast-pagination" aria-label="Cast pages" data-cast-pagination></nav>
+        </section>
+
+        <aside class="cast-detail" aria-label="Selected cast member" data-cast-detail>
+          <div class="cast-detail-empty">Select a cast member to view their episodes.</div>
+        </aside>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>

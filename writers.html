@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse the writers of CBS Radio Mystery Theater." />
+    <meta name="theme-color" content="#050505" />
+    <title>Writers Archive | CBS Radio Mystery Theater</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body data-page="writers">
+    <div data-site-header></div>
+
+    <main class="cast-page-main">
+      <section class="cast-hero">
+        <img class="cast-hero-image" src="/assets/images/cast.hero.png" alt="" aria-hidden="true" />
+        <div class="cast-hero-copy">
+          <h1>Writers Archive</h1>
+          <p class="cast-eyebrow">The storytellers behind the mysteries</p>
+          <p>Explore the writers who created the mysteries, suspense, horror, and drama heard on CBS Radio Mystery Theater.</p>
+        </div>
+        <div class="cast-hero-words">Mystery<br>Suspense<br>Unforgettable stories<br>Timeless radio</div>
+      </section>
+
+      <nav class="cast-alpha" aria-label="Browse writers by last-name initial" data-writers-alpha>
+        <span>Browse by letter</span>
+        <button type="button" data-initial="" class="active">All</button>
+      </nav>
+
+      <section class="cast-workspace">
+        <section class="cast-directory" aria-labelledby="writers-directory-heading">
+          <div class="cast-controls">
+            <label class="cast-search">
+              <span class="sr-only">Search writers</span>
+              <span aria-hidden="true">⌕</span>
+              <input type="search" placeholder="Search writers..." data-writers-search />
+            </label>
+            <label class="cast-sort-label">Sort by
+              <select data-writers-sort>
+                <option value="appearances:desc">Most Episodes</option>
+                <option value="appearances:asc">Fewest Episodes</option>
+                <option value="name:asc">Name A–Z</option>
+                <option value="name:desc">Name Z–A</option>
+              </select>
+            </label>
+            <div class="cast-total" data-writers-total>Writers</div>
+          </div>
+
+          <h2 id="writers-directory-heading" class="sr-only">Writers</h2>
+          <div class="cast-grid" data-writers-grid aria-live="polite"></div>
+          <p class="cast-status" data-writers-status hidden></p>
+          <nav class="cast-pagination" aria-label="Writer pages" data-writers-pagination></nav>
+        </section>
+
+        <aside class="cast-detail" aria-label="Selected writer" data-writers-detail>
+          <div class="cast-detail-empty">Select a writer to view their episodes.</div>
+        </aside>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+  </body>
+</html>

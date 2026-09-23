@@ -20,7 +20,7 @@
           <p>Explore our complete archive of CBS Radio Mystery Theater episodes. Classic crime, suspense, the supernatural, and more — brought to life by legendary writers and extraordinary talent.</p>
         </div>
         <div class="episodes-intro-art" aria-hidden="true">
-          <img src="/assets/images/cbsrmt3-wht.png" alt="" style="width:399.5px;right:0;" />
+          <img src="/assets/images/cbsrmt3-wht.png" alt="" />
         </div>
       </section>
 
@@ -29,71 +29,47 @@
           <h2>Filter Episodes</h2>
           <label class="episodes-search">
             <span class="sr-only">Search episodes</span>
-            <input type="search" placeholder="Search episodes..." />
+            <input type="search" placeholder="Search episodes..." data-episodes-search />
             <span aria-hidden="true">⌕</span>
           </label>
 
           <fieldset>
             <legend>Category</legend>
-            <label><input type="checkbox" /> Crime</label>
-            <label><input type="checkbox" /> Suspense</label>
-            <label><input type="checkbox" /> Supernatural</label>
-            <label><input type="checkbox" /> Fantasy</label>
-            <label><input type="checkbox" /> Psychological</label>
-            <label><input type="checkbox" /> Sherlock Holmes</label>
-            <label><input type="checkbox" /> Classic Favorites</label>
+            <div data-episodes-genres></div>
           </fieldset>
 
           <label class="episodes-select-label">Year
-            <select><option>All Years</option></select>
-          </label>
-          <label class="episodes-select-label">Sort By
-            <select>
-              <option>Episode Number</option>
-              <option>Title</option>
+            <select data-episodes-year>
+              <option value="">All Years</option>
+              <option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option>
+              <option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option>
+              <option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option>
             </select>
           </label>
-          <button class="episodes-clear" type="button">Clear Filters</button>
+          <label class="episodes-select-label">Sort By
+            <select data-episodes-sort>
+              <option value="episode_number:asc">Episode Number — Ascending</option>
+              <option value="episode_number:desc">Episode Number — Descending</option>
+              <option value="episode_name:asc">Title — A–Z</option>
+              <option value="episode_name:desc">Title — Z–A</option>
+              <option value="broadcast_date:asc">Broadcast Date — Oldest First</option>
+              <option value="broadcast_date:desc">Broadcast Date — Newest First</option>
+            </select>
+          </label>
+          <button class="episodes-clear" type="button" data-episodes-clear>Clear Filters</button>
         </aside>
 
         <section class="episodes-list" aria-labelledby="episodes-list-heading">
           <div class="episodes-list-head">
-            <h2 id="episodes-list-heading">1,399 Episodes</h2>
-            <div class="episodes-page-count">Page 1 of 140</div>
-            <div class="episodes-page-arrows"><button type="button">‹</button><button type="button">›</button></div>
+            <h2 id="episodes-list-heading" data-episodes-total>Episodes</h2>
           </div>
-
-          <article class="episodes-list-item is-selected" data-episode-preview="0733">
-            <img src="/assets/episodes/0733.png" alt="Last Train Out" />
-            <div class="episodes-list-copy"><h3>Last Train Out</h3><p class="episodes-meta">Episode 0733 <span>|</span> September 17, 1976</p><p>An American film crew tries to film the last journey of a legendary train The Orient Express and falls into a communist espionage trap.</p></div>
-          </article>
-          <article class="episodes-list-item"><img src="/assets/episodes/0002.png" alt="The Lonely Witness" /><div class="episodes-list-copy"><h3>The Lonely Witness</h3><p class="episodes-meta">Episode 0734 <span>|</span> September 24, 1976</p><p>A chance encounter leads to a chilling secret that someone will do anything to keep hidden.</p></div></article>
-          <article class="episodes-list-item"><img src="/assets/episodes/0003.png" alt="Murder in Manuscript" /><div class="episodes-list-copy"><h3>Murder in Manuscript</h3><p class="episodes-meta">Episode 0735 <span>|</span> October 1, 1976</p><p>A best-selling author finds that fiction can be deadly when life begins to imitate art.</p></div></article>
-          <article class="episodes-list-item"><img src="/assets/episodes/0004.png" alt="A Matter of Time" /><div class="episodes-list-copy"><h3>A Matter of Time</h3><p class="episodes-meta">Episode 0736 <span>|</span> October 8, 1976</p><p>A man receives a letter from his future self — with a warning he may not be able to escape.</p></div></article>
-          <article class="episodes-list-item"><img src="/assets/episodes/0005.png" alt="The Silent Curtain" /><div class="episodes-list-copy"><h3>The Silent Curtain</h3><p class="episodes-meta">Episode 0737 <span>|</span> October 15, 1976</p><p>Behind the glitz of the theater lies a mystery that threatens to close the final act.</p></div></article>
-
-          <nav class="episodes-pagination" aria-label="Episode pages"><button class="active" type="button">1</button><button type="button">2</button><button type="button">3</button><button type="button">4</button><button type="button">5</button><span>…</span><button type="button">140</button><button type="button">›</button></nav>
+          <div data-episodes-list aria-live="polite"></div>
+          <nav class="episodes-pagination" aria-label="Episode pages" data-episodes-pagination></nav>
+          <p class="episodes-status" data-episodes-status hidden></p>
         </section>
 
-        <aside class="episodes-preview" aria-label="Selected episode preview">
-          <img class="episodes-preview-image" src="/assets/episodes/0733.png" alt="Last Train Out" />
-          <div class="episodes-preview-header">
-            <div><h2>Last Train Out</h2><p>Episode 0733 <span>|</span> September 17, 1976</p></div>
-            <button class="episodes-preview-play" type="button" aria-label="Play Last Train Out">▶</button>
-          </div>
-          <p class="episodes-preview-description">An American film crew tries to film the last journey of a legendary train The Orient Express and falls into a communist espionage trap.</p>
-          <div class="episodes-preview-rule" aria-hidden="true"></div>
-          <div class="episodes-preview-lower">
-            <dl class="episodes-details">
-              <div><dt>Episode Number</dt><dd>0733</dd></div>
-              <div><dt>Original Air Date</dt><dd>September 17, 1976</dd></div>
-              <div><dt>Category</dt><dd>Suspense</dd></div>
-              <div><dt>Writer</dt><dd>Gene Levitt</dd></div>
-              <div><dt>Director</dt><dd>Himan Brown</dd></div>
-              <div><dt>Starring</dt><dd>John Dehner<br />Louise Sorel<br />and a full cast</dd></div>
-            </dl>
-            <div class="episodes-share"><h3>Share</h3><div><button type="button">↗</button><button type="button">f</button><button type="button">𝕏</button><button type="button">✉</button></div></div>
-          </div>
+        <aside class="episodes-preview" aria-label="Selected episode preview" data-episodes-preview>
+          <div class="episodes-preview-empty">Select an episode to view details.</div>
         </aside>
       </section>
     </main>

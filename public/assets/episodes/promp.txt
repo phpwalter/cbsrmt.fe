@@ -1,0 +1,312 @@
+Use this as the reusable prompt:
+
+
+
+Use the attached CBS Radio Mystery Theater JSON dataset as the sole source for selecting episodes and interpreting each episode's story.
+
+
+
+Create individual episode artwork based primarily on the "episode_plot" field.
+
+Episode Selection
+
+Generate artwork only for the requested "episode_id" range.
+
+
+
+Rules:
+
+
+
+Use "episode_id" to select records.
+
+Ignore "id" and "sequence_number".
+
+If "episode_id" is NULL, skip that record.
+
+Do not substitute another record for a skipped episode.
+
+Use "episode_plot" as the primary source for the visual concept.
+
+"episode_name" may be used only to help understand context.
+
+Do not place the episode title, episode number, or any other text inside the image.
+
+
+
+Requested episode IDs:
+
+
+
+[ENTER START EPISODE ID] through [ENTER END EPISODE ID]
+
+Image Requirements
+
+Create each episode as a completely independent image.
+
+
+
+Do not:
+
+
+
+create a collage
+
+create a contact sheet
+
+create a grid
+
+generate multiple scenes in one image
+
+crop individual images from a larger generated image
+
+enlarge pieces taken from a multi-panel image
+
+
+
+Each episode must be generated separately as its own complete composition.
+
+Dimensions
+
+Each final image must be:
+
+
+
+2080 × 756 pixels
+
+
+
+Landscape orientation.
+
+Visual Style
+
+Use a classic black-and-white cinematic noir style inspired by mid-20th-century mystery and suspense photography.
+
+
+
+Characteristics:
+
+
+
+pure black-and-white or near-monochrome grayscale
+
+deep blacks
+
+strong contrast
+
+controlled midtones
+
+dramatic directional lighting
+
+practical lamps, moonlight, window light, streetlights, or similar believable light sources
+
+atmospheric fog, rain, smoke, mist, shadows, reflections, or darkness when appropriate
+
+cinematic depth
+
+realistic environments
+
+realistic people
+
+period-appropriate clothing, interiors, vehicles, furniture, props, and architecture when the plot suggests a historical setting
+
+suspenseful composition
+
+mystery and psychological tension
+
+subtle horror where appropriate
+
+
+
+The image should resemble a still photograph from a serious noir mystery film rather than an illustration, poster, comic, or modern digital artwork.
+
+Content Direction
+
+Translate the "episode_plot" into one visually compelling moment that communicates the central mystery, suspense, supernatural element, or psychological tension.
+
+
+
+Prefer:
+
+
+
+anticipation
+
+unease
+
+discovery
+
+suspicion
+
+isolation
+
+investigation
+
+strange objects
+
+threatening environments
+
+emotional reactions
+
+implied danger
+
+supernatural atmosphere
+
+unanswered questions
+
+
+
+Avoid showing the literal violent event described in the plot when the same story can be communicated through implication, aftermath, suspicion, objects, environment, or character reaction.
+
+Restrictions
+
+Do not include:
+
+
+
+text
+
+captions
+
+titles
+
+logos
+
+watermarks
+
+episode numbers inside the image
+
+silhouetted people standing in doorways
+
+people posed as anonymous dark doorway figures
+
+acts of violence
+
+physical assault
+
+bullying
+
+torture
+
+blood or gore
+
+explicit injury
+
+weapons being used against people
+
+dead bodies as the primary visual subject
+
+
+
+Suspense, fear, mystery, implied danger, eerie supernatural elements, and restrained horror are acceptable.
+
+Composition Variety
+
+Do not repeat the same visual formula for every episode.
+
+
+
+Vary naturally between:
+
+
+
+interiors and exteriors
+
+close, medium, and wide compositions
+
+one-person, two-person, group, or environment-focused scenes
+
+urban, rural, institutional, domestic, historical, or supernatural environments
+
+daytime rendered dramatically in black-and-white and nighttime scenes
+
+object-centered mysteries and character-centered suspense
+
+
+
+Do not default repeatedly to:
+
+
+
+a man in a trench coat
+
+a person looking through blinds
+
+someone standing in a doorway
+
+a mysterious silhouette
+
+a detective at a desk
+
+the same mansion
+
+the same foggy street
+
+
+
+The visual should specifically reflect each episode's plot.
+
+File Naming
+
+Name each image using only its "episode_id". Must be a 4 digit ID
+
+
+
+Examples:
+
+
+
+0221.png
+0222.png
+0223.png
+
+
+
+Use PNG format unless otherwise instructed.
+
+Final Validation
+
+Before packaging the files, verify:
+
+
+
+every requested non-NULL episode ID has exactly one image
+
+every image is a separately generated composition
+
+dimensions are exactly 2080 × 756 pixels
+
+filenames exactly match "episode_id"
+
+images contain no text
+
+images are black-and-white noir
+
+no doorway silhouettes are present
+
+no explicit violence or bullying is shown
+
+each scene clearly relates to its corresponding "episode_plot"
+
+no duplicate image is reused for multiple episodes
+
+Delivery
+
+Package all completed PNG files into one ZIP archive.
+
+
+
+Name the archive:
+
+
+
+episodes_[START]_through_[END].zip
+
+
+
+Provide the ZIP as a downloadable file.
+
+
+
+If anything in the dataset makes an episode visually ambiguous, make the strongest reasonable interpretation from "episode_plot" rather than stopping for clarification.
+

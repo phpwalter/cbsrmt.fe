@@ -80,6 +80,84 @@ export const initEpisodesPage = () => {
   };
 
   let requestSequence = 0;
+  let previewAudio = null;
+
+  const stopPreviewAudio = () => {
+    if (!previewAudio) return;
+    previewAudio.pause();
+    previewAudio.currentTime = 0;
+    previewAudio = null;
+  };
+
+  const wirePreviewAudioControls = (episode) => {
+    const controls = previewElement.querySelector('[data-preview-audio-controls]');
+    const play = previewElement.querySelector('[data-preview-audio-play]');
+    const pause = previewElement.querySelector('[data-preview-audio-pause]');
+    const stop = previewElement.querySelector('[data-preview-audio-stop]');
+
+    if (!controls || !play || !pause || !stop) return;
+
+    const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
+    if (!audioAvailable) {
+      [play, pause, stop].forEach((button) => {
+        button.disabled = true;
+        button.classList.add('is-unavailable');
+      });
+      controls.dataset.state = 'unavailable';
+      return;
+    }
+
+    previewAudio = new Audio(episode.audio.stream_url);
+    const audio = previewAudio;
+
+    const updateState = () => {
+      const isCurrent = previewAudio === audio;
+      if (!isCurrent) return;
+
+      const isStopped = audio.paused && audio.currentTime === 0;
+      const isPaused = audio.paused && audio.currentTime > 0 && !audio.ended;
+      const isPlaying = !audio.paused && !audio.ended;
+
+      play.disabled = isPlaying;
+      pause.disabled = isStopped;
+      stop.disabled = isStopped;
+      pause.setAttribute(
+        'aria-label',
+        `${isPaused ? 'Resume' : 'Pause'} ${episode.episode_name}`,
+      );
+      controls.dataset.state = isPlaying ? 'playing' : isPaused ? 'paused' : 'stopped';
+    };
+
+    play.addEventListener('click', () => {
+      audio.play().then(updateState).catch(updateState);
+    });
+
+    pause.addEventListener('click', () => {
+      if (audio.paused && audio.currentTime > 0 && !audio.ended) {
+        audio.play().then(updateState).catch(updateState);
+        return;
+      }
+
+      audio.pause();
+      updateState();
+    });
+
+    stop.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      updateState();
+    });
+
+    audio.addEventListener('play', updateState);
+    audio.addEventListener('pause', updateState);
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      updateState();
+    });
+    audio.addEventListener('error', updateState);
+
+    updateState();
+  };
 
   const setStatus = (message = '') => {
     statusElement.textContent = message;
@@ -121,6 +199,7 @@ export const initEpisodesPage = () => {
   };
 
   const renderPreview = (episode) => {
+    stopPreviewAudio();
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
     const writers = (episode.writers || []).map((person) => escapeHtml(textName(person))).join(', ') || '—';
     const cast = (episode.cast || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
@@ -134,10 +213,29 @@ export const initEpisodesPage = () => {
           <h2>${escapeHtml(episode.episode_name)}</h2>
           <p>Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>
         </div>
-        <button class="episodes-preview-play${audioAvailable ? '' : ' is-unavailable'}"
-          type="button"
-          aria-label="${audioAvailable ? `Play ${escapeHtml(episode.episode_name)}` : `Audio unavailable for ${escapeHtml(episode.episode_name)}`}"
-          ${audioAvailable ? '' : 'disabled'}>▶</button>
+        <div class="episodes-preview-audio-controls" data-preview-audio-controls>
+          <button class="episodes-preview-audio-button episodes-preview-play${audioAvailable ? '' : ' is-unavailable'}"
+            type="button"
+            data-preview-audio-play
+            aria-label="${audioAvailable ? `Play ${escapeHtml(episode.episode_name)}` : `Audio unavailable for ${escapeHtml(episode.episode_name)}`}"
+            ${audioAvailable ? '' : 'disabled'}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5v9l7-4.5-7-4.5z"></path></svg>
+          </button>
+          <button class="episodes-preview-audio-button episodes-preview-pause${audioAvailable ? '' : ' is-unavailable'}"
+            type="button"
+            data-preview-audio-pause
+            aria-label="Pause ${escapeHtml(episode.episode_name)}"
+            disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h3v10H8zM13 7h3v10h-3z"></path></svg>
+          </button>
+          <button class="episodes-preview-audio-button episodes-preview-stop${audioAvailable ? '' : ' is-unavailable'}"
+            type="button"
+            data-preview-audio-stop
+            aria-label="Stop ${escapeHtml(episode.episode_name)}"
+            disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"></path></svg>
+          </button>
+        </div>
       </div>
       <p class="episodes-preview-description">${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>
       <div class="episodes-preview-rule" aria-hidden="true"></div>
@@ -153,22 +251,12 @@ export const initEpisodesPage = () => {
     `;
 
     useEpisodeImageFallback(previewElement.querySelector('.episodes-preview-image'));
-
-    if (audioAvailable) {
-      previewElement.querySelector('.episodes-preview-play').addEventListener('click', (event) => {
-        const button = event.currentTarget;
-        const audio = new Audio(episode.audio.stream_url);
-        button.disabled = true;
-        const restore = () => { button.disabled = false; };
-        audio.addEventListener('ended', restore, { once: true });
-        audio.addEventListener('error', restore, { once: true });
-        audio.play().catch(restore);
-      });
-    }
+    wirePreviewAudioControls(episode);
   };
 
   const loadDetail = async (number) => {
     if (!number) {
+      stopPreviewAudio();
       previewElement.innerHTML = '<div class="episodes-preview-empty">Select an episode to view details.</div>';
       return;
     }

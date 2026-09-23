@@ -89,13 +89,30 @@ export const initEpisodesPage = () => {
     previewAudio = null;
   };
 
+  const formatAudioTime = (seconds) => {
+    if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+    const rounded = Math.floor(seconds);
+    const hours = Math.floor(rounded / 3600);
+    const minutes = Math.floor((rounded % 3600) / 60);
+    const secs = rounded % 60;
+
+    if (hours > 0) {
+      return `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    }
+
+    return `${minutes}:${String(secs).padStart(2, '0')}`;
+  };
+
   const wirePreviewAudioControls = (episode) => {
     const controls = previewElement.querySelector('[data-preview-audio-controls]');
+    const progress = previewElement.querySelector('[data-preview-audio-progress]');
+    const currentTime = previewElement.querySelector('[data-preview-audio-current]');
+    const duration = previewElement.querySelector('[data-preview-audio-duration]');
     const play = previewElement.querySelector('[data-preview-audio-play]');
     const pause = previewElement.querySelector('[data-preview-audio-pause]');
     const stop = previewElement.querySelector('[data-preview-audio-stop]');
 
-    if (!controls || !play || !pause || !stop) return;
+    if (!controls || !progress || !currentTime || !duration || !play || !pause || !stop) return;
 
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
     if (!audioAvailable) {
@@ -104,11 +121,26 @@ export const initEpisodesPage = () => {
         button.classList.add('is-unavailable');
       });
       controls.dataset.state = 'unavailable';
+      progress.disabled = true;
+      progress.value = 0;
+      currentTime.textContent = '0:00';
+      duration.textContent = '0:00';
       return;
     }
 
     previewAudio = new Audio(episode.audio.stream_url);
     const audio = previewAudio;
+
+    const updateProgress = () => {
+      const total = Number.isFinite(audio.duration) ? audio.duration : 0;
+      const position = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+
+      progress.max = total || 0;
+      progress.value = Math.min(position, total || position);
+      currentTime.textContent = formatAudioTime(position);
+      duration.textContent = formatAudioTime(total);
+      progress.disabled = total <= 0;
+    };
 
     const updateState = () => {
       const isCurrent = previewAudio === audio;
@@ -126,6 +158,7 @@ export const initEpisodesPage = () => {
         `${isPaused ? 'Resume' : 'Pause'} ${episode.episode_name}`,
       );
       controls.dataset.state = isPlaying ? 'playing' : isPaused ? 'paused' : 'stopped';
+      updateProgress();
     };
 
     play.addEventListener('click', () => {
@@ -148,6 +181,17 @@ export const initEpisodesPage = () => {
       updateState();
     });
 
+    progress.addEventListener('input', () => {
+      if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+      audio.currentTime = Number(progress.value);
+      updateProgress();
+    });
+
+    audio.addEventListener('loadedmetadata', updateProgress);
+    audio.addEventListener('durationchange', updateProgress);
+    audio.addEventListener('timeupdate', updateProgress);
+    audio.addEventListener('seeking', updateProgress);
+    audio.addEventListener('seeked', updateProgress);
     audio.addEventListener('play', updateState);
     audio.addEventListener('pause', updateState);
     audio.addEventListener('ended', () => {
@@ -213,7 +257,25 @@ export const initEpisodesPage = () => {
           <h2>${escapeHtml(episode.episode_name)}</h2>
           <p>Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>
         </div>
-        <div class="episodes-preview-audio-controls" data-preview-audio-controls>
+        <div class="episodes-preview-audio-stack">
+          <div class="episodes-preview-audio-progress">
+            <input
+              class="episodes-preview-progress"
+              type="range"
+              min="0"
+              max="0"
+              value="0"
+              step="0.1"
+              data-preview-audio-progress
+              aria-label="Audio position for ${escapeHtml(episode.episode_name)}"
+              ${audioAvailable ? '' : 'disabled'}>
+            <div class="episodes-preview-audio-time">
+              <span data-preview-audio-current>0:00</span>
+              <span aria-hidden="true">/</span>
+              <span data-preview-audio-duration>0:00</span>
+            </div>
+          </div>
+          <div class="episodes-preview-audio-controls" data-preview-audio-controls>
           <button class="episodes-preview-audio-button episodes-preview-play${audioAvailable ? '' : ' is-unavailable'}"
             type="button"
             data-preview-audio-play
@@ -235,6 +297,7 @@ export const initEpisodesPage = () => {
             disabled>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"></path></svg>
           </button>
+          </div>
         </div>
       </div>
       <p class="episodes-preview-description">${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>

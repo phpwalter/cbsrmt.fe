@@ -55,23 +55,28 @@ button,input{font:inherit}
 .anniversary-cards.is-multiple .episode-card{display:grid;grid-template-columns:118px 1fr;width:350px;min-height:82px}
 .anniversary-cards.is-multiple .episode-card-image-region{width:118px;height:82px}
 .anniversary-cards.is-multiple .episode-card-copy{padding:9px 10px}
-.anniversary-cards.is-multiple .episode-card-title-row{grid-template-columns:minmax(0,1fr) 34px;margin:0}
+.anniversary-cards.is-multiple .episode-card-title-row{grid-template-columns:minmax(0,1fr) auto;margin:0}
 .anniversary-cards.is-multiple .episode-card-title{font-size:14px}
 .anniversary-cards.is-multiple .episode-card-number{font-size:9px}
-.anniversary-cards.is-multiple .episode-card-play{width:34px;height:34px}
-.anniversary-cards.is-multiple .episode-card-play svg{width:25px;height:25px}
+.anniversary-cards.is-multiple .episode-card-audio-button{width:30px;height:30px}
+.anniversary-cards.is-multiple .episode-card-audio-button svg{width:21px;height:21px}
 .episode-card-title a:hover,.episode-card-title a:focus-visible{color:var(--gold);outline:none}
 .episode-card-play:disabled,.episode-card-play.is-unavailable{opacity:.35;cursor:not-allowed;background:transparent;color:var(--gold)}
 .episode-card{width:350px;border:1px solid var(--gold);border-radius:4px;overflow:hidden;background:#080808;color:#f4efe7}
 .episode-card-image-region{width:350px;height:120px;display:flex;align-items:center;justify-content:center;background:#030303;overflow:hidden}
 .episode-card-image-region img{width:100%;height:100%;object-fit:contain;object-position:center;background:#030303}
 .episode-card-copy{padding:12px 14px 14px;text-align:left}
-.episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) 40px;align-items:center;gap:10px;margin:0 0 10px}
+.episode-card-title-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;margin:0 0 10px}
 .episode-card-title{margin:0;font-family:var(--serif);font-size:17px;font-weight:400;line-height:1.2;color:#f4efe7;text-align:left}
 .episode-card-number{margin:3px 0 0;color:#aaa39a;font-family:var(--sans);font-size:11px;line-height:1.2;letter-spacing:.08em;text-transform:uppercase}
-.episode-card-play{width:40px;height:40px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer}
-.episode-card-play svg{width:30px;height:30px;fill:currentColor;stroke:none;transform:translateX(1px)}
-.episode-card-play:hover,.episode-card-play:focus-visible{background:var(--gold);color:#080808;outline:none}
+.episode-card-audio-controls{display:flex;align-items:center;justify-content:flex-end;gap:6px}
+.episode-card-audio-button{width:36px;height:36px;display:grid;place-items:center;padding:0;border:1px solid var(--gold);border-radius:50%;background:transparent;color:var(--gold);cursor:pointer}
+.episode-card-audio-button svg{width:25px;height:25px;fill:currentColor;stroke:none}
+.episode-card-play svg{transform:translateX(1px)}
+.episode-card-audio-button:hover:not(:disabled),.episode-card-audio-button:focus-visible:not(:disabled){background:var(--gold);color:#080808;outline:none}
+.episode-card-audio-button:disabled,.episode-card-audio-button.is-unavailable{opacity:.35;cursor:not-allowed;background:transparent;color:var(--gold)}
+.episode-card-audio-controls[data-state="playing"] .episode-card-play{background:var(--gold);color:#080808}
+.episode-card-audio-controls[data-state="paused"] .episode-card-pause{background:var(--gold);color:#080808}
 .episode-card-description{max-height:120px;margin:0;padding-right:4px;overflow-x:hidden;overflow-y:auto;overflow-wrap:anywhere;word-break:normal;white-space:normal;font-family:var(--sans);font-size:16.5px;line-height:1.45;color:#cfc8bf;text-align:left;scrollbar-width:thin}
 
 .archive-section{width:var(--content-width);min-height:0;display:grid;grid-template-rows:auto 1fr;align-content:start;gap:20px;padding:20px 0 22px;background:#050505;overflow:hidden}

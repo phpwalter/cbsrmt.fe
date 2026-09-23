@@ -53,7 +53,52 @@ const formatApiDate = (value) => {
   });
 };
 
+const formatAudioTime = (seconds) => {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const rounded = Math.floor(seconds);
+  const hours = Math.floor(rounded / 3600);
+  const minutes = Math.floor((rounded % 3600) / 60);
+  const secs = rounded % 60;
+
+  if (hours > 0) {
+    return `${hours}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+  }
+
+  return `${minutes}:${String(secs).padStart(2, '0')}`;
+};
+
 const createEpisodeAudioControls = (episode) => {
+  const stack = document.createElement('div');
+  stack.className = 'episode-card-audio-stack';
+
+  const progressWrap = document.createElement('div');
+  progressWrap.className = 'episode-card-audio-progress';
+
+  const progress = document.createElement('input');
+  progress.className = 'episode-card-progress';
+  progress.type = 'range';
+  progress.min = '0';
+  progress.max = '0';
+  progress.value = '0';
+  progress.step = '0.1';
+  progress.setAttribute('aria-label', `Audio position for ${episode.episode_name}`);
+
+  const time = document.createElement('div');
+  time.className = 'episode-card-audio-time';
+
+  const currentTime = document.createElement('span');
+  currentTime.textContent = '0:00';
+
+  const separator = document.createElement('span');
+  separator.textContent = '/';
+  separator.setAttribute('aria-hidden', 'true');
+
+  const duration = document.createElement('span');
+  duration.textContent = '0:00';
+
+  time.append(currentTime, separator, duration);
+  progressWrap.append(progress, time);
+
   const controls = document.createElement('div');
   controls.className = 'episode-card-audio-controls';
 
@@ -90,10 +135,23 @@ const createEpisodeAudioControls = (episode) => {
       button.disabled = true;
       button.classList.add('is-unavailable');
     });
-    return controls;
+    progress.disabled = true;
+    stack.append(progressWrap, controls);
+    return stack;
   }
 
   const audio = new Audio(episode.audio.stream_url);
+
+  const updateProgress = () => {
+    const total = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const position = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+
+    progress.max = String(total || 0);
+    progress.value = String(Math.min(position, total || position));
+    currentTime.textContent = formatAudioTime(position);
+    duration.textContent = formatAudioTime(total);
+    progress.disabled = total <= 0;
+  };
 
   const updateState = () => {
     const isStopped = audio.paused && audio.currentTime === 0;
@@ -108,6 +166,7 @@ const createEpisodeAudioControls = (episode) => {
       `${isPaused ? 'Resume' : 'Pause'} ${episode.episode_name}`,
     );
     controls.dataset.state = isPlaying ? 'playing' : isPaused ? 'paused' : 'stopped';
+    updateProgress();
   };
 
   play.addEventListener('click', () => {
@@ -130,6 +189,17 @@ const createEpisodeAudioControls = (episode) => {
     updateState();
   });
 
+  progress.addEventListener('input', () => {
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
+    audio.currentTime = Number(progress.value);
+    updateProgress();
+  });
+
+  audio.addEventListener('loadedmetadata', updateProgress);
+  audio.addEventListener('durationchange', updateProgress);
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('seeking', updateProgress);
+  audio.addEventListener('seeked', updateProgress);
   audio.addEventListener('play', updateState);
   audio.addEventListener('pause', updateState);
   audio.addEventListener('ended', () => {
@@ -139,7 +209,8 @@ const createEpisodeAudioControls = (episode) => {
   audio.addEventListener('error', updateState);
 
   updateState();
-  return controls;
+  stack.append(progressWrap, controls);
+  return stack;
 };
 
 const createEpisodeCard = (broadcast, multiple) => {

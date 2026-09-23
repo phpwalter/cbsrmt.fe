@@ -259,8 +259,9 @@ const createEpisodeCard = (broadcast, multiple) => {
   titleBlock.append(title, number);
 
   const audioControls = createEpisodeAudioControls(episode);
+  imageRegion.appendChild(audioControls);
 
-  titleRow.append(titleBlock, audioControls);
+  titleRow.append(titleBlock);
   copy.appendChild(titleRow);
 
   if (!multiple && episode.episode_plot) {

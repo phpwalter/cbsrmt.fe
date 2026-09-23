@@ -113,12 +113,13 @@ button,input{font:inherit}
 .episodes-clear{width:100%;height:42px;margin-top:18px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 
 .episodes-list{min-width:0}
-.episodes-list-head{height:40px;display:grid;grid-template-columns:1fr auto auto;align-items:center;border-bottom:1px solid #5a4b2b}
-.episodes-page-count{margin-right:12px;color:#bbb3a9;font-size:13px}
-.episodes-page-arrows{display:flex;gap:8px}
-.episodes-page-arrows button,.episodes-pagination button{border:1px solid #64542f;background:#0b0b0b;color:#ddd4c5}
-.episodes-page-arrows button{width:28px;height:28px;font-size:18px}
-.episodes-page-arrows button:disabled,.episodes-pagination button:disabled{opacity:.35;cursor:not-allowed}
+.episodes-list-head{height:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #5a4b2b}
+.episodes-year-nav{display:flex;align-items:center;justify-content:flex-end;gap:5px;white-space:nowrap;font-family:var(--sans);font-size:12px}
+.episodes-year-nav button{padding:0;border:0;background:transparent;color:#bbb3a9;font:inherit;cursor:pointer}
+.episodes-year-nav button:hover,.episodes-year-nav button:focus-visible,.episodes-year-nav button.active{color:var(--gold);outline:none}
+.episodes-year-nav span{color:#665735}
+.episodes-pagination button{border:1px solid #64542f;background:#0b0b0b;color:#ddd4c5}
+.episodes-pagination button:disabled{opacity:.35;cursor:not-allowed}
 .episodes-list-item{position:relative;display:grid;grid-template-columns:170px 1fr;gap:14px;min-height:112px;padding:10px 0;border-bottom:1px solid #26221b;cursor:pointer;outline:none}
 .episodes-list-item:hover,.episodes-list-item:focus-visible{background:linear-gradient(90deg,rgba(192,171,113,.045),transparent)}
 .episodes-list-item.is-selected{background:linear-gradient(90deg,rgba(192,171,113,.12),transparent)}

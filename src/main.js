@@ -101,8 +101,12 @@ const createEpisodeAudioControls = (episode) => {
     const isPlaying = !audio.paused && !audio.ended;
 
     play.disabled = isPlaying;
-    pause.disabled = !isPlaying;
+    pause.disabled = isStopped;
     stop.disabled = isStopped;
+    pause.setAttribute(
+      'aria-label',
+      `${isPaused ? 'Resume' : 'Pause'} ${episode.episode_name}`,
+    );
     controls.dataset.state = isPlaying ? 'playing' : isPaused ? 'paused' : 'stopped';
   };
 
@@ -111,6 +115,11 @@ const createEpisodeAudioControls = (episode) => {
   });
 
   pause.addEventListener('click', () => {
+    if (audio.paused && audio.currentTime > 0 && !audio.ended) {
+      audio.play().then(updateState).catch(updateState);
+      return;
+    }
+
     audio.pause();
     updateState();
   });

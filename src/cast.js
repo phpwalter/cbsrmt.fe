@@ -118,7 +118,7 @@ export const initCastPage = () => {
         <div class="cast-detail-copy">
           <p class="cast-detail-label">Featured cast member</p>
           <h2>${escapeHtml(name)}</h2>
-          <p class="cast-detail-meta">${count} appearance${count === 1 ? '' : 's'} <span>|</span> Actor</p>
+          <p class="cast-detail-meta">${count} Episode${count === 1 ? '' : 's'} <span>|</span> Actor</p>
           <div class="cast-detail-rule"></div>
           <p class="cast-detail-summary">This catalog record is credited in ${count} CBS Radio Mystery Theater episode${count === 1 ? '' : 's'}.</p>
         </div>
@@ -179,7 +179,7 @@ export const initCastPage = () => {
       card.innerHTML = `
         <img src="${person.portrait || `/assets/cast/${person.id}.png`}" alt="${escapeHtml(name)}">
         <span class="cast-card-name">${escapeHtml(name)}</span>
-        <span class="cast-card-count">${count} appearance${count === 1 ? '' : 's'}</span>
+        <span class="cast-card-count">${count} Episode${count === 1 ? '' : 's'}</span>
       `;
       applyPortraitFallback(card.querySelector('img'));
       card.addEventListener('click', () => selectCast(person.id));

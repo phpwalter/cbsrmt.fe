@@ -70,6 +70,7 @@ export const initEpisodesPage = () => {
     search: params.get('search') || '',
     year: params.get('year') || '',
     cast: params.get('cast') || '',
+    writer: params.get('writer') || '',
     genres: params.getAll('genre'),
     sort: ['episode_number', 'episode_name', 'broadcast_date'].includes(initialSort)
       ? initialSort
@@ -93,6 +94,7 @@ export const initEpisodesPage = () => {
     if (state.search) next.set('search', state.search);
     if (state.year) next.set('year', state.year);
     if (state.cast) next.set('cast', state.cast);
+    if (state.writer) next.set('writer', state.writer);
     state.genres.forEach((genre) => next.append('genre', genre));
     if (state.sort !== 'episode_number') next.set('sort', state.sort);
     if (state.order !== 'asc') next.set('order', state.order);
@@ -281,6 +283,7 @@ export const initEpisodesPage = () => {
     if (state.search) query.set('search', state.search);
     if (state.year) query.set('year', state.year);
     if (state.cast) query.set('cast', state.cast);
+    if (state.writer) query.set('writer', state.writer);
     if (state.focusEpisode) query.set('episode', String(state.focusEpisode));
     state.genres.forEach((genre) => query.append('genre', genre));
 
@@ -389,6 +392,7 @@ export const initEpisodesPage = () => {
     state.search = '';
     state.year = '';
     state.cast = '';
+    state.writer = '';
     state.genres = [];
     state.sort = 'episode_number';
     state.order = 'asc';

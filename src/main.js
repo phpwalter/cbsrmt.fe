@@ -3,6 +3,7 @@ import { renderSiteHeader } from './components/header.js';
 import { renderSiteFooter } from './components/footer.js';
 import { initEpisodesPage } from './episodes.js';
 import { initCastPage } from './cast.js';
+import { initWritersPage } from './writers.js';
 
 const currentPage = document.body.dataset.page || 'home';
 renderSiteHeader(document.querySelector('[data-site-header]'), { active: currentPage });
@@ -14,6 +15,10 @@ if (currentPage === 'episodes') {
 
 if (currentPage === 'cast') {
   initCastPage();
+}
+
+if (currentPage === 'writers') {
+  initWritersPage();
 }
 
 const preventPlaceholderNavigation = (event) => {

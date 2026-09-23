@@ -37,21 +37,84 @@ const formatApiDate = (value) => {
   });
 };
 
-const playEpisodeAudio = (streamUrl, button) => {
-  if (!streamUrl) return;
+const createEpisodeAudioControls = (episode) => {
+  const controls = document.createElement('div');
+  controls.className = 'episode-card-audio-controls';
 
-  const audio = new Audio(streamUrl);
-  button.disabled = true;
-  button.setAttribute('aria-busy', 'true');
-
-  const restore = () => {
-    button.disabled = false;
-    button.removeAttribute('aria-busy');
+  const makeButton = (className, label, svg) => {
+    const button = document.createElement('button');
+    button.className = `episode-card-audio-button ${className}`;
+    button.type = 'button';
+    button.setAttribute('aria-label', `${label} ${episode.episode_name}`);
+    button.innerHTML = svg;
+    controls.appendChild(button);
+    return button;
   };
 
-  audio.addEventListener('ended', restore, { once: true });
-  audio.addEventListener('error', restore, { once: true });
-  audio.play().catch(restore);
+  const play = makeButton(
+    'episode-card-play',
+    'Play',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5v9l7-4.5-7-4.5z"></path></svg>',
+  );
+  const pause = makeButton(
+    'episode-card-pause',
+    'Pause',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7h3v10H8zM13 7h3v10h-3z"></path></svg>',
+  );
+  const stop = makeButton(
+    'episode-card-stop',
+    'Stop',
+    '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"></path></svg>',
+  );
+
+  const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
+
+  if (!audioAvailable) {
+    [play, pause, stop].forEach((button) => {
+      button.disabled = true;
+      button.classList.add('is-unavailable');
+    });
+    return controls;
+  }
+
+  const audio = new Audio(episode.audio.stream_url);
+
+  const updateState = () => {
+    const isStopped = audio.paused && audio.currentTime === 0;
+    const isPaused = audio.paused && audio.currentTime > 0 && !audio.ended;
+    const isPlaying = !audio.paused && !audio.ended;
+
+    play.disabled = isPlaying;
+    pause.disabled = !isPlaying;
+    stop.disabled = isStopped;
+    controls.dataset.state = isPlaying ? 'playing' : isPaused ? 'paused' : 'stopped';
+  };
+
+  play.addEventListener('click', () => {
+    audio.play().then(updateState).catch(updateState);
+  });
+
+  pause.addEventListener('click', () => {
+    audio.pause();
+    updateState();
+  });
+
+  stop.addEventListener('click', () => {
+    audio.pause();
+    audio.currentTime = 0;
+    updateState();
+  });
+
+  audio.addEventListener('play', updateState);
+  audio.addEventListener('pause', updateState);
+  audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+    updateState();
+  });
+  audio.addEventListener('error', updateState);
+
+  updateState();
+  return controls;
 };
 
 const createEpisodeCard = (broadcast, multiple) => {
@@ -94,22 +157,9 @@ const createEpisodeCard = (broadcast, multiple) => {
 
   titleBlock.append(title, number);
 
-  const play = document.createElement('button');
-  play.className = 'episode-card-play';
-  play.type = 'button';
-  play.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.5v9l7-4.5-7-4.5z"></path></svg>';
+  const audioControls = createEpisodeAudioControls(episode);
 
-  const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
-  if (audioAvailable) {
-    play.setAttribute('aria-label', `Play ${episode.episode_name}`);
-    play.addEventListener('click', () => playEpisodeAudio(episode.audio.stream_url, play));
-  } else {
-    play.disabled = true;
-    play.classList.add('is-unavailable');
-    play.setAttribute('aria-label', `Audio unavailable for ${episode.episode_name}`);
-  }
-
-  titleRow.append(titleBlock, play);
+  titleRow.append(titleBlock, audioControls);
   copy.appendChild(titleRow);
 
   if (!multiple && episode.episode_plot) {

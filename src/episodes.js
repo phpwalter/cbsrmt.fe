@@ -13,7 +13,8 @@ const formatDate = (value) => {
   });
 };
 
-const episodeNumber = (value) => String(value).padStart(4, '0');
+const episodeNumber = (value) => String(Number(value));
+const episodeAssetNumber = (value) => String(Number(value)).padStart(4, '0');
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -248,10 +249,11 @@ export const initEpisodesPage = () => {
     const writers = (episode.writers || []).map((person) => escapeHtml(textName(person))).join(', ') || '—';
     const cast = (episode.cast || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
+    const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
 
     previewElement.innerHTML = `
-      <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${escapeHtml(episode.episode_name)}">
+      <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">
       <div class="episodes-preview-header">
         <div>
           <h2>${escapeHtml(episode.episode_name)}</h2>
@@ -347,13 +349,14 @@ export const initEpisodesPage = () => {
 
     episodes.forEach((episode) => {
       const number = episodeNumber(episode.episode_number);
+      const assetNumber = episodeAssetNumber(episode.episode_number);
       const row = document.createElement('article');
       row.className = 'episodes-list-item';
       row.dataset.episodeNumber = String(episode.episode_number);
       row.tabIndex = 0;
       row.innerHTML = `
         <span class="episodes-current-indicator" aria-hidden="true"></span>
-        <img src="${episode.thumbnail || `/assets/episodes/${number}.png`}" alt="${escapeHtml(episode.episode_name)}">
+        <img src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">
         <div class="episodes-list-copy">
           <h3>${escapeHtml(episode.episode_name)}</h3>
           <p class="episodes-meta">Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>

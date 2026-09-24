@@ -231,7 +231,7 @@ button,input{font:inherit}
 .cast-hero-copy h1{margin:0;color:#f0d79b;font-size:52px;font-weight:400;line-height:.98;text-shadow:0 1px 4px rgba(0,0,0,.8)}
 .cast-eyebrow{margin:10px 0 15px!important;color:var(--gold)!important;font-family:var(--sans);font-size:12px!important;letter-spacing:.24em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.9)}
 .cast-hero-copy p:last-child{max-width:540px;margin:0;color:#ded8cf;font-size:16px;line-height:1.45;text-shadow:0 1px 4px rgba(0,0,0,.95)}
-.cast-hero-words{position:absolute;z-index:2;right:calc(17% - 50px);top:31%;color:#c6ad72;font-family:var(--sans);font-size:13px;line-height:2;letter-spacing:.23em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.95)}
+.cast-hero-words{position:absolute;z-index:2;right:calc(17% + 30px);top:31%;color:#c6ad72;font-family:var(--sans);font-size:13px;line-height:2;letter-spacing:.23em;text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.95)}
 
 .cast-alpha{width:var(--content-width);min-height:50px;display:flex;align-items:center;gap:0;border-bottom:1px solid #3c3322;background:#080808}
 .cast-alpha>span{width:132px;padding-left:16px;color:var(--gold);font-family:var(--sans);font-size:12px;line-height:1.2;letter-spacing:.18em;text-transform:uppercase}

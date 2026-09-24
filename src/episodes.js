@@ -37,6 +37,15 @@ const textName = (person) =>
   [person?.first_name, person?.last_name].filter(Boolean).join(' ') ||
   'Unknown';
 
+const personLink = (person, type) => {
+  if (!person?.id) return escapeHtml(textName(person));
+  const name = escapeHtml(textName(person));
+  const href = type === 'writer'
+    ? `/writers.html?writer=${encodeURIComponent(person.id)}`
+    : `/cast.html?cast=${encodeURIComponent(person.id)}`;
+  return `<a class="episodes-person-link" href="${href}">${name}</a>`;
+};
+
 const debounce = (fn, delay) => {
   let timer;
   return (...args) => {
@@ -246,9 +255,9 @@ export const initEpisodesPage = () => {
   const renderPreview = (episode) => {
     stopPreviewAudio();
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
-    const writers = (episode.writers || []).map((person) => escapeHtml(textName(person))).join(', ') || '—';
-    const star = episode.star ? escapeHtml(textName(episode.star)) : '—';
-    const coStars = (episode.co_stars || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
+    const writers = (episode.writers || []).map((person) => personLink(person, 'writer')).join(', ') || '—';
+    const star = episode.star ? personLink(episode.star, 'cast') : '—';
+    const coStars = (episode.co_stars || []).map((person) => personLink(person, 'cast')).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
@@ -311,7 +320,7 @@ export const initEpisodesPage = () => {
           <div><dt>Original Air Date</dt><dd>${formatDate(episode.broadcast_date)}</dd></div>
           <div><dt>Category</dt><dd>${genres}</dd></div>
           <div><dt>Writer</dt><dd>${writers}</dd></div>
-          <div><dt>Star</dt><dd>${star}</dd></div>
+          <div><dt>Stars</dt><dd>${star}</dd></div>
           <div><dt>Co-Stars</dt><dd>${coStars}</dd></div>
         </dl>
       </div>

@@ -247,7 +247,8 @@ export const initEpisodesPage = () => {
     stopPreviewAudio();
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
     const writers = (episode.writers || []).map((person) => escapeHtml(textName(person))).join(', ') || '—';
-    const cast = (episode.cast || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
+    const star = episode.star ? escapeHtml(textName(episode.star)) : '—';
+    const coStars = (episode.co_stars || []).map((person) => escapeHtml(textName(person))).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
@@ -310,7 +311,8 @@ export const initEpisodesPage = () => {
           <div><dt>Original Air Date</dt><dd>${formatDate(episode.broadcast_date)}</dd></div>
           <div><dt>Category</dt><dd>${genres}</dd></div>
           <div><dt>Writer</dt><dd>${writers}</dd></div>
-          <div><dt>Starring</dt><dd>${cast}</dd></div>
+          <div><dt>Star</dt><dd>${star}</dd></div>
+          <div><dt>Co-Stars</dt><dd>${coStars}</dd></div>
         </dl>
       </div>
     `;

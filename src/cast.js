@@ -248,7 +248,7 @@ export const initCastPage = () => {
         return;
       }
 
-      if (!people.some((person) => person.id === state.selected)) {
+      if (!state.selected) {
         state.selected = people[0].id;
       }
 

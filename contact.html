@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact the CBS Radio Mystery Theater archive." />
+  <meta name="theme-color" content="#050505" />
+  <style>html,body{background:#050505;color:#f3efe8}</style>
+  <title>Contact | CBS Radio Mystery Theater</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body data-page="contact">
+<div data-site-header></div>
+
+<main class="contact-page-main">
+  <section class="contact-hero" aria-labelledby="contact-heading">
+    <div class="contact-intro">
+      <p class="contact-eyebrow">Contact</p>
+      <h1 id="contact-heading">Get in touch</h1>
+      <div class="contact-gold-rule" aria-hidden="true"></div>
+      <p class="contact-lede">
+        Have a correction, a question about an episode, or a memory of CBS Radio Mystery Theater?
+        Send a note using the form.
+      </p>
+
+      <div class="contact-note">
+        <p class="contact-note-title">About this archive</p>
+        <p>
+          This is an independent personal archive celebrating CBS Radio Mystery Theater,
+          its episodes, writers, performers, and broadcast history.
+        </p>
+      </div>
+    </div>
+
+    <form class="contact-form" data-contact-form>
+      <div class="contact-form-head">
+        <span>Send a message</span>
+        <span aria-hidden="true">On the air</span>
+      </div>
+
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" autocomplete="name" required />
+      </label>
+
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label>
+        <span>Subject</span>
+        <input type="text" name="subject" required />
+      </label>
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="7" required></textarea>
+      </label>
+
+      <button type="submit">Send Message</button>
+      <p class="contact-form-status" data-contact-status aria-live="polite"></p>
+    </form>
+  </section>
+</main>
+
+<div data-site-footer></div>
+</body>
+</html>

@@ -908,3 +908,28 @@ button,input{font:inherit}
 .contact-form-panel{
   margin-top:30px;
 }
+
+
+/* Contact page - mic scale and typography refinement */
+.contact-mic-image{
+  width:60%;
+  height:auto;
+  max-width:none;
+  position:absolute;
+  left:0;
+  bottom:0;
+  object-fit:contain;
+  object-position:left bottom;
+  transform:none;
+  transform-origin:left bottom;
+}
+
+.contact-intro,
+.contact-reasons h2,
+.contact-reasons p{
+  font-family:"Libre Caslon Text", Georgia, "Times New Roman", serif;
+}
+
+.contact-intro{
+  font-size:20px;
+}

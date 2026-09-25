@@ -1014,12 +1014,6 @@ button,input{font:inherit}
 .contact-hero-shell{
   position:relative;
 }
-.contact-hero-copy{
-  left:42px;
-  top:13%;
-  width:calc(42% - 100px);
-  max-width:460px;
-}
 .contact-hero-copy h1{
   margin:0;
   color:#f0d79b;
@@ -1073,8 +1067,6 @@ button,input{font:inherit}
 
 /* Contact hero topic list aligned with Cast/Writers */
 .contact-hero-words{
-  right:calc(17% - 10px);
-  top:31%;
   color:#c6ad72;
   font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
   font-size:13px;

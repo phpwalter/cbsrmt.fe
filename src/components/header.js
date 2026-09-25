@@ -6,8 +6,8 @@ export const renderSiteHeader = (target, { active = 'home' } = {}) => {
     ['episodes', 'Episodes', '/episodes.html'],
     ['cast', 'Cast', '/cast.html'],
     ['writers', 'Writers', '/writers.html'],
-    ['about', 'About', '/about.html'],
     ['contact', 'Contact', '/contact.html'],
+    ['about', 'About', '/about.html'],
   ];
 
   const navItem = ([key, label, href]) =>

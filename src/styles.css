@@ -1083,3 +1083,13 @@ button,input{font:inherit}
   text-transform:none;
   text-shadow:0 1px 3px rgba(0,0,0,.95);
 }
+
+
+/* Contact hero topic list - match Cast/Writers typography */
+.contact-hero-words{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:13px;
+  line-height:2;
+  letter-spacing:.23em;
+  text-transform:uppercase;
+}

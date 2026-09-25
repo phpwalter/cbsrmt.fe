@@ -1129,3 +1129,66 @@ button,input{font:inherit}
 .contact-left-panel{
   min-height:400px;
 }
+
+
+/* Contact lower section - About Us / story / form three-column layout */
+.contact-main-section{
+  grid-template-columns:340px minmax(0,1fr) 374px;
+  gap:28px;
+  padding:0 50px 0 0;
+  align-items:start;
+}
+
+.contact-left-panel{
+  min-height:400px;
+  position:relative;
+  overflow:hidden;
+  background:#010101;
+}
+
+.contact-about-title{
+  position:absolute;
+  top:18px;
+  left:42px;
+  z-index:3;
+  margin:0;
+  color:#f0d79b;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:52px;
+  font-weight:400;
+  line-height:.98;
+  text-shadow:0 1px 4px rgba(0,0,0,.8);
+}
+
+.contact-mic-image{
+  width:60%;
+  height:auto;
+  position:absolute;
+  left:0;
+  bottom:0;
+  object-fit:contain;
+  object-position:left bottom;
+  transform:none;
+}
+
+.contact-about-copy{
+  align-self:start;
+  padding-top:20px;
+  color:#ded8cf;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:16px;
+  line-height:1.48;
+}
+
+.contact-about-copy p{
+  margin:0 0 16px;
+}
+
+.contact-about-copy p:last-child{
+  margin-bottom:0;
+}
+
+.contact-form-panel{
+  margin-top:8px;
+  justify-self:end;
+}

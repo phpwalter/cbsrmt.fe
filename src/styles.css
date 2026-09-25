@@ -1308,3 +1308,9 @@ button,input{font:inherit}
   object-fit:contain;
   object-position:left bottom;
 }
+
+
+/* Contact About Us copy - remove all padding */
+.contact-about-copy{
+  padding:0;
+}

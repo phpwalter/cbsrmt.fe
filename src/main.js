@@ -356,3 +356,10 @@ if (introAudio) {
     attemptPlayback();
   }
 }
+
+
+document.querySelector('[data-contact-form]')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const status = document.querySelector('[data-contact-status]');
+  if (status) status.textContent = 'Message form is ready for delivery wiring.';
+});

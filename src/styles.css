@@ -1244,3 +1244,45 @@ button,input{font:inherit}
 .contact-about-copy p{
   margin:0 0 14px;
 }
+
+
+/* Contact About Us - restore narrative to centered middle panel */
+.contact-main-section{
+  grid-template-columns:340px minmax(0,1fr) 374px;
+  gap:28px;
+  padding:0 50px 0 0;
+  align-items:start;
+}
+
+.contact-left-panel{
+  grid-column:1 / 3;
+  grid-row:1;
+  min-height:400px;
+  position:relative;
+  overflow:hidden;
+  background:#010101;
+}
+
+.contact-about-copy{
+  grid-column:2;
+  grid-row:1;
+  position:relative;
+  top:auto;
+  left:auto;
+  z-index:3;
+  width:auto;
+  max-width:none;
+  align-self:start;
+  justify-self:center;
+  padding:84px 28px 0;
+  color:#ded8cf;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:13px;
+  line-height:1.5;
+  text-shadow:0 1px 4px rgba(0,0,0,.95);
+}
+
+.contact-form-panel{
+  grid-column:3;
+  grid-row:1;
+}

@@ -576,3 +576,28 @@ button,input{font:inherit}
   border-bottom-color:currentColor;
   outline:none;
 }
+
+
+/* Contact page */
+.contact-page-main{width:var(--page-width);padding:28px 50px 36px;background:#050505;flex:0 0 auto}
+.contact-hero{width:var(--content-width);min-height:590px;display:grid;grid-template-columns:470px 1fr;gap:58px;padding:54px 58px;background:
+  radial-gradient(circle at 18% 28%,rgba(192,171,113,.08),transparent 30%),
+  linear-gradient(180deg,#090909,#050505);border-top:1px solid #2e281d;border-bottom:1px solid #4b3d22}
+.contact-intro{align-self:start;padding-top:18px}
+.contact-eyebrow{margin:0 0 8px;color:var(--gold);font-family:var(--sans);font-size:14px;letter-spacing:.22em;text-transform:uppercase}
+.contact-intro h1{margin:0;color:#f4efe8;font-size:50px;font-weight:400;line-height:1;text-transform:uppercase}
+.contact-gold-rule{width:86px;height:2px;margin:20px 0 24px;background:var(--gold)}
+.contact-lede{margin:0 0 34px;color:#ddd6cc;font-size:20px;line-height:1.55}
+.contact-note{padding:22px 24px;border-left:2px solid var(--gold);background:#0a0a0a}
+.contact-note-title{margin:0 0 8px;color:var(--gold);font-family:var(--sans);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
+.contact-note p:last-child{margin:0;color:#bfb7ad;font-family:var(--sans);font-size:14px;line-height:1.55}
+.contact-form{align-self:start;display:grid;gap:16px;padding:24px 26px 28px;border:1px solid #6d5b31;background:#080808;box-shadow:0 18px 45px rgba(0,0,0,.35)}
+.contact-form-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid #282319;color:#efe7da;font-size:24px;text-transform:uppercase}
+.contact-form-head span:last-child{color:var(--gold);font-family:var(--sans);font-size:11px;letter-spacing:.18em}
+.contact-form label{display:grid;gap:7px;color:#c9c1b7;font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid #333;background:#050505;color:#f2ece3;padding:12px 13px;font-family:var(--sans);font-size:15px;letter-spacing:0;text-transform:none;outline:none}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form textarea{resize:vertical;min-height:150px}
+.contact-form button{justify-self:start;margin-top:4px;padding:12px 24px;border:1px solid var(--gold);background:transparent;color:var(--gold);font-family:var(--sans);font-size:13px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.contact-form button:hover,.contact-form button:focus-visible{background:var(--gold);color:#070707;outline:none}
+.contact-form-status{min-height:18px;margin:0;color:#bfb7ad;font-family:var(--sans);font-size:12px}

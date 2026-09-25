@@ -1297,3 +1297,14 @@ button,input{font:inherit}
   padding-top:0;
   padding-left:0;
 }
+
+
+/* Contact mic image scale and vertical offset */
+.contact-mic-image{
+  width:90%;
+  height:auto;
+  left:0;
+  bottom:-40px;
+  object-fit:contain;
+  object-position:left bottom;
+}

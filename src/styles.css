@@ -1286,3 +1286,14 @@ button,input{font:inherit}
   grid-column:3;
   grid-row:1;
 }
+
+
+/* Contact spacing refinement */
+.contact-main-section{
+  padding-top:10px;
+}
+
+.contact-about-copy{
+  padding-top:0;
+  padding-left:0;
+}

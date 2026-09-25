@@ -1314,3 +1314,9 @@ button,input{font:inherit}
 .contact-about-copy{
   padding:0;
 }
+
+
+/* Contact main section bottom spacing */
+.contact-main-section{
+  padding-bottom:10px;
+}

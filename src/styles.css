@@ -1320,3 +1320,36 @@ button,input{font:inherit}
 .contact-main-section{
   padding-bottom:10px;
 }
+
+
+/* About page - shared hero system with Cast/Writers */
+.about-page-main{
+  padding:18px 50px 24px;
+  background:#050505;
+}
+
+.about-page-main > .cast-hero{
+  width:var(--content-width);
+  margin:0;
+}
+
+/* Keep only the non-hero About content below the shared hero */
+.about-story{
+  width:var(--content-width);
+  margin:20px 0 0;
+  padding:22px 28px;
+  color:#e8e1d8;
+  background:#070707;
+  border-top:1px solid #2b251a;
+  border-bottom:1px solid #2b251a;
+}
+
+.about-story > p{
+  margin:0 0 18px;
+  font-size:16px;
+  line-height:1.5;
+}
+
+.about-story > p:last-of-type{
+  margin-bottom:20px;
+}

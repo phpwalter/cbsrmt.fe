@@ -637,3 +637,173 @@ button,input{font:inherit}
 .contact-form button{width:100%;margin-top:4px;padding:12px 18px;border:0;border-radius:5px;background:linear-gradient(180deg,#efd09b,#d9b36d);color:#17110a;font-size:18px;font-weight:700;cursor:pointer}
 .contact-form button:hover,.contact-form button:focus-visible{filter:brightness(1.05);outline:none}
 .contact-form-status{min-height:16px;margin:0;color:#bfb7ad;font-family:var(--sans);font-size:12px}
+
+
+/* Contact page archive rebuild */
+.contact-page-main{
+  width:var(--page-width);
+  padding:0;
+  background:#050505;
+  flex:0 0 auto;
+}
+.contact-hero-shell{
+  width:var(--content-width);
+  margin:0 auto;
+}
+.contact-main-section{
+  width:var(--page-width);
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 565px;
+  gap:34px;
+  padding:0 50px 42px 0;
+  background:
+    radial-gradient(circle at 32% 26%,rgba(194,165,104,.06),transparent 26%),
+    linear-gradient(180deg,#080808 0%,#050505 100%);
+  border-top:1px solid #201a12;
+}
+.contact-left-panel{
+  position:relative;
+  min-height:690px;
+  overflow:hidden;
+}
+.contact-mic-image{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:left center;
+}
+.contact-copy-overlay{
+  position:absolute;
+  top:22px;
+  left:58%;
+  transform:translateX(-50%);
+  width:440px;
+  text-align:center;
+  z-index:2;
+}
+.contact-copy-overlay h1{
+  margin:0;
+  color:#f4efe8;
+  font-size:76px;
+  line-height:1;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+.contact-title-rule{
+  position:relative;
+  width:380px;
+  height:20px;
+  margin:20px auto 18px;
+}
+.contact-title-rule::before,
+.contact-title-rule::after{
+  content:"";
+  position:absolute;
+  top:9px;
+  width:176px;
+  height:1px;
+  background:linear-gradient(90deg,transparent 0%,var(--gold) 35%,var(--gold) 100%);
+}
+.contact-title-rule::before{left:0}
+.contact-title-rule::after{right:0;transform:scaleX(-1)}
+.contact-title-rule span{
+  position:absolute;
+  left:50%;
+  top:4px;
+  width:10px;
+  height:10px;
+  border:1px solid var(--gold);
+  transform:translateX(-50%) rotate(45deg);
+  background:#050505;
+}
+.contact-intro{
+  margin:0 auto 26px;
+  max-width:560px;
+  color:#efe7db;
+  font-size:24px;
+  line-height:1.45;
+}
+.contact-reasons{
+  width:340px;
+  margin:0 0 0 auto;
+  text-align:left;
+}
+.contact-reasons section{
+  padding:18px 0 20px;
+  border-bottom:1px solid #8a6d38;
+}
+.contact-reasons section:last-child{border-bottom:0}
+.contact-reasons h2{
+  margin:0 0 6px;
+  color:#f3ece2;
+  font-size:24px;
+  line-height:1.15;
+  font-weight:700;
+}
+.contact-reasons p{
+  margin:0;
+  color:#d3cabf;
+  font-size:18px;
+  line-height:1.45;
+}
+.contact-form-panel{
+  align-self:start;
+  margin-top:34px;
+  display:grid;
+  gap:18px;
+  padding:30px 30px 28px;
+  border:1px solid #404040;
+  border-radius:10px;
+  background:rgba(6,6,6,.92);
+  box-shadow:0 20px 45px rgba(0,0,0,.30);
+}
+.contact-form label{
+  display:grid;
+  gap:8px;
+  color:#f1ebe3;
+  font-size:18px;
+  line-height:1.2;
+}
+.contact-form label>span{display:block}
+.contact-form em{color:#c9a45c;font-style:normal}
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  width:100%;
+  border:1px solid #383838;
+  border-radius:6px;
+  background:#090909;
+  color:#eee7dc;
+  padding:14px 14px;
+  font-family:var(--serif);
+  font-size:17px;
+  outline:none;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{color:#8c867d}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus{border-color:var(--gold)}
+.contact-form textarea{min-height:150px;resize:vertical}
+.contact-form button{
+  width:100%;
+  margin-top:8px;
+  padding:16px 20px;
+  border:0;
+  border-radius:6px;
+  background:linear-gradient(180deg,#edd3a6 0%,#d8b26f 100%);
+  color:#17110a;
+  font-size:22px;
+  font-weight:700;
+  cursor:pointer;
+}
+.contact-form button:hover,
+.contact-form button:focus-visible{filter:brightness(1.04);outline:none}
+.contact-form-status{
+  min-height:18px;
+  margin:0;
+  color:#bfb7ad;
+  font-family:var(--sans);
+  font-size:12px;
+}

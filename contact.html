@@ -10,78 +10,89 @@
   <script type="module" src="/src/main.js"></script>
 </head>
 <body data-page="contact">
-<div data-site-header></div>
+  <div data-site-header></div>
 
-<main class="contact-page-main">
-  <section class="contact-banner" aria-hidden="true">
-    <img src="/assets/images/cast.hero.png" alt="" />
-  </section>
+  <main class="contact-page-main">
+    <section class="cast-hero contact-hero-shell" aria-hidden="true">
+      <img
+        class="cast-hero-image"
+        src="/assets/images/cast.hero.png"
+        alt=""
+      />
+    </section>
 
-  <section class="contact-layout" aria-labelledby="contact-heading">
-    <div class="contact-visual">
-      <img src="/assets/images/mic-on-desk.png" alt="Vintage broadcast microphone on a studio desk" />
-    </div>
+    <section class="contact-main-section" aria-labelledby="contact-heading">
+      <div class="contact-left-panel">
+        <img
+          class="contact-mic-image"
+          src="/assets/images/mic-on-desk.png"
+          alt="Vintage microphone on a radio desk"
+        />
 
-    <div class="contact-copy">
-      <h1 id="contact-heading">Contact</h1>
-      <div class="contact-title-rule" aria-hidden="true"><span></span></div>
+        <div class="contact-copy-overlay">
+          <h1 id="contact-heading">Contact</h1>
 
-      <p class="contact-intro">
-        We’d love to hear from you. If you have a question, a suggestion,
-        or information to share about CBS Radio Mystery Theater,
-        please use the form below.
-      </p>
+          <div class="contact-title-rule" aria-hidden="true">
+            <span></span>
+          </div>
 
-      <div class="contact-reasons">
-        <section>
-          <h2>General Inquiries</h2>
-          <p>Questions, feedback, or comments about the site or the series.</p>
-        </section>
+          <p class="contact-intro">
+            We’d love to hear from you. If you have a question, a suggestion,
+            or information to share about CBS Radio Mystery Theater,
+            please use the form below.
+          </p>
 
-        <section>
-          <h2>Corrections &amp; Additions</h2>
-          <p>Help us improve our episode, cast, and writer databases with new information.</p>
-        </section>
+          <div class="contact-reasons">
+            <section>
+              <h2>General Inquiries</h2>
+              <p>Questions, feedback, or comments about the site or the series.</p>
+            </section>
 
-        <section>
-          <h2>Technical Issues</h2>
-          <p>Let us know if you find a problem with the website.</p>
-        </section>
+            <section>
+              <h2>Corrections &amp; Additions</h2>
+              <p>Help us improve our episode, cast, and writer databases with new information.</p>
+            </section>
+
+            <section>
+              <h2>Technical Issues</h2>
+              <p>Let us know if you find a problem with the website.</p>
+            </section>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <form class="contact-form" data-contact-form>
-      <label>
-        <span>Name <em>*</em></span>
-        <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
-      </label>
+      <form class="contact-form contact-form-panel" data-contact-form>
+        <label>
+          <span>Name <em>*</em></span>
+          <input type="text" name="name" placeholder="Your name" autocomplete="name" required />
+        </label>
 
-      <label>
-        <span>Email <em>*</em></span>
-        <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
-      </label>
+        <label>
+          <span>Email <em>*</em></span>
+          <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required />
+        </label>
 
-      <label>
-        <span>Subject <em>*</em></span>
-        <select name="subject" required>
-          <option value="">Select a topic</option>
-          <option value="general">General Inquiry</option>
-          <option value="correction">Correction or Addition</option>
-          <option value="technical">Technical Issue</option>
-        </select>
-      </label>
+        <label>
+          <span>Subject <em>*</em></span>
+          <select name="subject" required>
+            <option value="">Select a topic</option>
+            <option value="general">General Inquiry</option>
+            <option value="correction">Correction or Addition</option>
+            <option value="technical">Technical Issue</option>
+          </select>
+        </label>
 
-      <label>
-        <span>Message <em>*</em></span>
-        <textarea name="message" rows="7" placeholder="Your message..." required></textarea>
-      </label>
+        <label>
+          <span>Message <em>*</em></span>
+          <textarea name="message" rows="7" placeholder="Your message..." required></textarea>
+        </label>
 
-      <button type="submit">Send Message</button>
-      <p class="contact-form-status" data-contact-status aria-live="polite"></p>
-    </form>
-  </section>
-</main>
+        <button type="submit">Send Message</button>
+        <p class="contact-form-status" data-contact-status aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-<div data-site-footer></div>
+  <div data-site-footer></div>
 </body>
 </html>

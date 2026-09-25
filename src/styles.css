@@ -1093,3 +1093,11 @@ button,input{font:inherit}
   letter-spacing:.23em;
   text-transform:uppercase;
 }
+
+
+/* Contact form panel - increase overall size by 10% */
+.contact-form-panel{
+  width:374px;
+  gap:13px;
+  padding:20px 20px 22px;
+}

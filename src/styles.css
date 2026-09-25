@@ -1119,3 +1119,13 @@ button,input{font:inherit}
 .contact-copy-overlay{
   left:calc(61.1% + 60px);
 }
+
+
+/* Contact section spacing refinement */
+.contact-main-section{
+  padding-bottom:0;
+}
+
+.contact-left-panel{
+  min-height:400px;
+}

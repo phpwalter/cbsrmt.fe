@@ -1192,3 +1192,55 @@ button,input{font:inherit}
   margin-top:8px;
   justify-self:end;
 }
+
+
+/* Contact About Us overlay refinement */
+.contact-main-section{
+  grid-template-columns:minmax(0,1fr) 374px;
+  gap:28px;
+  padding:0 50px 0 0;
+}
+
+.contact-left-panel{
+  min-height:400px;
+  position:relative;
+  overflow:hidden;
+  background:#010101;
+}
+
+.contact-mic-image{
+  width:100%;
+  height:100%;
+  position:absolute;
+  left:0;
+  bottom:0;
+  object-fit:cover;
+  object-position:left bottom;
+  transform:none;
+}
+
+.contact-about-title{
+  position:absolute;
+  top:18px;
+  left:42px;
+  z-index:3;
+}
+
+.contact-about-copy{
+  position:absolute;
+  top:84px;
+  left:42%;
+  z-index:3;
+  width:50%;
+  max-width:520px;
+  padding:0;
+  color:#ded8cf;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:13px;
+  line-height:1.5;
+  text-shadow:0 1px 4px rgba(0,0,0,.95);
+}
+
+.contact-about-copy p{
+  margin:0 0 14px;
+}

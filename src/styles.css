@@ -933,3 +933,78 @@ button,input{font:inherit}
 .contact-intro{
   font-size:20px;
 }
+
+
+/* Contact form panel - tuned to latest reference */
+.contact-form-panel{
+  width:340px;
+  margin-top:8px;
+  justify-self:end;
+  display:grid;
+  gap:12px;
+  padding:18px 18px 20px;
+  border:1px solid #2f2f2f;
+  border-radius:6px;
+  background:#060606;
+  box-shadow:none;
+}
+
+.contact-form label{
+  gap:5px;
+  color:#eee8de;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:11px;
+  line-height:1.15;
+}
+
+.contact-form em{
+  color:#c79f55;
+  font-style:normal;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+  border:1px solid #313131;
+  border-radius:4px;
+  background:#0a0a0a;
+  color:#e9e2d8;
+  padding:8px 8px;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:10px;
+  line-height:1.2;
+}
+
+.contact-form input,
+.contact-form select{
+  height:26px;
+}
+
+.contact-form textarea{
+  min-height:68px;
+  height:68px;
+  resize:none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+  color:#8c877f;
+}
+
+.contact-form button{
+  width:100%;
+  margin-top:2px;
+  padding:9px 12px;
+  border:0;
+  border-radius:3px;
+  background:linear-gradient(180deg,#efd8ae 0%,#d6ad68 100%);
+  color:#17110a;
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+  font-size:13px;
+  font-weight:700;
+  line-height:1;
+}
+
+.contact-form-status{
+  display:none;
+}

@@ -1101,3 +1101,9 @@ button,input{font:inherit}
   gap:13px;
   padding:20px 20px 22px;
 }
+
+
+/* Contact subject select - increase height by 6px */
+.contact-form select{
+  height:32px;
+}

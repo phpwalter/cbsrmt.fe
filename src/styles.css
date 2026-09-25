@@ -1056,3 +1056,16 @@ button,input{font:inherit}
 .contact-reasons{
   margin-top:0;
 }
+
+
+/* Contact hero typography refinement */
+.contact-hero-copy,
+.contact-hero-copy h1,
+.contact-hero-copy .cast-eyebrow,
+.contact-hero-copy p{
+  font-family:"Libre Caslon Text",Georgia,"Times New Roman",serif;
+}
+
+.contact-hero-copy p:last-child{
+  font-size:16px;
+}

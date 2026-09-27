@@ -1403,3 +1403,39 @@ button,input{font:inherit}
   object-fit:contain;
   object-position:center;
 }
+
+
+/* Shared site chrome: lock header/footer presentation across all pages */
+[data-site-header],
+[data-site-footer]{
+  width:var(--page-width);
+  flex:0 0 auto;
+}
+
+[data-site-header] .site-header{
+  width:var(--page-width);
+  margin:0;
+  font-family:var(--serif);
+}
+
+[data-site-header] .primary-nav,
+[data-site-header] .primary-nav a,
+[data-site-header] .header-brand,
+[data-site-header] .header-search{
+  font-family:var(--serif);
+}
+
+[data-site-footer] .bottom-stack,
+[data-site-footer] .newsletter,
+[data-site-footer] .site-footer{
+  width:var(--page-width);
+  margin-left:0;
+  margin-right:0;
+}
+
+[data-site-footer] .newsletter-copy,
+[data-site-footer] .footer-brand,
+[data-site-footer] .footer-social,
+[data-site-footer] .until-art{
+  font-family:var(--serif);
+}

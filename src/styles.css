@@ -1745,3 +1745,39 @@ button,input{font:inherit}
   color:#c9c1b7;
   font-style:italic;
 }
+
+
+/* Episode preview panel width and cast/character column layout */
+.episodes-workspace{
+  grid-template-columns:210px 376px 500px;
+}
+
+.episodes-preview{
+  width:500px;
+}
+
+.episodes-details div{
+  grid-template-columns:98px 1fr;
+}
+
+.episodes-cast-credit{
+  display:grid;
+  grid-template-columns:145px 1fr;
+  column-gap:8px;
+  align-items:baseline;
+  width:100%;
+}
+
+.episodes-cast-performer{
+  min-width:0;
+}
+
+.episodes-character-role{
+  color:#c9c1b7;
+  font-style:italic;
+  white-space:nowrap;
+}
+
+.episodes-character-role-empty{
+  visibility:hidden;
+}

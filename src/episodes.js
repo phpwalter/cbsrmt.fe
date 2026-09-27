@@ -48,9 +48,18 @@ const personLink = (person, type) => {
 
 const castCredit = (person) => {
   if (!person) return '—';
+
   const performer = personLink(person, 'cast');
   const character = String(person.character_name || '').trim();
-  return character ? `${performer} <span class="episodes-character-role">as ${escapeHtml(character)}</span>` : performer;
+
+  return `
+    <span class="episodes-cast-credit">
+      <span class="episodes-cast-performer">${performer}</span>
+      ${character
+        ? `<span class="episodes-character-role">as ${escapeHtml(character)}</span>`
+        : '<span class="episodes-character-role episodes-character-role-empty"></span>'}
+    </span>
+  `;
 };
 
 const debounce = (fn, delay) => {

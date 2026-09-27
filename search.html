@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Search the CBS Radio Mystery Theater archive." />
+  <meta name="theme-color" content="#050505" />
+  <style>html,body{background:#050505;color:#f3efe8}</style>
+  <title>Search | CBS Radio Mystery Theater</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body data-page="search">
+  <div data-site-header></div>
+
+  <main class="search-page-main">
+    <section class="search-page-stage" aria-labelledby="search-page-heading">
+      <div class="search-page-shade" aria-hidden="true"></div>
+
+      <section class="search-panel">
+        <header class="search-panel-header">
+          <h1 id="search-page-heading">Search the Archive</h1>
+          <div class="search-panel-rule" aria-hidden="true"><span></span></div>
+          <p>Find episodes, cast members, and writers across the CBS Radio Mystery Theater archive.</p>
+        </header>
+
+        <form class="search-form" data-site-search-form role="search">
+          <label class="search-field">
+            <span class="sr-only">Search the archive</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.25"></circle>
+              <path d="m15.25 15.25 4.75 4.75"></path>
+            </svg>
+            <input
+              type="search"
+              name="q"
+              autocomplete="off"
+              placeholder="Search episodes, cast, writers..."
+              data-site-search-input
+            />
+          </label>
+          <button type="submit">Search</button>
+        </form>
+
+        <div class="search-filter-row" role="group" aria-label="Filter search results">
+          <button type="button" class="active" data-search-type="all">All</button>
+          <button type="button" data-search-type="episodes">Episodes</button>
+          <button type="button" data-search-type="cast">Cast</button>
+          <button type="button" data-search-type="writers">Writers</button>
+        </div>
+
+        <div class="search-summary" data-search-summary>
+          Enter a title, episode number, actor, or writer to search the archive.
+        </div>
+
+        <div class="search-results" data-search-results aria-live="polite"></div>
+      </section>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+</body>
+</html>

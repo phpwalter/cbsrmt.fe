@@ -21,8 +21,8 @@ export const renderSiteHeader = (target, { active = 'home' } = {}) => {
       <nav class="primary-nav" aria-label="Primary navigation">
         ${items.map(navItem).join('')}
       </nav>
-      <button class="header-search" type="button" aria-label="Search placeholder">
+      <a class="header-search" href="/search.html" aria-label="Search the archive">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.25"></circle><path d="m15.25 15.25 4.75 4.75"></path></svg>
-      </button>
+      </a>
     </header>`;
 };

@@ -1781,3 +1781,13 @@ button,input{font:inherit}
 .episodes-character-role-empty{
   visibility:hidden;
 }
+
+
+/* Episode preview panel width refinement */
+.episodes-workspace{
+  grid-template-columns:210px 426px 450px;
+}
+
+.episodes-preview{
+  width:450px;
+}

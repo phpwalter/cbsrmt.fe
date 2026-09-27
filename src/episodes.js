@@ -46,6 +46,13 @@ const personLink = (person, type) => {
   return `<a class="episodes-person-link" href="${href}">${name}</a>`;
 };
 
+const castCredit = (person) => {
+  if (!person) return '—';
+  const performer = personLink(person, 'cast');
+  const character = String(person.character_name || '').trim();
+  return character ? `${performer} <span class="episodes-character-role">as ${escapeHtml(character)}</span>` : performer;
+};
+
 const debounce = (fn, delay) => {
   let timer;
   return (...args) => {
@@ -256,8 +263,8 @@ export const initEpisodesPage = () => {
     stopPreviewAudio();
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
     const writers = (episode.writers || []).map((person) => personLink(person, 'writer')).join(', ') || '—';
-    const star = episode.star ? personLink(episode.star, 'cast') : '—';
-    const coStars = (episode.co_stars || []).map((person) => personLink(person, 'cast')).join('<br>') || '—';
+    const star = episode.star ? castCredit(episode.star) : '—';
+    const coStars = (episode.co_stars || []).map((person) => castCredit(person)).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);

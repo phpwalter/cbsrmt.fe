@@ -1439,3 +1439,22 @@ button,input{font:inherit}
 [data-site-footer] .until-art{
   font-family:var(--serif);
 }
+
+
+/* Contact page width normalization: match Cast/Writers/other 1220px page shell */
+.contact-page-main{
+  width:var(--page-width);
+  padding-left:50px;
+  padding-right:50px;
+}
+
+.contact-page-main > .contact-hero-shell{
+  width:var(--content-width);
+  margin-left:0;
+  margin-right:0;
+}
+
+.contact-main-section{
+  width:var(--content-width);
+  padding-right:0;
+}

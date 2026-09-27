@@ -273,7 +273,7 @@ export const initEpisodesPage = () => {
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
     const writers = (episode.writers || []).map((person) => personLink(person, 'writer')).join(', ') || '—';
     const star = episode.star ? castCredit(episode.star) : '—';
-    const coStars = (episode.co_stars || []).map((person) => castCredit(person)).join('<br>') || '—';
+    const coStars = (episode.co_stars || []).map((person) => castCredit(person)).join('') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);

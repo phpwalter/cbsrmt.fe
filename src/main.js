@@ -128,7 +128,8 @@ const createEpisodeAudioControls = (episode) => {
     '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8h8v8H8z"></path></svg>',
   );
 
-  const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
+  const audioUrl = episode.audio?.stream_url || null;
+    const audioAvailable = Boolean(audioUrl);
 
   if (!audioAvailable) {
     [play, pause, stop].forEach((button) => {
@@ -140,7 +141,7 @@ const createEpisodeAudioControls = (episode) => {
     return stack;
   }
 
-  const audio = new Audio(episode.audio.stream_url);
+  const audio = new Audio(audioUrl);
 
   const updateProgress = () => {
     const total = Number.isFinite(audio.duration) ? audio.duration : 0;

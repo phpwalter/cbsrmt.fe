@@ -124,7 +124,8 @@ export const initEpisodesPage = () => {
 
     if (!controls || !progress || !currentTime || !duration || !play || !pause || !stop) return;
 
-    const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
+    const audioUrl = episode.audio?.stream_url || null;
+    const audioAvailable = Boolean(audioUrl);
     if (!audioAvailable) {
       [play, pause, stop].forEach((button) => {
         button.disabled = true;
@@ -138,7 +139,7 @@ export const initEpisodesPage = () => {
       return;
     }
 
-    previewAudio = new Audio(episode.audio.stream_url);
+    previewAudio = new Audio(audioUrl);
     const audio = previewAudio;
 
     const updateProgress = () => {
@@ -260,7 +261,8 @@ export const initEpisodesPage = () => {
     const coStars = (episode.co_stars || []).map((person) => personLink(person, 'cast')).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
-    const audioAvailable = Boolean(episode.audio?.available && episode.audio?.stream_url);
+    const audioUrl = episode.audio?.stream_url || null;
+    const audioAvailable = Boolean(audioUrl);
 
     previewElement.innerHTML = `
       <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">

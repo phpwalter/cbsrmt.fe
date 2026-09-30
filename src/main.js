@@ -129,7 +129,7 @@ const createEpisodeAudioControls = (episode) => {
   );
 
   const audioUrl = episode.audio?.stream_url || null;
-    const audioAvailable = Boolean(audioUrl);
+  const audioAvailable = Boolean(audioUrl);
 
   if (!audioAvailable) {
     [play, pause, stop].forEach((button) => {

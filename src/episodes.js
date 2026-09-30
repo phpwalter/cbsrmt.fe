@@ -262,7 +262,7 @@ export const initEpisodesPage = () => {
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioUrl = episode.audio?.stream_url || null;
-    const audioAvailable = Boolean(audioUrl);
+  const audioAvailable = Boolean(audioUrl);
 
     previewElement.innerHTML = `
       <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">

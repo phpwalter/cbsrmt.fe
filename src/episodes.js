@@ -46,6 +46,19 @@ const personLink = (person, type) => {
   return `<a class="episodes-person-link" href="${href}">${name}</a>`;
 };
 
+const castCredit = (person) => {
+  const actor = personLink(person, 'cast');
+  const character = String(person?.character_name || '').trim();
+  return character ? `${actor} as ${escapeHtml(character)}` : actor;
+};
+
+const formatFisherRubric = (value) => {
+  if (value === null || value === undefined || value === '') return '—';
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return '—';
+  return `${numeric.toString()} / 100`;
+};
+
 const debounce = (fn, delay) => {
   let timer;
   return (...args) => {
@@ -257,8 +270,8 @@ export const initEpisodesPage = () => {
     stopPreviewAudio();
     const genres = (episode.genres || []).map((genre) => escapeHtml(genre.name)).join(', ') || '—';
     const writers = (episode.writers || []).map((person) => personLink(person, 'writer')).join(', ') || '—';
-    const star = episode.star ? personLink(episode.star, 'cast') : '—';
-    const coStars = (episode.co_stars || []).map((person) => personLink(person, 'cast')).join('<br>') || '—';
+    const star = episode.star ? castCredit(episode.star) : '—';
+    const coStars = (episode.co_stars || []).map(castCredit).join('<br>') || '—';
     const number = episodeNumber(episode.episode_number);
     const assetNumber = episodeAssetNumber(episode.episode_number);
     const audioUrl = episode.audio?.stream_url || null;
@@ -324,6 +337,7 @@ export const initEpisodesPage = () => {
           <div><dt>Writer</dt><dd>${writers}</dd></div>
           <div><dt>Stars</dt><dd>${star}</dd></div>
           <div><dt>Co-Stars</dt><dd>${coStars}</dd></div>
+          <div><dt>Fisher Rubric</dt><dd>${formatFisherRubric(episode.fisher_rubric)}</dd></div>
         </dl>
       </div>
     `;

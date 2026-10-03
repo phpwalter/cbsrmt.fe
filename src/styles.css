@@ -124,10 +124,10 @@ button,input{font:inherit}
 .episodes-list-artwork{width:170px}
 .episodes-list-artwork>img{display:block;box-sizing:border-box;width:100%;height:56px;object-fit:cover;border:1px solid #7b683b;background:#050505}
 .episodes-indicators{display:grid;background:#000}
-.episodes-indicators-compact{grid-template-columns:repeat(3,24px) 1fr repeat(2,24px);column-gap:6px;width:100%;margin-top:6px;padding:0;box-sizing:border-box}
+.episodes-indicators-compact{grid-template-columns:repeat(3,23px) 1fr repeat(2,23px);column-gap:6px;width:calc(100% - 6px);margin:6px 3px 0;padding:0;box-sizing:border-box}
 .episodes-indicators-detail{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:100%;margin-top:7px}
 .episodes-indicator{display:flex;align-items:center;justify-content:center;box-sizing:border-box;border:1px solid var(--gold);background:#000;color:#766f65;font-family:var(--sans);font-weight:700;text-transform:uppercase}
-.episodes-indicators-compact .episodes-indicator{width:24px;height:24px;font-size:11px;letter-spacing:.04em}
+.episodes-indicators-compact .episodes-indicator{width:23px;height:23px;font-size:11px;letter-spacing:.04em}
 .episodes-indicators-compact .episodes-indicator:nth-child(4){grid-column:5}
 .episodes-indicators-compact .episodes-indicator:nth-child(5){grid-column:6}
 .episodes-indicators-detail .episodes-indicator{height:28px;padding:0 5px;font-size:10px;letter-spacing:.03em;white-space:nowrap}

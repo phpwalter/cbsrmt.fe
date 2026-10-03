@@ -121,7 +121,15 @@ button,input{font:inherit}
 .episodes-list-item.is-selected{background:linear-gradient(90deg,rgba(192,171,113,.12),transparent)}
 .episodes-current-indicator{position:absolute;left:0;top:10px;bottom:10px;width:3px;background:transparent}
 .episodes-list-item.is-selected .episodes-current-indicator{background:var(--gold);box-shadow:0 0 8px rgba(192,171,113,.35)}
-.episodes-list-item>img{width:170px;height:86px;object-fit:cover;border:1px solid #7b683b;background:#050505}
+.episodes-list-artwork{width:170px}
+.episodes-list-artwork>img{display:block;width:170px;height:86px;object-fit:cover;border:1px solid #7b683b;background:#050505}
+.episodes-indicators{display:grid;background:#000}
+.episodes-indicators-compact{grid-template-columns:repeat(5,24px);justify-content:center;gap:7px;width:170px;margin-top:6px}
+.episodes-indicators-detail{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:100%;margin-top:7px}
+.episodes-indicator{display:flex;align-items:center;justify-content:center;box-sizing:border-box;border:1px solid var(--gold);background:#000;color:#766f65;font-family:var(--sans);font-weight:700;text-transform:uppercase}
+.episodes-indicators-compact .episodes-indicator{width:24px;height:24px;font-size:11px;letter-spacing:.04em}
+.episodes-indicators-detail .episodes-indicator{height:28px;padding:0 5px;font-size:10px;letter-spacing:.03em;white-space:nowrap}
+.episodes-indicator.is-active{color:#f5e7c2;text-shadow:0 0 7px rgba(222,197,126,.3)}
 .episodes-list-copy h3{margin:0 0 3px;color:#f1ece5;font-size:18px;font-weight:400}
 .episodes-meta{margin:0 0 5px!important;color:#a9a297!important;font-size:13px!important;letter-spacing:.02em}
 .episodes-meta span,.episodes-preview-header span{margin:0 6px;color:#75643b}

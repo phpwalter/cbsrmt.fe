@@ -122,7 +122,7 @@ button,input{font:inherit}
 .episodes-current-indicator{position:absolute;left:0;top:10px;bottom:10px;width:3px;background:transparent}
 .episodes-list-item.is-selected .episodes-current-indicator{background:var(--gold);box-shadow:0 0 8px rgba(192,171,113,.35)}
 .episodes-list-artwork{width:170px}
-.episodes-list-artwork>img{display:block;box-sizing:border-box;width:100%;height:86px;object-fit:cover;border:1px solid #7b683b;background:#050505}
+.episodes-list-artwork>img{display:block;box-sizing:border-box;width:100%;height:56px;object-fit:cover;border:1px solid #7b683b;background:#050505}
 .episodes-indicators{display:grid;background:#000}
 .episodes-indicators-compact{grid-template-columns:repeat(3,24px) 1fr repeat(2,24px);column-gap:6px;width:100%;margin-top:6px;padding:0;box-sizing:border-box}
 .episodes-indicators-detail{grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;width:100%;margin-top:7px}

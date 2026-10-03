@@ -37,6 +37,35 @@ const textName = (person) =>
   [person?.first_name, person?.last_name].filter(Boolean).join(' ') ||
   'Unknown';
 
+const episodeIndicatorData = (episode) => {
+  const quality = String(episode?.recording_quality || '').trim().toUpperCase();
+  return [
+    { short: 'F', label: 'Fair', active: quality === 'FAIR' },
+    { short: 'G', label: 'Good', active: quality === 'GOOD' },
+    { short: 'E', label: 'Excellent', active: quality === 'EXCELLENT' },
+    { short: 'C', label: 'Commercials', active: episode?.commercials === true },
+    { short: 'N', label: 'News', active: episode?.news === true },
+  ];
+};
+
+const renderEpisodeIndicators = (episode, detail = false) => {
+  const items = episodeIndicatorData(episode)
+    .map((item) => {
+      const text = detail ? item.label : item.short;
+      const state = item.active ? 'active' : 'inactive';
+      return `<span class="episodes-indicator${item.active ? ' is-active' : ''}" aria-label="${item.label}: ${state}">${text}</span>`;
+    })
+    .join('');
+
+  return `<div class="episodes-indicators ${detail ? 'episodes-indicators-detail' : 'episodes-indicators-compact'}">${items}</div>`;
+};
+
+const formatFisherRubric = (value) => {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return '—';
+  return `${numeric} / 100`;
+};
+
 const personLink = (person, type) => {
   if (!person?.id) return escapeHtml(textName(person));
   const name = escapeHtml(textName(person));
@@ -264,6 +293,7 @@ export const initEpisodesPage = () => {
 
     previewElement.innerHTML = `
       <img class="episodes-preview-image" src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">
+      ${renderEpisodeIndicators(episode, true)}
       <div class="episodes-preview-header">
         <div>
           <h2>${escapeHtml(episode.episode_name)}</h2>
@@ -322,6 +352,7 @@ export const initEpisodesPage = () => {
           <div><dt>Writer</dt><dd>${writers}</dd></div>
           <div><dt>Stars</dt><dd>${star}</dd></div>
           <div><dt>Co-Stars</dt><dd>${coStars}</dd></div>
+          <div><dt>Fisher Rubric</dt><dd>${formatFisherRubric(episode.fisher_rubric)}</dd></div>
         </dl>
       </div>
     `;
@@ -367,14 +398,17 @@ export const initEpisodesPage = () => {
       row.tabIndex = 0;
       row.innerHTML = `
         <span class="episodes-current-indicator" aria-hidden="true"></span>
-        <img src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">
+        <div class="episodes-list-artwork">
+          <img src="${episode.thumbnail || `/assets/episodes/${assetNumber}.png`}" alt="${escapeHtml(episode.episode_name)}">
+          ${renderEpisodeIndicators(episode)}
+        </div>
         <div class="episodes-list-copy">
           <h3>${escapeHtml(episode.episode_name)}</h3>
           <p class="episodes-meta">Episode ${number} <span>|</span> ${formatDate(episode.broadcast_date)}</p>
           <p>${escapeHtml(episode.episode_plot || 'No episode description is available.')}</p>
         </div>
       `;
-      useEpisodeImageFallback(row.querySelector('img'));
+      useEpisodeImageFallback(row.querySelector('.episodes-list-artwork img'));
 
       const activate = () => selectEpisode(episode.episode_number);
       row.addEventListener('click', activate);
